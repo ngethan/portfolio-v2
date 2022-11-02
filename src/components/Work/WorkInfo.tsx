@@ -53,7 +53,7 @@ const WorkInfo = ({ work, md }: Props) => {
             description: [
                 "Used Java & Paper API to develop highly functional Minecraft plugins",
                 "Used TypeScript & discord.js to develop a general purpose discord management bot",
-                "Manged the server, staff, and oversaw the server's overall operation",
+                "Managed the server, staff, and oversaw the server's overall operation",
             ],
         },
     ];
