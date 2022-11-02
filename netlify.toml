@@ -1,0 +1,18 @@
+[build]
+  publish = "out"
+  command = "npm run build-prod"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[[redirects]]
+  from = "/rr"
+  to = "https://youtu.be/QhOWr56LAdE"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cm"
+  to = "https://youtu.be/ZwiP31vbC2U"
+  status = 301
+  force = true
