@@ -37,34 +37,45 @@ const Contact = () => {
     };
 
     useEffect(() => {
-        document.getElementById("name")!.addEventListener("focus", () => {
-            document.getElementById("name-label")!.style.top = "0px";
-        });
+        if (typeof document.getElementById("name") !== null) {
+            document.getElementById("name")!.addEventListener("focus", () => {
+                document.getElementById("name-label")!.style.top = "0px";
+            });
 
-        document.getElementById("name")!.addEventListener("blur", (e) => {
-            if ((e.target as any).value?.trim().length === 0)
-                document.getElementById("name-label")!.style.top = "40px";
-            document.getElementById("name-label")!.style.fontSize = "24px";
-        });
+            document.getElementById("name")!.addEventListener("blur", (e) => {
+                if ((e.target as any).value?.trim().length === 0)
+                    document.getElementById("name-label")!.style.top = "40px";
+                document.getElementById("name-label")!.style.fontSize = "24px";
+            });
+        }
 
-        document.getElementById("email")!.addEventListener("focus", () => {
-            document.getElementById("email-label")!.style.top = "0px";
-        });
+        if (typeof document.getElementById("email") !== null) {
+            document.getElementById("email")!.addEventListener("focus", () => {
+                document.getElementById("email-label")!.style.top = "0px";
+            });
 
-        document.getElementById("email")!.addEventListener("blur", (e) => {
-            if ((e.target as any).value?.trim().length === 0)
-                document.getElementById("email-label")!.style.top = "40px";
-        });
+            document.getElementById("email")!.addEventListener("blur", (e) => {
+                if ((e.target as any).value?.trim().length === 0)
+                    document.getElementById("email-label")!.style.top = "40px";
+            });
+        }
 
-        document.getElementById("message")!.addEventListener("focus", () => {
-            document.getElementById("message-label")!.style.top = "0px";
-        });
+        if (typeof document.getElementById("message") !== null) {
+            document
+                .getElementById("message")!
+                .addEventListener("focus", () => {
+                    document.getElementById("message-label")!.style.top = "0px";
+                });
 
-        document.getElementById("message")!.addEventListener("blur", (e) => {
-            if ((e.target as any).value?.trim().length === 0)
-                document.getElementById("message-label")!.style.top = "40px";
-        });
-    });
+            document
+                .getElementById("message")!
+                .addEventListener("blur", (e) => {
+                    if ((e.target as any).value?.trim().length === 0)
+                        document.getElementById("message-label")!.style.top =
+                            "40px";
+                });
+        }
+    }, []);
 
     const [submitted, setSubmitted] = useState(false);
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
