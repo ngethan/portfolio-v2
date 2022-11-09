@@ -112,8 +112,9 @@ const Home = () => {
                     className="text-gray-200 my-2 max-w-[500px] text-lg"
                     variants={item}
                 >
-                    I&apos;m a software engineer specializing in building web
-                    and desktop applications. Currently, I&apos;m teaching at{" "}
+                    I&apos;m a software engineer who is passionate about
+                    utilizing code to better the world. Currently, I&apos;m
+                    teaching at{" "}
                     <a
                         className="hover-animation-light font-code text-red-200"
                         href="https://www.thecoderschool.com/"

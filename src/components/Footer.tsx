@@ -97,7 +97,7 @@ const Footer = () => {
                 </li>
                 <li className="group mx-[15px] px-[5px] my-[20px]">
                     <a
-                        href="https://twitter.com/ethanng21/"
+                        href="https://twitter.com/ethn_ng/"
                         target="_blank"
                         rel="noreferrer"
                         aria-label="CodePen"

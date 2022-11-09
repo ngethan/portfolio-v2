@@ -38,7 +38,8 @@ const Index = () => {
                 <meta property="og:title" content="Ethan Ng" />
                 <meta
                     property="og:description"
-                    content="Ethan Ng is a software engineer who loves designing and building applications."
+                    content="Ethan Ng is a software engineer who is passionate about utilizing code
+                    to better the world."
                 />
                 <meta name="google" content="notranslate" />
                 <meta http-equiv="Content-Language" content="en" />
@@ -46,7 +47,7 @@ const Index = () => {
                     property="og:image"
                     content="https://ethanng.dev/image.png"
                 />
-                <meta name="twitter:creator" content="@ethanng21" />
+                <meta name="twitter:creator" content="@ethn_ng" />
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://ethanng.dev/" />
                 <meta property="twitter:title" content="Ethan Ng" />
@@ -59,6 +60,7 @@ const Index = () => {
                     content="https://ethanng.dev/image.png"
                 />
             </Head>
+            <Cursor />
             <Stars />
             <Navbar />
             <Home />
@@ -68,7 +70,6 @@ const Index = () => {
             <Contact />
             <Footer />
             <Socials />
-            <Cursor />
         </div>
     );
 };
