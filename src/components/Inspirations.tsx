@@ -37,7 +37,7 @@ const Inspirations = () => {
 
     return (
         <motion.div
-            id="about"
+            id="inspirations"
             className="py-[100px] text-gray-200 w-full max-w-[950px] mx-auto flex flex-col px-4"
             initial="hidden"
             animate={controls}
