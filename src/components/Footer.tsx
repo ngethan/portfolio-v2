@@ -84,7 +84,7 @@ const Footer = () => {
                 </li>
                 <li className="group mx-[15px] px-[5px] my-[20px]">
                     <a
-                        href="https://www.instagram.com/ethan.ng6/"
+                        href="https://www.instagram.com/ethn.ng/"
                         target="_blank"
                         rel="noreferrer"
                         aria-label="Instagram"

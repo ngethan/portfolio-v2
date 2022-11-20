@@ -61,8 +61,8 @@ const Index = () => {
                 />
             </Head>
             <Cursor />
-            <Stars />
             <Navbar />
+            <Stars />
             <Home />
             <About />
             <Skills />

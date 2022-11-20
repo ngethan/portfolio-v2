@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 import icon from "../../public/icon.png";
 
-const Navbar = () => {
+const CRNavbar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
 
@@ -125,6 +125,15 @@ const Navbar = () => {
                 <motion.li variants={item}>
                     <h1
                         className="hover-animation-dark duration-300 hover:text-red-400"
+                        data-section="inspirations"
+                        onClick={handleViewSection}
+                    >
+                        Inspirations
+                    </h1>
+                </motion.li>
+                <motion.li variants={item}>
+                    <h1
+                        className="hover-animation-dark duration-300 hover:text-red-400"
                         data-section="about"
                         onClick={handleViewSection}
                     >
@@ -188,8 +197,16 @@ const Navbar = () => {
                         About
                     </p>
                 </li>
-
                 <li className="top-[200px] fixed">
+                    <p
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        data-section="inspirations"
+                        onClick={handleViewSection}
+                    >
+                        Inspirations
+                    </p>
+                </li>
+                <li className="top-[300px] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="skills"
@@ -198,7 +215,7 @@ const Navbar = () => {
                         Skills
                     </p>
                 </li>
-                <li className="top-[300px] fixed">
+                <li className="top-[400px] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="work"
@@ -221,4 +238,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default CRNavbar;

@@ -80,11 +80,11 @@ const Inspirations = () => {
                 <p>
                     My creative side has taken much inspiration from Billy Joel.
                     I absolutely adore his music and have rekindled my love for
-                    piano by learning his songs. Billy Joel&apos;s songs have
-                    encouraged me to experiment outside of the classical genre
-                    and explore pop, rock, and jazz. Because of Joel, my piano
-                    repertoire has expanded to utilize the piano’s versatile
-                    nature to the fullest extent.
+                    piano through learning his songs. Billy Joel&apos;s songs
+                    have encouraged me to experiment outside of the classical
+                    genre and explore pop, rock, and jazz. Because of Joel, my
+                    piano repertoire has expanded to utilize the piano’s
+                    versatile nature to the fullest extent.
                 </p>
                 <br />
                 <h2 className="text-[20px] underline">Steve Jobs</h2>

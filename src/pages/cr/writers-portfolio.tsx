@@ -3,12 +3,12 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import creativeNonFiction from "../assets/creative-non-fiction.png";
-import dolphin_fountain from "../assets/dolphin_fountain.png";
-import ramen from "../assets/ramen.png";
-import research from "../assets/research.png";
-import satire from "../assets/satire.png";
-import vincentVanGogh from "../assets/vincent-van-gogh.png";
+import creativeNonFiction from "../../assets/creative-non-fiction.png";
+import dolphin_fountain from "../../assets/dolphin_fountain.png";
+import ramen from "../../assets/ramen.png";
+import research from "../../assets/research.png";
+import satire from "../../assets/satire.png";
+import vincentVanGogh from "../../assets/vincent-van-gogh.png";
 
 const WritersPortfolio = () => {
     const controls = useAnimation();

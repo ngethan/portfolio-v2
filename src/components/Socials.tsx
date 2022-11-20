@@ -31,7 +31,7 @@ const Socials = () => {
             </li>
             <li className="group mb-[30px]">
                 <a
-                    href="https://www.instagram.com/ethan.ng6/"
+                    href="https://www.instagram.com/ethn.ng/"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Instagram"

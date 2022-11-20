@@ -127,18 +127,7 @@ const Cursor = () => {
     });
 
     return (
-        <div
-            className={
-                // eslint-disable-next-line no-nested-ternary
-                typeof navigator !== "undefined"
-                    ? /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-                          navigator.userAgent
-                      )
-                        ? "hidden"
-                        : "relative top-0 z-[1000]"
-                    : ""
-            }
-        >
+        <div className="relative top-0 z-[999]">
             <div ref={dotOutline} className="cursor-dot-outline"></div>
             <div ref={dot} className="cursor-dot"></div>
         </div>
