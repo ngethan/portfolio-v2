@@ -103,7 +103,7 @@ const Work = () => {
     return (
         <motion.div
             id="work"
-            className="py-[100px] mb-[100px] text-gray-200 w-full h-[500px] max-w-[850px] mx-auto px-4 flex flex-col"
+            className="py-[100px] text-gray-200 w-full max-w-[850px] mx-auto px-4 flex flex-col"
             initial="hidden"
             animate={controls}
             variants={list}
