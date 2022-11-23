@@ -20,6 +20,7 @@ const CRNavbar = ({ dPage }: Props) => {
     let prevPos = 0;
 
     const onScroll = (): void => {
+        if (dPage) return;
         const userAgent =
             typeof navigator !== "undefined" ? navigator.userAgent : "";
 
