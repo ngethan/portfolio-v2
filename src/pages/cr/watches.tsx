@@ -1,4 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
+import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -46,6 +47,9 @@ const Watches = () => {
 
     return (
         <div>
+            <Head>
+                <title>Ethan Ng - Watches</title>
+            </Head>
             <CRNavbar dPage={true} />
             <motion.div
                 id="watches"

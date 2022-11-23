@@ -1,4 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
+import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -52,6 +53,9 @@ const WritersPortfolio = () => {
             variants={list}
             ref={ref}
         >
+            <Head>
+                <title>Ethan Ng - Writers Portfolio</title>
+            </Head>
             <motion.div
                 className="justify-center text-7xl sm:text-8xl flex text-gray-100 font-bold"
                 variants={itemY}

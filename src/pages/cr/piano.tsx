@@ -1,4 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
+import Head from "next/head";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -40,6 +41,9 @@ const Piano = () => {
 
     return (
         <div>
+            <Head>
+                <title>Ethan Ng - Piano</title>
+            </Head>
             <CRNavbar dPage={true} />
             <motion.div
                 id="piano"

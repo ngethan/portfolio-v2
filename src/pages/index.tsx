@@ -60,8 +60,8 @@ const Index = () => {
                     content="https://ethanng.dev/image.png"
                 />
             </Head>
-            <Cursor />
             <Navbar />
+            <Cursor />
             <Stars />
             <Home />
             <About />

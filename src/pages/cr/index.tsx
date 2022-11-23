@@ -18,8 +18,8 @@ const cr = () => {
             <Head>
                 <title>Ethan Ng</title>
             </Head>
-            <Cursor />
             <CRNavbar />
+            <Cursor />
             <Stars />
             <Home />
             <About />

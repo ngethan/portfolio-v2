@@ -1,4 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
+import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
@@ -89,10 +90,13 @@ const Dogs = () => {
     };
     return (
         <div>
+            <Head>
+                <title>Ethan Ng - Dogs</title>
+            </Head>
             <CRNavbar dPage={true} />
             <motion.div
                 id="dogs"
-                className="ml-72 px-4 max-w-[1075px] flex -z-[1] flex-row"
+                className="ml-72 px-4  flex -z-[1] flex-row"
                 initial="hidden"
                 animate={controls}
                 variants={list}
