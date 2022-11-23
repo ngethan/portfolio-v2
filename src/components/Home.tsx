@@ -78,7 +78,7 @@ const Home = () => {
                     <span>👋 Hi there, I&apos;m</span>
                 </motion.div>
                 <motion.div
-                    className="name text-7xl sm:text-8xl flex text-gray-100 font-bold my-4 max-w-[425.2px]"
+                    className="text-7xl sm:text-8xl flex text-gray-100 font-bold my-4 max-w-[425.2px]"
                     variants={item}
                 >
                     <h1>

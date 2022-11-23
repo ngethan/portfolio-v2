@@ -53,7 +53,7 @@ const WritersPortfolio = () => {
             ref={ref}
         >
             <motion.div
-                className="name justify-center text-7xl sm:text-8xl flex text-gray-100 font-bold"
+                className="justify-center text-7xl sm:text-8xl flex text-gray-100 font-bold"
                 variants={itemY}
             >
                 <h1>
@@ -62,7 +62,7 @@ const WritersPortfolio = () => {
                         .map((letter, index) => {
                             return (
                                 <span
-                                    className="text-5xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500"
+                                    className="mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500"
                                     key={index}
                                 >
                                     {letter}
@@ -76,7 +76,7 @@ const WritersPortfolio = () => {
                 <p></p>
             </motion.div>
             <motion.div
-                className="name text-7xl sm:text-8xl h-[40px] flex text-gray-100 font-bold"
+                className="text-7xl sm:text-8xl h-[40px] flex text-gray-100 font-bold"
                 variants={itemY}
             >
                 <h1>

@@ -76,25 +76,25 @@ const Work = () => {
             if ((e.target as any).dataset.work === "tcs")
                 sleep(100).then(() => {
                     document.getElementById(
-                        "selected-indicator"
+                        "selected-indicator-cr"
                     )!.style.marginTop = `${-47 * 4}px`;
                 });
             if ((e.target as any).dataset.work === "mpr")
                 sleep(100).then(() => {
                     document.getElementById(
-                        "selected-indicator"
+                        "selected-indicator-cr"
                     )!.style.marginTop = `${-47 * 3}px`;
                 });
             else if ((e.target as any).dataset.work === "nydeo")
                 sleep(100).then(() => {
                     document.getElementById(
-                        "selected-indicator"
+                        "selected-indicator-cr"
                     )!.style.marginTop = `${-47 * 2}px`;
                 });
             else if ((e.target as any).dataset.work === "aetheria")
                 sleep(100).then(() => {
                     document.getElementById(
-                        "selected-indicator"
+                        "selected-indicator-cr"
                     )!.style.marginTop = `${-47 * 1}px`;
                 });
         }
@@ -167,7 +167,7 @@ const Work = () => {
                         Aetheria
                     </li>
                     <div
-                        id="selected-indicator"
+                        id="selected-indicator-cr"
                         className="relative top-0 mt-[-188px] w-[2px] h-[47px] border-l-[2px] border-red-500 duration-300"
                     ></div>
                 </motion.ul>

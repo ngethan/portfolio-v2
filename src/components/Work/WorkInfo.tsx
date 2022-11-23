@@ -86,22 +86,22 @@ const WorkInfo = ({ work, md }: Props) => {
 
     return (
         <motion.div
-            className={!md ? "ml-[25px] float-right" : "ml-4 float-right"}
+            className={
+                !md
+                    ? "ml-[25px] float-right h-[300px]"
+                    : "ml-4 float-right h-[300px]"
+            }
             initial="hidden"
             animate="visible"
             key={work}
             variants={list}
         >
             <motion.div variants={itemY}>
-                <motion.p
-                    id="title"
-                    className="inline text-[24px] text-gray-100 font-bold mb-1"
-                >
+                <motion.p className="inline text-[24px] text-gray-100 font-bold mb-1">
                     {data!.title}
                 </motion.p>
                 <p className="inline text-[24px] text-red-500 font-bold"> @ </p>
                 <a
-                    id="name"
                     className="hover-animation-dark inline text-[24px] text-red-500 font-bold"
                     href={data!.url}
                     target="_blank"
@@ -111,13 +111,12 @@ const WorkInfo = ({ work, md }: Props) => {
                 </a>
             </motion.div>
             <motion.p
-                id="duration"
                 className="font-code text-[20px] text-gray-200 mb-4"
                 variants={itemY}
             >
                 {data!.duration}
             </motion.p>
-            <motion.ul id="description" variants={itemY}>
+            <motion.ul variants={itemY}>
                 {data!.description.map((i: string, index: number) => {
                     return (
                         <li

@@ -45,7 +45,7 @@ const About = () => {
             ref={ref}
         >
             <motion.div
-                className="name text-7xl sm:text-8xl flex text-gray-100 font-bold"
+                className="text-7xl sm:text-8xl flex text-gray-100 font-bold"
                 variants={itemY}
             >
                 <h1>

@@ -98,7 +98,7 @@ const Contact = () => {
                 className="py-[100px] bg-transparent text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
                 ref={ref}
             >
-                <div className="name text-7xl sm:text-8xl flex text-gray-100 font-bold ">
+                <div className="text-7xl sm:text-8xl flex text-gray-100 font-bold ">
                     <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
                         Thanks for your message!
                     </h1>
@@ -117,7 +117,7 @@ const Contact = () => {
             ref={ref}
         >
             <motion.div
-                className="name text-7xl sm:text-8xl flex text-gray-100 font-bold "
+                className="text-7xl sm:text-8xl flex text-gray-100 font-bold "
                 variants={itemY}
             >
                 <h1>

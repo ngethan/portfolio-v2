@@ -1,11 +1,17 @@
 import { motion, useAnimation } from "framer-motion";
 import { Spin as Hamburger } from "hamburger-react";
+import Link from "next/link";
+import Router from "next/router";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import icon from "../../public/icon.png";
 
-const CRNavbar = () => {
+interface Props {
+    dPage?: boolean;
+}
+
+const CRNavbar = ({ dPage }: Props) => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
 
@@ -79,11 +85,15 @@ const CRNavbar = () => {
     };
 
     const handleViewSection = (e: React.MouseEvent<HTMLElement>) => {
-        document
-            .getElementById((e.target as any).dataset.section!)!
-            .scrollIntoView();
-        if (window.innerWidth < 768) {
-            setNav(false);
+        if (dPage) {
+            Router.push("/cr");
+        } else {
+            document
+                .getElementById((e.target as any).dataset.section!)!
+                .scrollIntoView();
+            if (window.innerWidth < 768) {
+                setNav(false);
+            }
         }
     };
 
@@ -125,19 +135,19 @@ const CRNavbar = () => {
                 <motion.li variants={item}>
                     <h1
                         className="hover-animation-dark duration-300 hover:text-red-400"
-                        data-section="inspirations"
+                        data-section="about"
                         onClick={handleViewSection}
                     >
-                        Inspirations
+                        About
                     </h1>
                 </motion.li>
                 <motion.li variants={item}>
                     <h1
                         className="hover-animation-dark duration-300 hover:text-red-400"
-                        data-section="about"
+                        data-section="inspirations"
                         onClick={handleViewSection}
                     >
-                        About
+                        Inspirations
                     </h1>
                 </motion.li>
                 <motion.li variants={item}>
@@ -157,6 +167,30 @@ const CRNavbar = () => {
                     >
                         Work
                     </h1>
+                </motion.li>
+                <motion.li variants={item}>
+                    <Link
+                        className="hover-animation-dark duration-300 hover:text-red-400"
+                        href="/cr/dogs"
+                    >
+                        Dogs
+                    </Link>
+                </motion.li>
+                <motion.li variants={item}>
+                    <Link
+                        className="hover-animation-dark duration-300 hover:text-red-400"
+                        href="/cr/piano"
+                    >
+                        Piano
+                    </Link>
+                </motion.li>
+                <motion.li variants={item}>
+                    <Link
+                        className="hover-animation-dark duration-300 hover:text-red-400"
+                        href="/cr/watches"
+                    >
+                        Watches
+                    </Link>
                 </motion.li>
                 <motion.li variants={item}>
                     <button
@@ -225,6 +259,30 @@ const CRNavbar = () => {
                     </p>
                 </li>
                 <li className="top-[500px] fixed">
+                    <Link
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        href="/cr/dogs"
+                    >
+                        Dogs
+                    </Link>
+                </li>
+                <li className="top-[600px] fixed">
+                    <Link
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        href="/cr/piano"
+                    >
+                        Piano
+                    </Link>
+                </li>
+                <li className="top-[700px] fixed">
+                    <Link
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        href="/cr/watches"
+                    >
+                        Watches
+                    </Link>
+                </li>
+                <li className="top-[800px] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="contact"
