@@ -2,10 +2,10 @@ import Head from "next/head";
 
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import CRHome from "@/components/CRHome";
 import CRNavbar from "@/components/CRNavbar";
 import Cursor from "@/components/Cursor";
 import Footer from "@/components/Footer";
-import Home from "@/components/Home";
 import Inspirations from "@/components/Inspirations/Inspirations";
 import Skills from "@/components/Skills";
 import Socials from "@/components/Socials";
@@ -21,7 +21,7 @@ const cr = () => {
             <CRNavbar />
             <Cursor />
             <Stars />
-            <Home />
+            <CRHome />
             <About />
             <Inspirations />
             <Skills />

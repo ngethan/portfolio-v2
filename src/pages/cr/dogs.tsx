@@ -130,7 +130,7 @@ const Dogs = () => {
                         hypoallergenic.
                     </motion.p>
                 </div>
-                <div className="w-full mt-24">
+                <motion.div className="w-full mt-24" variants={item}>
                     <div className="justify-center flex pt-[100px] flex-col">
                         <DogImg index={carouselIndex} />
                         <div className="flex justify-center">
@@ -148,7 +148,7 @@ const Dogs = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </motion.div>
         </div>
     );

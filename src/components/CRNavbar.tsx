@@ -87,7 +87,7 @@ const CRNavbar = ({ dPage }: Props) => {
 
     const handleViewSection = (e: React.MouseEvent<HTMLElement>) => {
         if (dPage) {
-            Router.push("/cr");
+            Router.push(`/cr/#${(e.target as any).dataset.section!}`);
         } else {
             document
                 .getElementById((e.target as any).dataset.section!)!
@@ -194,6 +194,14 @@ const CRNavbar = ({ dPage }: Props) => {
                     </Link>
                 </motion.li>
                 <motion.li variants={item}>
+                    <Link
+                        className="hover-animation-dark duration-300 hover:text-red-400"
+                        href="/cr/writers-portfolio"
+                    >
+                        Writers Portfolio
+                    </Link>
+                </motion.li>
+                <motion.li variants={item}>
                     <button
                         className="font-code text-red-400 border-red-400 text-lg border-2 rounded-lg px-4 py-1 my-1 flex items-center duration-300 hover:bg-red-300/[.3]"
                         data-section="contact"
@@ -223,7 +231,7 @@ const CRNavbar = ({ dPage }: Props) => {
                 }
                 variants={variants}
             >
-                <li className="top-[100px] fixed">
+                <li className="top-[75px] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="about"
@@ -232,7 +240,7 @@ const CRNavbar = ({ dPage }: Props) => {
                         About
                     </p>
                 </li>
-                <li className="top-[200px] fixed">
+                <li className="top-[150px] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="inspirations"
@@ -241,7 +249,7 @@ const CRNavbar = ({ dPage }: Props) => {
                         Inspirations
                     </p>
                 </li>
-                <li className="top-[300px] fixed">
+                <li className="top-[225px] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="skills"
@@ -250,7 +258,7 @@ const CRNavbar = ({ dPage }: Props) => {
                         Skills
                     </p>
                 </li>
-                <li className="top-[400px] fixed">
+                <li className="top-[300px] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="work"
@@ -259,31 +267,39 @@ const CRNavbar = ({ dPage }: Props) => {
                         Work
                     </p>
                 </li>
-                <li className="top-[500px] fixed">
+                <li className="top-[375px] py-6 fixed">
                     <Link
-                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        className="hover-animation-dark text-4xl duration-300 hover:text-red-400"
                         href="/cr/dogs"
                     >
                         Dogs
                     </Link>
                 </li>
-                <li className="top-[600px] fixed">
+                <li className="top-[450px] py-6 fixed">
                     <Link
-                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        className="hover-animation-dark text-4xl duration-300 hover:text-red-400"
                         href="/cr/piano"
                     >
                         Piano
                     </Link>
                 </li>
-                <li className="top-[700px] fixed">
+                <li className="top-[525px] py-6 fixed">
                     <Link
-                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        className="hover-animation-dark text-4xl duration-300 hover:text-red-400"
                         href="/cr/watches"
                     >
                         Watches
                     </Link>
                 </li>
-                <li className="top-[800px] fixed">
+                <li className="top-[600px] py-6 fixed">
+                    <Link
+                        className="hover-animation-dark text-4xl duration-300 hover:text-red-400"
+                        href="/cr/writers-portfolio"
+                    >
+                        Writers Portfolio
+                    </Link>
+                </li>
+                <li className="top-[675px] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="contact"
