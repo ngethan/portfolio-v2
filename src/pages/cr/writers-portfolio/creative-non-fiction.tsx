@@ -80,7 +80,7 @@ const CreativeNonFiction = () => {
                     >
                         <motion.p className="inline text-[16px] text-gray-100 font-bold underline">
                             <Link
-                                href="https://ethanng.dev/personal-statement"
+                                href="https://ethanng.dev/personal-statement.pdf"
                                 target="_blank"
                             >
                                 Personal Statement
@@ -93,7 +93,7 @@ const CreativeNonFiction = () => {
                     >
                         <motion.p className="inline text-[16px] text-gray-100 font-bold underline">
                             <Link
-                                href="https://ethanng.dev/personal-statement"
+                                href="https://ethanng.dev/essay-refl.pdf"
                                 target="_blank"
                             >
                                 Essay Reflection
@@ -106,7 +106,7 @@ const CreativeNonFiction = () => {
                     >
                         <motion.p className="inline text-[16px] text-gray-100 font-bold underline">
                             <Link
-                                href="https://ethanng.dev/personal-statement"
+                                href="https://ethanng.dev/bio-poem.pdf"
                                 target="_blank"
                             >
                                 Bio Poem
