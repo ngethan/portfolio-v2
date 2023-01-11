@@ -15,38 +15,6 @@ const CRNavbar = ({ dPage }: Props) => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
 
-    const [top, setTop] = useState(true);
-
-    let prevPos = 0;
-
-    const onScroll = (): void => {
-        if (dPage) return;
-        const userAgent =
-            typeof navigator !== "undefined" ? navigator.userAgent : "";
-
-        if (
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-                userAgent
-            )
-        )
-            setTop(true);
-        const currPos = window.pageYOffset;
-        if (currPos === 0) setTop(true);
-        else setTop(false);
-        if (prevPos > currPos)
-            document.getElementById("navbar")!.style.top = "0";
-        else document.getElementById("navbar")!.style.top = "-80px";
-        prevPos = currPos;
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", onScroll);
-
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-        };
-    });
-
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
@@ -101,11 +69,7 @@ const CRNavbar = ({ dPage }: Props) => {
     return (
         <motion.div
             id="navbar"
-            className={
-                top
-                    ? "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100 z-[999]"
-                    : "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100 z-[999]"
-            }
+            className="duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100 z-[999]"
             initial="hidden"
             animate={controls}
             variants={list}
