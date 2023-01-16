@@ -75,7 +75,9 @@ const Home = () => {
                     className="font-code flex text-gray-100 text-xl max-w-[181.4px]"
                     variants={item}
                 >
-                    <span>👋 Hi there, I&apos;m</span>
+                    <span className="whitespace-nowrap">
+                        👋 Hi there, I&apos;m
+                    </span>
                 </motion.div>
                 <motion.div
                     className="text-7xl sm:text-8xl flex text-gray-100 font-bold my-4 max-w-[425.2px]"
