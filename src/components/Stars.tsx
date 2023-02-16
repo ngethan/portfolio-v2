@@ -11,21 +11,27 @@ const Stars = () => {
             const handleWindowMouseMove = (e: MouseEvent) => {
                 setGlobalCoords({
                     x:
-                        e.screenX / window.innerWidth >= 0.5
-                            ? e.screenX / window.innerWidth - 0.5
-                            : -(0.5 - e.screenX / window.innerWidth),
+                        // eslint-disable-next-line no-nested-ternary
+                        window.innerWidth >= 768
+                            ? e.screenX / window.innerWidth >= 0.5
+                                ? e.screenX / window.innerWidth - 0.5
+                                : -(0.5 - e.screenX / window.innerWidth)
+                            : 0.1,
                     y:
-                        (window.innerHeight - e.screenY + 100) /
-                            window.innerHeight >=
-                        0.5
+                        // eslint-disable-next-line no-nested-ternary
+                        window.innerWidth >= 768
                             ? (window.innerHeight - e.screenY + 100) /
-                                  window.innerHeight -
+                                  window.innerHeight >=
                               0.5
-                            : -(
-                                  0.5 -
-                                  (window.innerHeight - e.screenY + 100) /
-                                      window.innerHeight
-                              ),
+                                ? (window.innerHeight - e.screenY + 100) /
+                                      window.innerHeight -
+                                  0.5
+                                : -(
+                                      0.5 -
+                                      (window.innerHeight - e.screenY + 100) /
+                                          window.innerHeight
+                                  )
+                            : 0.1,
                 });
             };
             window.addEventListener("mousemove", handleWindowMouseMove);

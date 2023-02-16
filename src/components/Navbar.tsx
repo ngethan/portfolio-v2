@@ -175,7 +175,7 @@ const Navbar = () => {
                 }
                 variants={variants}
             >
-                <li className="top-[100px] fixed">
+                <li className="top-[calc(15%)] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="about"
@@ -185,7 +185,7 @@ const Navbar = () => {
                     </p>
                 </li>
 
-                <li className="top-[200px] fixed">
+                <li className="top-[calc(35%)] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="skills"
@@ -194,7 +194,7 @@ const Navbar = () => {
                         Skills
                     </p>
                 </li>
-                <li className="top-[300px] fixed">
+                <li className="top-[calc(55%)] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="work"
@@ -203,7 +203,7 @@ const Navbar = () => {
                         Work
                     </p>
                 </li>
-                <li className="top-[500px] fixed">
+                <li className="top-[calc(75%)] fixed">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
                         data-section="contact"
