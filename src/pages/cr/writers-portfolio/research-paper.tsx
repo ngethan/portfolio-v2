@@ -11,6 +11,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const ResearchPaper = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
+
     useEffect(() => {
         if (inView) {
             controls.start("visible");
@@ -133,7 +134,15 @@ const ResearchPaper = () => {
             </motion.div>
             <motion.div className="absolute top-[150px] right-[100px]">
                 <Document file="https://ethanng.dev/research-paper.pdf">
-                    <Page />
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((pageNumber) => {
+                        return (
+                            <Page
+                                className="abcdefg"
+                                key={`page_${pageNumber}`}
+                                pageNumber={pageNumber}
+                            />
+                        );
+                    })}
                 </Document>
             </motion.div>
         </div>
