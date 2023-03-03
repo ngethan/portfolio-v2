@@ -43,7 +43,7 @@ const ResearchPaper = () => {
     };
 
     return (
-        <div>
+        <div className="flex">
             <Head>
                 <title>Ethan Ng - Research Paper</title>
             </Head>
@@ -131,9 +131,17 @@ const ResearchPaper = () => {
                     </motion.p>
                 </div>
             </motion.div>
-            <motion.div className="float-right w-[calc(50%)] h-full">
-                <Document file="https://ethanng.dev/research-paper.pdf">
+            <motion.div className="absolute top-[150px] right-[100px]">
+                <Document file="https://localhost:3000/research-paper.pdf">
                     <Page pageNumber={1} />
+                    <Page pageNumber={2} />
+                    <Page pageNumber={3} />
+                    <Page pageNumber={4} />
+                    <Page pageNumber={5} />
+                    <Page pageNumber={6} />
+                    <Page pageNumber={7} />
+                    <Page pageNumber={8} />
+                    <Page pageNumber={9} />
                 </Document>
             </motion.div>
         </div>
