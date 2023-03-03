@@ -1,6 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { useInView } from "react-intersection-observer";
 import { Document, Page, pdfjs } from "react-pdf";
 
@@ -11,6 +12,23 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const ResearchPaper = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
+    const [pageNumber, setPageNumber] = useState(1);
+
+    const handleLeftClick = () => {
+        if (pageNumber === 1) {
+            setPageNumber(9);
+        } else {
+            setPageNumber(pageNumber - 1);
+        }
+    };
+
+    const handleRightClick = () => {
+        if (pageNumber === 9) {
+            setPageNumber(1);
+        } else {
+            setPageNumber(pageNumber + 1);
+        }
+    };
 
     useEffect(() => {
         if (inView) {
@@ -134,16 +152,22 @@ const ResearchPaper = () => {
             </motion.div>
             <motion.div className="absolute top-[150px] right-[100px]">
                 <Document file="https://ethanng.dev/research-paper.pdf">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((pageNumber) => {
-                        return (
-                            <Page
-                                className="abcdefg"
-                                key={`page_${pageNumber}`}
-                                pageNumber={pageNumber}
-                            />
-                        );
-                    })}
+                    <Page pageNumber={pageNumber} />
                 </Document>
+                <div className="flex justify-center">
+                    <button onClick={handleLeftClick}>
+                        <BsArrowLeftShort
+                            className="text-gray-200 hover:text-red-500 duration-300"
+                            size={64}
+                        />
+                    </button>
+                    <button onClick={handleRightClick}>
+                        <BsArrowRightShort
+                            className="text-gray-200 hover:text-red-500 duration-300"
+                            size={64}
+                        />
+                    </button>
+                </div>
             </motion.div>
         </div>
     );
