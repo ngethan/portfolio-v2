@@ -133,15 +133,14 @@ const ResearchPaper = () => {
             </motion.div>
             <motion.div className="absolute top-[150px] right-[100px]">
                 <Document file="https://ethanng.dev/research-paper.pdf">
-                    <Page pageNumber={1} />
-                    <Page pageNumber={2} />
-                    <Page pageNumber={3} />
-                    <Page pageNumber={4} />
-                    <Page pageNumber={5} />
-                    <Page pageNumber={6} />
-                    <Page pageNumber={7} />
-                    <Page pageNumber={8} />
-                    <Page pageNumber={9} />
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((pageNumber) => {
+                        return (
+                            <Page
+                                key={`page_${pageNumber}`}
+                                pageNumber={pageNumber}
+                            />
+                        );
+                    })}
                 </Document>
             </motion.div>
         </div>
