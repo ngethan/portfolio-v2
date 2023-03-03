@@ -132,7 +132,7 @@ const ResearchPaper = () => {
                 </div>
             </motion.div>
             <motion.div className="absolute top-[150px] right-[100px]">
-                <Document file="https://localhost:3000/research-paper.pdf">
+                <Document file="https://ethanng.dev/research-paper.pdf">
                     <Page pageNumber={1} />
                     <Page pageNumber={2} />
                     <Page pageNumber={3} />
