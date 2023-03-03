@@ -163,4 +163,12 @@
     .fade-in-out {
         animation: fade-in-out 5s both infinite;
     }
+
+    .react-pdf__Page__annotations {
+        height: 10px !important;
+    }
+    
+    .annotationLayer {
+        height: 10px !important;
+    }
 }
