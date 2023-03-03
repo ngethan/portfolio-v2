@@ -115,26 +115,9 @@ const Home = () => {
                     variants={item}
                 >
                     I&apos;m a software engineer who is passionate about
-                    utilizing code to better the world. Currently, I&apos;m
-                    teaching at{" "}
-                    <a
-                        className="hover-animation-light font-code text-red-200"
-                        href="https://www.thecoderschool.com/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        theCoderSchool
-                    </a>{" "}
-                    and developing at{" "}
-                    <a
-                        className="hover-animation-light font-code text-red-200"
-                        href="https://muddypawsrescue.org/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Muddy Paws Rescue
-                    </a>
-                    .
+                    utilizing code to better the world.I&apos;m currently
+                    studying computer science at Washington University in St.
+                    Louis.
                 </motion.p>
 
                 <motion.div variants={item}>
