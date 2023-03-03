@@ -133,14 +133,7 @@ const ResearchPaper = () => {
             </motion.div>
             <motion.div className="absolute top-[150px] right-[100px]">
                 <Document file="https://ethanng.dev/research-paper.pdf">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((pageNumber) => {
-                        return (
-                            <Page
-                                key={`page_${pageNumber}`}
-                                pageNumber={pageNumber}
-                            />
-                        );
-                    })}
+                    <Page />
                 </Document>
             </motion.div>
         </div>
