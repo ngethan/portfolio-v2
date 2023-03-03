@@ -2,9 +2,11 @@ import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Document } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
 
 import CRNavbar from "@/components/CRNavbar";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const ResearchPaper = () => {
     const controls = useAnimation();
@@ -130,11 +132,9 @@ const ResearchPaper = () => {
                 </div>
             </motion.div>
             <motion.div className="float-right w-[calc(50%)] h-full">
-                <Document
-                    file={{
-                        url: "http://ethanng.dev/research-paper.pdf",
-                    }}
-                />
+                <Document file="https://ethanng.dev/research-paper.pdf">
+                    <Page pageNumber={1} />
+                </Document>
             </motion.div>
         </div>
     );
