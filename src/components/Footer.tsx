@@ -71,7 +71,7 @@ const Footer = () => {
                 </li>
                 <li className="group mx-[15px] px-[5px] my-[20px]">
                     <a
-                        href="https://www.linkedin.com/in/ethan-ng-007312235/"
+                        href="https://www.linkedin.com/in/ethan--ng/"
                         target="_blank"
                         rel="noreferrer"
                         aria-label="Linkedin"

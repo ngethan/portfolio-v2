@@ -18,7 +18,7 @@ const Socials = () => {
             </li>
             <li className="group mb-[30px]">
                 <a
-                    href="https://www.linkedin.com/in/ethan-ng-007312235/"
+                    href="https://www.linkedin.com/in/ethan--ng/"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Linkedin"
