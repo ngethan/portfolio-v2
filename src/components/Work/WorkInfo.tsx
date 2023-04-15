@@ -12,7 +12,7 @@ const WorkInfo = ({ work, md }: Props) => {
             name: "theCoderSchool",
             title: "Code Coach",
             url: "https://thecoderschool.com/",
-            duration: "September 2021 - Present",
+            duration: "September 2021 - March 2023",
             description: [
                 "Facilitate learning amongst beginner and intermediate programmers",
                 "Teach scratch, Python, JavaScript, HTML, and CSS",
@@ -49,7 +49,7 @@ const WorkInfo = ({ work, md }: Props) => {
             name: "Aetheria",
             title: "Lead Developer",
             url: "https://discord.aetheria.world",
-            duration: "June 2022 - Present",
+            duration: "June 2022 - February 2023",
             description: [
                 "Used Java & Paper API to develop highly functional Minecraft plugins",
                 "Used TypeScript & discord.js to develop a general purpose discord management bot",
