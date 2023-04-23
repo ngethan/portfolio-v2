@@ -58,14 +58,7 @@
         },
         // Configuration for testing
         {
-            "files": ["**/*.test.ts", "**/*.test.tsx"],
-            "plugins": ["jest", "jest-formatting", "testing-library", "jest-dom"],
-            "extends": [
-                "plugin:jest/recommended",
-                "plugin:jest-formatting/recommended",
-                "plugin:testing-library/react",
-                "plugin:jest-dom/recommended"
-            ]
+            "files": ["**/*.test.ts", "**/*.test.tsx"]
         },
         // Configuration for e2e testing (Cypress)
         {

@@ -114,10 +114,9 @@ const Home = () => {
                     className="text-gray-200 my-2 max-w-[500px] text-lg"
                     variants={item}
                 >
-                    I&apos;m a software engineer who is passionate about
-                    utilizing code to better the world.I&apos;m currently
-                    studying computer science at Washington University in St.
-                    Louis.
+                    I&apos;m a software engineer who loves creating beautiful
+                    interfaces. Currently, I&apos;m studying computer science at
+                    Washington University in St. Louis.
                 </motion.p>
 
                 <motion.div variants={item}>
