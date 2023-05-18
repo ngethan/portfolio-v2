@@ -10,6 +10,12 @@
   to = "https://youtu.be/QhOWr56LAdE"
   status = 301
   force = true
+  
+[[redirects]]
+  from = "/hannahng"
+  to = "https://soundcloud.com/hannah-n-921628638/podcast/s-C4DzCyZMQWV?si=3924dd223e1c4642bd55a0caf8d1ab07&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/cm"
