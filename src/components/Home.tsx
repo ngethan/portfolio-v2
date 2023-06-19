@@ -1,30 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-const text = [
-    "Software Engineer",
-    "Teacher",
-    "Student",
-    "Musician",
-    "Volunteer",
-];
-
 const Home = () => {
-    const animationEl = useRef(null as any);
-    const [articleIndex, setArticleIndex] = useState(0);
-
-    useEffect(() => {
-        animationEl.current!.addEventListener("animationiteration", () => {
-            setArticleIndex((currentIndex) => {
-                if (currentIndex + 1 < text.length) {
-                    return currentIndex + 1;
-                }
-                return 0;
-            });
-        });
-    }, []);
-
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
@@ -88,7 +66,7 @@ const Home = () => {
                             (letter, index) => {
                                 return (
                                     <span
-                                        className="duration-300 inline align-top hover:text-red-500"
+                                        className="hover:text-primary-500 duration-300 inline align-top"
                                         key={index}
                                     >
                                         {letter}
@@ -99,16 +77,10 @@ const Home = () => {
                     </h1>
                 </motion.div>
                 <motion.div
-                    className="flex text-red-500 text-5xl sm:text-6xl font-bold"
+                    className="text-primary-500 flex text-5xl sm:text-6xl font-bold"
                     variants={item}
                 >
-                    <h2
-                        id="titles"
-                        className="fade-in-out text-[52px]"
-                        ref={animationEl}
-                    >
-                        {text[articleIndex]}
-                    </h2>
+                    <h2 className="fade-in-out text-[52px]">Developer</h2>
                 </motion.div>
                 <motion.p
                     className="text-gray-200 my-2 max-w-[500px] text-lg"
@@ -121,7 +93,7 @@ const Home = () => {
 
                 <motion.div variants={item}>
                     <button
-                        className="font-code text-red-400 border-red-400 text-lg border-2 rounded-lg px-5 py-3 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
+                        className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 rounded-lg px-5 py-3 my-2 flex items-center duration-300"
                         onClick={handleViewWork}
                         type="button"
                         aria-label="View work"

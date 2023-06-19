@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { Spin as Hamburger } from "hamburger-react";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -8,6 +9,7 @@ import icon from "../../public/icon.png";
 const Navbar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
+    const router = useRouter();
 
     // const [top, setTop] = useState(true);
 
@@ -78,13 +80,17 @@ const Navbar = () => {
         closed: { opacity: 0, x: "-100%" },
     };
 
-    const handleViewSection = (e: React.MouseEvent<HTMLElement>) => {
-        document
-            .getElementById((e.target as any).dataset.section!)!
-            .scrollIntoView();
-        if (window.innerWidth < 768) {
-            setNav(false);
-        }
+    const handleViewSection = async (e: React.MouseEvent<HTMLElement>) => {
+        await router.push("/").then(() => {
+            window.onload = () => {
+                document
+                    .getElementById((e.target as any).dataset.section!)!
+                    .scrollIntoView();
+                if (window.innerWidth < 768) {
+                    setNav(false);
+                }
+            };
+        });
     };
 
     return (
@@ -111,7 +117,7 @@ const Navbar = () => {
             <ul className="font-code hidden md:flex text-lg items-center">
                 <motion.li variants={item}>
                     <h1
-                        className="hover-animation-dark duration-300 hover:text-red-400"
+                        className="hover-animation-dark hover:text-primary-400 duration-300"
                         data-section="home"
                         onClick={handleViewSection}
                     >
@@ -120,7 +126,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                     <h1
-                        className="hover-animation-dark duration-300 hover:text-red-400"
+                        className="hover-animation-dark hover:text-primary-400 duration-300"
                         data-section="about"
                         onClick={handleViewSection}
                     >
@@ -129,7 +135,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                     <h1
-                        className="hover-animation-dark duration-300 hover:text-red-400"
+                        className="hover-animation-dark hover:text-primary-400 duration-300"
                         data-section="skills"
                         onClick={handleViewSection}
                     >
@@ -138,7 +144,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                     <h1
-                        className="hover-animation-dark duration-300 hover:text-red-400"
+                        className="hover-animation-dark hover:text-primary-400 duration-300"
                         data-section="work"
                         onClick={handleViewSection}
                     >
@@ -147,7 +153,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                     <button
-                        className="font-code text-red-400 border-red-400 text-lg border-2 rounded-lg px-4 py-1 my-1 flex items-center duration-300 hover:bg-red-300/[.3]"
+                        className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 rounded-lg px-4 py-1 my-1 flex items-center duration-300"
                         data-section="contact"
                         onClick={handleViewSection}
                         type="button"
@@ -177,7 +183,7 @@ const Navbar = () => {
             >
                 <li className="top-[calc(15%)] fixed">
                     <p
-                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="about"
                         onClick={handleViewSection}
                     >
@@ -187,7 +193,7 @@ const Navbar = () => {
 
                 <li className="top-[calc(35%)] fixed">
                     <p
-                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="skills"
                         onClick={handleViewSection}
                     >
@@ -196,7 +202,7 @@ const Navbar = () => {
                 </li>
                 <li className="top-[calc(55%)] fixed">
                     <p
-                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="work"
                         onClick={handleViewSection}
                     >
@@ -205,7 +211,7 @@ const Navbar = () => {
                 </li>
                 <li className="top-[calc(75%)] fixed">
                     <p
-                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-red-400"
+                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="contact"
                         onClick={handleViewSection}
                     >

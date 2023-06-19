@@ -71,7 +71,7 @@ const Skills = () => {
                     {["S", "k", "i", "l", "l", "s"].map((letter, index) => {
                         return (
                             <span
-                                className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500"
+                                className="hover:text-primary-500 border-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
                                 key={index}
                             >
                                 {letter}

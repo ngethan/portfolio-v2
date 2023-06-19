@@ -100,9 +100,12 @@ const WorkInfo = ({ work, md }: Props) => {
                 <motion.p className="inline text-[24px] text-gray-100 font-bold mb-1">
                     {data!.title}
                 </motion.p>
-                <p className="inline text-[24px] text-red-500 font-bold"> @ </p>
+                <p className="text-primary-500 inline text-[24px] font-bold">
+                    {" "}
+                    @{" "}
+                </p>
                 <a
-                    className="hover-animation-dark inline text-[24px] text-red-500 font-bold"
+                    className="hover-animation-dark text-primary-500 inline text-[24px] font-bold"
                     href={data!.url}
                     target="_blank"
                     rel="noreferrer"
@@ -120,7 +123,7 @@ const WorkInfo = ({ work, md }: Props) => {
                 {data!.description.map((i: string, index: number) => {
                     return (
                         <li
-                            className="relative text-[18px] pl-[30px] pr-0 mb-[10px] list-none before:absolute before:left-0 before:text-red-300 before:content-['▸'] before:font-black"
+                            className="before:text-primary-300 relative text-[18px] pl-[30px] pr-0 mb-[10px] list-none before:absolute before:left-0 before:content-['▸'] before:font-black"
                             key={index}
                         >
                             <p>{i}</p>

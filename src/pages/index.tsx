@@ -2,7 +2,6 @@ import Head from "next/head";
 
 import About from "@/components/About";
 import Contact from "@/components/Contact";
-import Cursor from "@/components/Cursor";
 import Footer from "@/components/Footer";
 import Home from "@/components/Home";
 import Navbar from "@/components/Navbar";
@@ -42,7 +41,7 @@ const Index = () => {
                     to better the world."
                 />
                 <meta name="google" content="notranslate" />
-                <meta http-equiv="Content-Language" content="en" />
+                <meta httpEquiv="Content-Language" content="en" />
                 <meta
                     property="og:image"
                     content="https://ethanng.dev/image.png"
@@ -61,7 +60,6 @@ const Index = () => {
                 />
             </Head>
             <Navbar />
-            <Cursor />
             <Stars />
             <Home />
             <About />

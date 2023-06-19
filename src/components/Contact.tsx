@@ -99,7 +99,7 @@ const Contact = () => {
                 ref={ref}
             >
                 <div className="text-7xl sm:text-8xl flex text-gray-100 font-bold ">
-                    <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+                    <h1 className="hover:text-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top">
                         Thanks for your message!
                     </h1>
                 </div>
@@ -125,7 +125,7 @@ const Contact = () => {
                         (letter, index) => {
                             return (
                                 <span
-                                    className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500"
+                                    className="hover:text-primary-500 border-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
                                     key={index}
                                 >
                                     {letter}
@@ -152,7 +152,7 @@ const Contact = () => {
                     <label
                         id="name-label"
                         htmlFor="name"
-                        className="label relative text-red-500 text-[24px] top-10 duration-300"
+                        className="label text-primary-500 relative text-[24px] top-10 duration-300"
                     >
                         Name
                     </label>
@@ -171,7 +171,7 @@ const Contact = () => {
                     <label
                         id="email-label"
                         htmlFor="email"
-                        className="relative text-red-500 text-[24px] top-10 duration-300"
+                        className="text-primary-500 relative text-[24px] top-10 duration-300"
                     >
                         Email
                     </label>
@@ -190,7 +190,7 @@ const Contact = () => {
                     <label
                         id="message-label"
                         htmlFor="message"
-                        className="relative text-red-500 text-[24px] top-10 duration-300"
+                        className="text-primary-500 relative text-[24px] top-10 duration-300"
                     >
                         Message
                     </label>
@@ -204,7 +204,7 @@ const Contact = () => {
 
                 <motion.button
                     id="submit"
-                    className="font-code text-red-400 border-red-400 text-lg border-2 rounded-lg px-4 py-2 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
+                    className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 rounded-lg px-4 py-2 my-2 flex items-center duration-300"
                     type="submit"
                     variants={itemY}
                     aria-label="Send message"

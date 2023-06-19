@@ -118,7 +118,7 @@ const Work = () => {
                         (letter, index) => {
                             return (
                                 <span
-                                    className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500"
+                                    className="hover:text-primary-500 border-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
                                     key={index}
                                 >
                                     {letter}
@@ -168,7 +168,7 @@ const Work = () => {
                     </li>
                     <div
                         id="selected-indicator-cr"
-                        className="relative top-0 mt-[-188px] w-[2px] h-[47px] border-l-[2px] border-red-500 duration-300"
+                        className="border-primary-500 relative top-0 mt-[-188px] w-[2px] h-[47px] border-l-[2px] duration-300"
                     ></div>
                 </motion.ul>
 

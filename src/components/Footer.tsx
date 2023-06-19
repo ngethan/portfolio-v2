@@ -10,7 +10,7 @@ const Footer = () => {
     };
     return (
         <footer className="flex flex-col justify-center items-center sticky top-full pb-[20px] w-full h-auto mb-[20px]">
-            <h1 className="text-[20px] text-red-400 font-bold mb-[20px]">
+            <h1 className="text-[20px] text-primary-400 font-bold mb-[20px]">
                 Ethan Ng&nbsp;&nbsp;
                 <p className="text-gray-100 inline-block font-normal">
                     Portfolio
@@ -19,7 +19,7 @@ const Footer = () => {
             <ul className="flex flex-row text-gray-100 text-[18px]">
                 <li>
                     <h1
-                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-red-400"
+                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-primary-400"
                         data-section="home"
                         onClick={handleViewSection}
                     >
@@ -28,7 +28,7 @@ const Footer = () => {
                 </li>
                 <li>
                     <h1
-                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-red-400"
+                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-primary-400"
                         data-section="about"
                         onClick={handleViewSection}
                     >
@@ -37,7 +37,7 @@ const Footer = () => {
                 </li>
                 <li>
                     <h1
-                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-red-400"
+                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-primary-400"
                         data-section="work"
                         onClick={handleViewSection}
                     >
@@ -46,7 +46,7 @@ const Footer = () => {
                 </li>
                 <li>
                     <h1
-                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-red-400"
+                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-primary-400"
                         data-section="contact"
                         onClick={handleViewSection}
                     >
@@ -64,7 +64,7 @@ const Footer = () => {
                         aria-label="GitHub"
                     >
                         <FiGithub
-                            className="text-gray-200 duration-300 group-hover:text-red-500 group-hover:translate-y-[-5px]"
+                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:translate-y-[-5px]"
                             size={25}
                         />
                     </a>
@@ -77,7 +77,7 @@ const Footer = () => {
                         aria-label="Linkedin"
                     >
                         <FiLinkedin
-                            className="text-gray-200 duration-300 group-hover:text-red-500 group-hover:translate-y-[-5px]"
+                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:translate-y-[-5px]"
                             size={25}
                         />
                     </a>
@@ -90,7 +90,7 @@ const Footer = () => {
                         aria-label="Instagram"
                     >
                         <FiInstagram
-                            className="text-gray-200 duration-300 group-hover:text-red-500 group-hover:translate-y-[-5px]"
+                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:translate-y-[-5px]"
                             size={25}
                         />
                     </a>
@@ -103,7 +103,7 @@ const Footer = () => {
                         aria-label="CodePen"
                     >
                         <FiTwitter
-                            className="text-gray-200 duration-300 group-hover:text-red-500 group-hover:translate-y-[-5px]"
+                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:translate-y-[-5px]"
                             size={25}
                         />
                     </a>
@@ -113,7 +113,7 @@ const Footer = () => {
                 href="https://github.com/ngethan/portfolio"
                 target="_blank"
                 rel="noreferrer"
-                className="hover-animation-dark font-code text-gray-100 text-[16px] hover:text-red-500 duration-300"
+                className="hover-animation-dark font-code hover:text-primary-500 text-gray-100 text-[16px] duration-300"
                 aria-label="Project Repository"
             >
                 Designed and built by Ethan Ng

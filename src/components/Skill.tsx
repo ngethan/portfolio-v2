@@ -23,8 +23,8 @@ const Skill = ({ name, icon, noName }: Props) => {
             <div
                 className={
                     !noName
-                        ? "group rounded px-[10px] mb-[20px] h-[75px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] hover:shadow-red-200/[.8] duration-300 hover:scale-[1.12] transform-gpu mr-[50px] justify-center"
-                        : "group rounded px-[10px] mb-[20px] h-[60px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] hover:shadow-red-200/[.8] duration-300 hover:scale-[1.12] transform-gpu mr-[20px] justify-center z-0"
+                        ? "group hover:shadow-primary-200/[.8] rounded px-[10px] mb-[20px] h-[75px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] transform-gpu mr-[50px] justify-center"
+                        : "group hover:shadow-primary-200/[.8] rounded px-[10px] mb-[20px] h-[60px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] transform-gpu mr-[20px] justify-center z-0"
                 }
             >
                 <p
@@ -45,10 +45,10 @@ const Skill = ({ name, icon, noName }: Props) => {
                 >
                     <Icon
                         size={!noName ? 50 : 30}
-                        className="duration-300 group-hover:text-red-300"
+                        className="group-hover:text-primary-300 duration-300"
                     />
                     {!noName ? (
-                        <h1 className="ml-[20px] float-right text-[20px] duration-300 group-hover:text-red-300">
+                        <h1 className="group-hover:text-primary-300 ml-[20px] float-right text-[20px] duration-300">
                             {name}
                         </h1>
                     ) : (
