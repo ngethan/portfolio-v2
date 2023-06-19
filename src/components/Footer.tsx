@@ -10,7 +10,7 @@ const Footer = () => {
     };
     return (
         <footer className="flex flex-col justify-center items-center sticky top-full pb-[20px] w-full h-auto mb-[20px]">
-            <h1 className="text-[20px] text-primary-400 font-bold mb-[20px]">
+            <h1 className="text-primary-400 text-[20px] font-bold mb-[20px]">
                 Ethan Ng&nbsp;&nbsp;
                 <p className="text-gray-100 inline-block font-normal">
                     Portfolio
@@ -19,7 +19,7 @@ const Footer = () => {
             <ul className="flex flex-row text-gray-100 text-[18px]">
                 <li>
                     <h1
-                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-primary-400"
+                        className="hover-animation-dark hover:text-primary-400 mb-[10px] md:mx-[20px] duration-300"
                         data-section="home"
                         onClick={handleViewSection}
                     >
@@ -28,7 +28,7 @@ const Footer = () => {
                 </li>
                 <li>
                     <h1
-                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-primary-400"
+                        className="hover-animation-dark hover:text-primary-400 mb-[10px] md:mx-[20px] duration-300"
                         data-section="about"
                         onClick={handleViewSection}
                     >
@@ -37,7 +37,7 @@ const Footer = () => {
                 </li>
                 <li>
                     <h1
-                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-primary-400"
+                        className="hover-animation-dark hover:text-primary-400 mb-[10px] md:mx-[20px] duration-300"
                         data-section="work"
                         onClick={handleViewSection}
                     >
@@ -46,7 +46,7 @@ const Footer = () => {
                 </li>
                 <li>
                     <h1
-                        className="hover-animation-dark mb-[10px] md:mx-[20px] duration-300 hover:text-primary-400"
+                        className="hover-animation-dark hover:text-primary-400 mb-[10px] md:mx-[20px] duration-300"
                         data-section="contact"
                         onClick={handleViewSection}
                     >

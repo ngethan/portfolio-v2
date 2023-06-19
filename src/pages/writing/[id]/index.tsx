@@ -150,7 +150,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
             },
         };
     } catch (e) {
-        console.error(e);
         return {
             props: {
                 success: false,

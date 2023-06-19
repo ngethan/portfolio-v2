@@ -27,7 +27,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
                 data,
             });
         } catch (err) {
-            console.log(err);
             res.status(500).json({
                 success: false,
                 message: "Something went wrong",

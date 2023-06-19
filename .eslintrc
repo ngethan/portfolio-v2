@@ -55,19 +55,6 @@
                 "tailwindcss/no-custom-classname": "off",
                 "tailwindcss/enforces-negative-arbitrary-values": "off"
             }
-        },
-        // Configuration for testing
-        {
-            "files": ["**/*.test.ts", "**/*.test.tsx"]
-        },
-        // Configuration for e2e testing (Cypress)
-        {
-            "files": ["**/*.cy.ts"],
-            "plugins": ["cypress"],
-            "extends": ["plugin:cypress/recommended"],
-            "parserOptions": {
-                "project": "./cypress/tsconfig.json"
-            }
         }
     ]
 }
