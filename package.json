@@ -7,7 +7,7 @@
         "start": "next start",
         "build-stats": "cross-env ANALYZE=true npm run build",
         "export": "next export",
-        "build-prod": "clean build export",
+        "build-prod": "yarn clean && yarn build && yarn export",
         "clean": "rimraf .next out",
         "lint": "next lint",
         "commit": "cz"
