@@ -57,10 +57,13 @@ const handleSubmit = () => {
             slug: "painting-with-the-internet",
             hidden: false,
         })
-        .catch();
+        .catch((err) => {
+            console.error(err);
+        });
 };
 
 // const handleSubmit = () => {
+//     console.log("hi");
 //     axios
 //         .delete("/api/writing/delete/64836d1a8802e165c49dd216", {})
 //         .then((res) => {
