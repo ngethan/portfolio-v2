@@ -79,7 +79,6 @@ export async function getServerSideProps() {
             },
         };
     } catch (e) {
-        console.error(e);
         return {
             props: {
                 success: false,

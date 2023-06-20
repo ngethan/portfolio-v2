@@ -57,9 +57,7 @@ const handleSubmit = () => {
             slug: "painting-with-the-internet",
             hidden: false,
         })
-        .catch((err) => {
-            console.error(err);
-        });
+        .catch();
 };
 
 // const handleSubmit = () => {
