@@ -1,6 +1,13 @@
 {
     "name": "portfolio",
     "version": "2.0.0",
+    "browserslist": [
+        "chrome 64",
+        "edge 79",
+        "firefox 67",
+        "opera 51",
+        "safari 12"
+    ],
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -9,6 +16,7 @@
         "export": "next export",
         "build-prod": "run-s clean build start",
         "clean": "rimraf .next out",
+        "postbuild": "next-on-netlify",
         "lint": "next lint",
         "check-types": "tsc --noEmit --pretty && tsc --project cypress --noEmit --pretty",
         "commit": "cz",
@@ -31,6 +39,7 @@
         "maath": "^0.4.2",
         "mongoose": "^7.2.2",
         "next": "^13.0.0",
+        "next-on-netlify": "^3.0.1",
         "next-seo": "^5.8.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
