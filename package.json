@@ -26,6 +26,10 @@
         "@react-three/fiber": "^8.9.0",
         "axios": "^1.4.0",
         "bson": "^5.3.0",
+        "cypress": "^10.11.0",
+        "eslint": "^8.26.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-airbnb-typescript": "^17.0.0",
         "framer-motion": "^7.6.4",
         "hamburger-react": "^2.5.0",
         "maath": "^0.4.2",
@@ -39,8 +43,9 @@
         "react-intersection-observer": "^9.4.0",
         "tailwind-merge": "^1.13.2",
         "tailwindcss": "^3.3.1",
+        "start-server-and-test": "^1.14.0",
         "three": "^0.146.0",
-        "cypress": "^10.11.0"
+        "typescript": "^4.8.4"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.1.2",
@@ -56,9 +61,6 @@
         "commitizen": "^4.2.5",
         "cross-env": "^7.0.3",
         "cssnano": "^5.1.13",
-        "eslint": "^8.26.0",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-config-airbnb-typescript": "^17.0.0",
         "eslint-config-next": "^13.0.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-cypress": "^2.12.1",
@@ -76,9 +78,7 @@
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.18",
         "prettier": "^2.7.1",
-        "rimraf": "^3.0.2",
-        "start-server-and-test": "^1.14.0",
-        "typescript": "^4.8.4"
+        "rimraf": "^3.0.2"
     },
     "author": "Ethan Ng"
 }
