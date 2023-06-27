@@ -14,7 +14,7 @@
         "start": "next start",
         "build-stats": "cross-env ANALYZE=true npm run build",
         "export": "next export",
-        "build-prod": "run-s clean build start",
+        "build-prod": "run-s clean build",
         "clean": "rimraf .next out",
         "postbuild": "next-on-netlify",
         "lint": "next lint",
