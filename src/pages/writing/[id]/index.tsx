@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import type {
     GetServerSidePropsContext,
     InferGetServerSidePropsType,
@@ -22,12 +23,13 @@ const ViewBlogPage = ({
         h1: "font-serif text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-200",
         h2: "font-serif text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-200",
         h3: "font-serif text-xl text-gray-100",
-        p: "text-lg text-gray-300 font-serif",
+        p: "text-lg font-serif",
+        span: "text-lg font-serif",
         quote: "text-gray-100 font-code italic font-serif bg-gray-800 rounded-lg px-2 py-1",
         code: "text-gray-100 font-code bg-gray-800 font-code rounded-lg px-2 py-1",
         link: "text-gray-100 underline decoration-gray-500 hover:decoration-gray-300 duration-300",
         underline:
-            "underline decoration-gray-500 hover:decoration-gray-300 duration-300",
+            "underline decoration-gray-300 hover:decoration-gray-100 duration-300",
     };
     return (
         <div>
@@ -61,9 +63,8 @@ const ViewBlogPage = ({
                                 </p>
                             </div>
                             <hr className="border-gray-300 mb-[30px]" />
-                            <div className="mb-[50px]">
+                            <div className="mb-[50px] text-gray-300">
                                 {content.map((c: any, i: number) =>
-                                    // eslint-disable-next-line no-nested-ternary
                                     c.type === "break" ? (
                                         React.createElement("br")
                                     ) : c.type === "link" ? (
@@ -71,21 +72,56 @@ const ViewBlogPage = ({
                                             href={c.href}
                                             className={styles.link}
                                         >
-                                            {c.text}
+                                            {c.text
+                                                ? c.text
+                                                : c.content.map(
+                                                      (d: any, k: number) =>
+                                                          d.type === "break"
+                                                              ? React.createElement(
+                                                                    "br"
+                                                                )
+                                                              : React.createElement(
+                                                                    d.type,
+                                                                    {
+                                                                        className: `${
+                                                                            d.className
+                                                                                ? `${d.className} `
+                                                                                : ""
+                                                                        }${
+                                                                            (
+                                                                                styles as any
+                                                                            )[
+                                                                                d
+                                                                                    .type
+                                                                            ] ||
+                                                                            styles.p
+                                                                        }${
+                                                                            d.underline
+                                                                                ? ` ${styles.underline}`
+                                                                                : ""
+                                                                        }`,
+                                                                        key: k,
+                                                                    },
+                                                                    d.text
+                                                                )
+                                                  )}
                                         </Link>
                                     ) : (
                                         React.createElement(
                                             c.type,
                                             {
                                                 className: `${
+                                                    c.className
+                                                        ? `${c.className} `
+                                                        : ""
+                                                }${
                                                     (styles as any)[c.type] ||
                                                     styles.p
-                                                } ${c.className} ${
+                                                }${
                                                     c.underline
-                                                        ? styles.underline
+                                                        ? ` ${styles.underline}`
                                                         : ""
-                                                }
-                                            `,
+                                                }`,
                                                 key: i,
                                             },
                                             c.text
