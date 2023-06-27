@@ -12,11 +12,14 @@ import {
     FaWordpressSimple,
 } from "react-icons/fa";
 import {
+    SiFlutter,
     SiJavascript,
     SiNetlify,
+    SiSupabase,
     SiTailwindcss,
     SiTypescript,
 } from "react-icons/si";
+import { TbBrandNextjs, TbBrandVercel } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 
 import Skill from "./Skill";
@@ -92,10 +95,14 @@ const Skills = () => {
                 <Skill name="Python" icon={FaPython} />
                 <Skill name="Java" icon={FaJava} />
                 <Skill name="React.js" icon={FaReact} />
+                <Skill name="Next.js" icon={TbBrandNextjs} />
+                <Skill name="Flutter" icon={SiFlutter} />
                 <Skill name="Git" icon={DiGit} />
+                <Skill name="SiSupabase" icon={SiSupabase} />
                 <Skill name="MongoDB" icon={DiMongodb} />
                 <Skill name="Squarespace" icon={FaSquarespace} />
                 <Skill name="Wordpress" icon={FaWordpressSimple} />
+                <Skill name="Vercel" icon={TbBrandVercel} />
                 <Skill name="Netlify" icon={SiNetlify} />
                 <Skill name="Heroku" icon={DiHeroku} />
                 <Skill name="AWS" icon={FaAws} />
@@ -112,10 +119,14 @@ const Skills = () => {
                 <Skill name="Python" icon={FaPython} noName />
                 <Skill name="Java" icon={FaJava} noName />
                 <Skill name="React.js" icon={FaReact} noName />
+                <Skill name="Next.js" icon={TbBrandNextjs} noName />
+                <Skill name="Flutter" icon={SiFlutter} noName />
                 <Skill name="Git" icon={DiGit} noName />
+                <Skill name="SiSupabase" icon={SiSupabase} noName />
                 <Skill name="MongoDB" icon={DiMongodb} noName />
                 <Skill name="Squarespace" icon={FaSquarespace} noName />
                 <Skill name="Wordpress" icon={FaWordpressSimple} noName />
+                <Skill name="Vercel" icon={TbBrandVercel} noName />
                 <Skill name="Netlify" icon={SiNetlify} noName />
                 <Skill name="Heroku" icon={DiHeroku} noName />
                 <Skill name="AWS" icon={FaAws} noName />
