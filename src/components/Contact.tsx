@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+import axios from "axios";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -77,21 +79,66 @@ const Contact = () => {
         }
     }, []);
 
-    const [submitted, setSubmitted] = useState(false);
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        const form = document.getElementById("contact_form") as HTMLFormElement;
-        const data = new FormData(form);
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(data as any).toString(),
-        })
-            .then(() => setSubmitted(true))
-            .catch();
+    const [status, setStatus] = useState({
+        submitted: false,
+        submitting: false,
+        info: { error: false, msg: null },
+    });
+    const [inputs, setInputs] = useState({
+        email: "",
+        message: "",
+    });
+    const handleServerResponse = (ok: any, msg: any) => {
+        if (ok) {
+            setStatus({
+                submitted: true,
+                submitting: false,
+                info: { error: false, msg },
+            });
+            setInputs({
+                email: "",
+                message: "",
+            });
+        } else {
+            setStatus({
+                submitted: false,
+                submitting: false,
+                info: { error: true, msg },
+            });
+        }
+    };
+    const handleOnChange = (e: any) => {
+        e.persist();
+        setInputs((prev) => ({
+            ...prev,
+            [e.target.id]: e.target.value,
+        }));
+        setStatus({
+            submitted: false,
+            submitting: false,
+            info: { error: false, msg: null },
+        });
+    };
+    const handleOnSubmit = (e: any) => {
         e.preventDefault();
+        setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+        axios({
+            method: "POST",
+            url: "https://formspree.io/f/moqoawvl",
+            data: inputs,
+        })
+            .then(() => {
+                handleServerResponse(
+                    true,
+                    "Thank you, your message has been submitted."
+                );
+            })
+            .catch((error) => {
+                handleServerResponse(false, error.response.data.error);
+            });
     };
 
-    if (submitted) {
+    if (status.submitted) {
         return (
             <div
                 id="contact"
@@ -140,7 +187,7 @@ const Contact = () => {
                 id="contact_form"
                 className="font-code inline-flex flex-wrap justify-between w-full"
                 method="post"
-                onSubmit={handleSubmit}
+                onSubmit={handleOnSubmit}
                 name="contact"
                 aria-label="Contact"
             >
@@ -160,6 +207,7 @@ const Contact = () => {
                         type="text"
                         id="name"
                         name="name"
+                        onChange={handleOnChange}
                         className="input relative text-[18px]"
                         required
                     />
@@ -179,6 +227,7 @@ const Contact = () => {
                         type="email"
                         id="email"
                         name="email"
+                        onChange={handleOnChange}
                         className="input relative text-[18px]"
                         required
                     />
@@ -197,6 +246,7 @@ const Contact = () => {
                     <textarea
                         id="message"
                         name="message"
+                        onChange={handleOnChange}
                         className="input relative h-[88px] py-[8px] text-[18px]"
                         required
                     ></textarea>
@@ -206,12 +256,25 @@ const Contact = () => {
                     id="submit"
                     className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 rounded-lg px-4 py-2 my-2 flex items-center duration-300"
                     type="submit"
+                    disabled={status.submitting}
                     variants={itemY}
                     aria-label="Send message"
                 >
-                    Send message
+                    {!status.submitting
+                        ? !status.submitted
+                            ? "Send message"
+                            : "Sent message!"
+                        : "Sending message..."}{" "}
                 </motion.button>
             </form>
+            {status.info.error && (
+                <div className="error">Error: {status.info.msg}</div>
+            )}
+            {!status.info.error && status.info.msg && (
+                <p className="text-red-500 font-bold text-xl">
+                    {status.info.msg}
+                </p>
+            )}
         </motion.div>
     );
 };

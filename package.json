@@ -16,7 +16,6 @@
         "export": "next export",
         "build-prod": "run-s clean build",
         "clean": "rimraf .next out",
-        "postbuild": "next-on-netlify",
         "lint": "next lint",
         "check-types": "tsc --noEmit --pretty && tsc --project cypress --noEmit --pretty",
         "commit": "cz",

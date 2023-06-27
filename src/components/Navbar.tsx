@@ -81,16 +81,21 @@ const Navbar = () => {
     };
 
     const handleViewSection = async (e: React.MouseEvent<HTMLElement>) => {
-        await router.push("/").then(() => {
-            window.onload = () => {
-                document
-                    .getElementById((e.target as any).dataset.section!)!
-                    .scrollIntoView();
-                if (window.innerWidth < 768) {
-                    setNav(false);
-                }
-            };
-        });
+        if ((e.target as any).dataset.section === "writing") {
+            await router.push("/writing");
+        } else {
+            if (router.pathname !== "/") await router.push("/");
+            console.log(
+                document.getElementById((e.target as any).dataset.section!)!
+            );
+            document
+                .getElementById((e.target as any).dataset.section!)!
+                .scrollIntoView();
+
+            if (window.innerWidth < 768) {
+                setNav(false);
+            }
+        }
     };
 
     return (
@@ -152,6 +157,15 @@ const Navbar = () => {
                     </h1>
                 </motion.li>
                 <motion.li variants={item}>
+                    <h1
+                        className="hover-animation-dark hover:text-primary-400 duration-300"
+                        data-section="writing"
+                        onClick={handleViewSection}
+                    >
+                        Writing
+                    </h1>
+                </motion.li>
+                <motion.li variants={item}>
                     <button
                         className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 rounded-lg px-4 py-1 my-1 flex items-center duration-300"
                         data-section="contact"
@@ -191,7 +205,7 @@ const Navbar = () => {
                     </p>
                 </li>
 
-                <li className="top-[calc(35%)] fixed">
+                <li className="top-[calc(30%)] fixed">
                     <p
                         className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="skills"
@@ -200,13 +214,22 @@ const Navbar = () => {
                         Skills
                     </p>
                 </li>
-                <li className="top-[calc(55%)] fixed">
+                <li className="top-[calc(45%)] fixed">
                     <p
                         className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="work"
                         onClick={handleViewSection}
                     >
                         Work
+                    </p>
+                </li>
+                <li className="top-[calc(60%)] fixed">
+                    <p
+                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
+                        data-section="writing"
+                        onClick={handleViewSection}
+                    >
+                        Writing
                     </p>
                 </li>
                 <li className="top-[calc(75%)] fixed">

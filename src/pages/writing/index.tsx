@@ -15,7 +15,7 @@ const ViewBlogPage = ({
             <Stars />
             <section>
                 <div className="relative flex min-h-screen flex-col items-center justify-center py-12 text-center">
-                    <div className="mb-[30px] max-w-[672px] text-left w-[672px]">
+                    <div className="mb-[30px] max-w-[672px] text-left mx-auto px-4">
                         <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-200 mb-5 w-fit cursor-pointer font-serif text-6xl font-bold duration-150">
                             Writing
                         </h1>
