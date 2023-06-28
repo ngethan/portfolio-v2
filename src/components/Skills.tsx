@@ -98,7 +98,7 @@ const Skills = () => {
                 <Skill name="Next.js" icon={TbBrandNextjs} />
                 <Skill name="Flutter" icon={SiFlutter} />
                 <Skill name="Git" icon={DiGit} />
-                <Skill name="SiSupabase" icon={SiSupabase} />
+                <Skill name="Supabase" icon={SiSupabase} />
                 <Skill name="MongoDB" icon={DiMongodb} />
                 <Skill name="Squarespace" icon={FaSquarespace} />
                 <Skill name="Wordpress" icon={FaWordpressSimple} />
@@ -122,7 +122,7 @@ const Skills = () => {
                 <Skill name="Next.js" icon={TbBrandNextjs} noName />
                 <Skill name="Flutter" icon={SiFlutter} noName />
                 <Skill name="Git" icon={DiGit} noName />
-                <Skill name="SiSupabase" icon={SiSupabase} noName />
+                <Skill name="Supabase" icon={SiSupabase} noName />
                 <Skill name="MongoDB" icon={DiMongodb} noName />
                 <Skill name="Squarespace" icon={FaSquarespace} noName />
                 <Skill name="Wordpress" icon={FaWordpressSimple} noName />
