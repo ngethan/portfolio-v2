@@ -64,7 +64,7 @@ const Footer = () => {
                         aria-label="GitHub"
                     >
                         <FiGithub
-                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:translate-y-[-5px]"
+                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:tranprimary-y-[-5px]"
                             size={25}
                         />
                     </a>
@@ -77,7 +77,7 @@ const Footer = () => {
                         aria-label="Linkedin"
                     >
                         <FiLinkedin
-                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:translate-y-[-5px]"
+                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:tranprimary-y-[-5px]"
                             size={25}
                         />
                     </a>
@@ -90,7 +90,7 @@ const Footer = () => {
                         aria-label="Instagram"
                     >
                         <FiInstagram
-                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:translate-y-[-5px]"
+                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:tranprimary-y-[-5px]"
                             size={25}
                         />
                     </a>
@@ -103,7 +103,7 @@ const Footer = () => {
                         aria-label="CodePen"
                     >
                         <FiTwitter
-                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:translate-y-[-5px]"
+                            className="group-hover:text-primary-500 text-gray-200 duration-300 group-hover:tranprimary-y-[-5px]"
                             size={25}
                         />
                     </a>

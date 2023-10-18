@@ -27,13 +27,13 @@ const Cursor = () => {
 
     const toggleCursorSize = () => {
         if (cursorEnlarged.current) {
-            dot.current.style.transform = "translate(-50%, -50%) scale(0.75)";
+            dot.current.style.transform = "tranprimary(-50%, -50%) scale(0.75)";
             dotOutline.current.style.transform =
-                "translate(-50%, -50%) scale(1.25)";
+                "tranprimary(-50%, -50%) scale(1.25)";
         } else {
-            dot.current.style.transform = "translate(-50%, -50%) scale(1)";
+            dot.current.style.transform = "tranprimary(-50%, -50%) scale(1)";
             dotOutline.current.style.transform =
-                "translate(-50%, -50%) scale(1)";
+                "tranprimary(-50%, -50%) scale(1)";
         }
     };
 

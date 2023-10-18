@@ -5,6 +5,8 @@ import { useInView } from "react-intersection-observer";
 import Delayed from "@/components/Delayed";
 import WorkInfo from "@/components/Work/WorkInfo";
 
+import Title from "@/components/Title";
+
 const Work = () => {
     const [work, setWork] = useState("tcs");
 
@@ -113,20 +115,7 @@ const Work = () => {
                 className="name text-7xl sm:text-8xl flex text-gray-100 font-bold"
                 variants={itemY}
             >
-                <h1>
-                    {["M", "y", "\xa0", "w", "o", "r", "k"].map(
-                        (letter, index) => {
-                            return (
-                                <span
-                                    className="hover:text-primary-500 border-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
-                                    key={index}
-                                >
-                                    {letter}
-                                </span>
-                            );
-                        }
-                    )}
-                </h1>
+                <Title text="my work" />
             </motion.div>
 
             <div className="hidden md:flex">

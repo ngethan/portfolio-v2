@@ -4,6 +4,8 @@ import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
+import Title from "@/components/Title";
+
 const Contact = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
@@ -167,20 +169,7 @@ const Contact = () => {
                 className="text-7xl sm:text-8xl flex text-gray-100 font-bold "
                 variants={itemY}
             >
-                <h1>
-                    {["C", "o", "n", "t", "a", "c", "t"].map(
-                        (letter, index) => {
-                            return (
-                                <span
-                                    className="hover:text-primary-500 border-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
-                                    key={index}
-                                >
-                                    {letter}
-                                </span>
-                            );
-                        }
-                    )}
-                </h1>
+                <Title text="contact" />
             </motion.div>
 
             <form

@@ -22,6 +22,8 @@ import {
 import { TbBrandNextjs, TbBrandVercel } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 
+import Title from "@/components/Title";
+
 import Skill from "./Skill";
 
 const Skills = () => {
@@ -70,18 +72,7 @@ const Skills = () => {
                 className="text-7xl sm:text-8xl flex text-gray-100 font-bold"
                 variants={itemY}
             >
-                <h1>
-                    {["S", "k", "i", "l", "l", "s"].map((letter, index) => {
-                        return (
-                            <span
-                                className="hover:text-primary-500 border-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
-                                key={index}
-                            >
-                                {letter}
-                            </span>
-                        );
-                    })}
-                </h1>
+                <Title text="skills" />
             </motion.div>
 
             <div className="hidden md:flex flex-row flex-wrap justify-center">

@@ -2,6 +2,8 @@ import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
+import Title from "@/components/Title";
+
 const About = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
@@ -48,18 +50,7 @@ const About = () => {
                 className="text-7xl sm:text-8xl flex text-gray-100 font-bold"
                 variants={itemY}
             >
-                <h1>
-                    {["A", "b", "o", "u", "t"].map((letter, index) => {
-                        return (
-                            <span
-                                className="hover:text-primary-500 border-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
-                                key={index}
-                            >
-                                {letter}
-                            </span>
-                        );
-                    })}
-                </h1>
+                <Title text="about" />
             </motion.div>
 
             <motion.div className="text-[17px]" variants={itemY}>

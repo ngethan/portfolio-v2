@@ -40,7 +40,7 @@ const Index = () => {
                     content="Ethan Ng is a software engineer who is passionate about utilizing code
                     to better the world."
                 />
-                <meta name="google" content="notranslate" />
+                <meta name="google" content="notranprimary" />
                 <meta httpEquiv="Content-Language" content="en" />
                 <meta
                     property="og:image"

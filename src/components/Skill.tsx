@@ -30,7 +30,7 @@ const Skill = ({ name, icon, noName }: Props) => {
                 <p
                     className={
                         noName
-                            ? "invisible opacity-0 px-[10px] fixed group-hover:visible group-hover:opacity-100 text-gray-200 w-fit h-[20] bg-gray-700 rounded duration-300 left-[50%] bottom-[60px] -translate-x-1/2 z-[100]"
+                            ? "invisible opacity-0 px-[10px] fixed group-hover:visible group-hover:opacity-100 text-gray-200 w-fit h-[20] bg-gray-700 rounded duration-300 left-[50%] bottom-[60px] -tranprimary-x-1/2 z-[100]"
                             : "invisible fixed"
                     }
                 >
