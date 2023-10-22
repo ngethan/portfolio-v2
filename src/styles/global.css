@@ -6,215 +6,228 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
+  @font-face {
     font-family: "Magnat";
     src: url("/fonts/Magnat-HeadSemiBoldItalic.woff2") format("woff2");
     font-weight: 600;
     font-style: italic;
   }
 
-    @font-face {
-        font-family: "Magnat";
-        src: url("/fonts/Magnat-HeadRegular.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "Magnat";
+    src: url("/fonts/Magnat-HeadRegular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "Magnat";
-        src: url("/fonts/Magnat-HeadLightItalic.woff2") format("woff2");
-        font-weight: 300;
-        font-style: italic;
-    }
+  @font-face {
+    font-family: "Magnat";
+    src: url("/fonts/Magnat-HeadLightItalic.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+  }
 
-    @font-face {
-        font-family: "Magnat";
-        src: url("/fonts/Magnat-HeadBoldItalic.woff2") format("woff2");
-        font-weight: bold;
-        font-style: italic;
-    }
+  @font-face {
+    font-family: "Magnat";
+    src: url("/fonts/Magnat-HeadBoldItalic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+  }
 
-    @font-face {
-        font-family: "Magnat";
-        src: url("/fonts/Magnat-HeadBold.woff2") format("woff2");
-        font-weight: bold;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "Magnat";
+    src: url("/fonts/Magnat-HeadBold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "Magnat";
-        src: url("/fonts/Magnat-HeadMedium.woff2") format("woff2");
-        font-weight: 500;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "Magnat";
+    src: url("/fonts/Magnat-HeadMedium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "Magnat";
-        src: url("/fonts/Magnat-HeadExtraBoldItalic.woff2") format("woff2");
-        font-weight: 800;
-        font-style: italic;
-    }
+  @font-face {
+    font-family: "Magnat";
+    src: url("/fonts/Magnat-HeadExtraBoldItalic.woff2") format("woff2");
+    font-weight: 800;
+    font-style: italic;
+  }
 
-    @font-face {
-        font-family: "Magnat";
-        src: url("/fonts/Magnat-HeadRegularItalic.woff2") format("woff2");
-        font-weight: normal;
-        font-style: italic;
-    }
+  @font-face {
+    font-family: "Magnat";
+    src: url("/fonts/Magnat-HeadRegularItalic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+  }
 
-    @font-face {
-        font-family: "Magnat";
-        src: url("/fonts/Magnat-HeadSemiBold.woff2") format("woff2");
-        font-weight: 600;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "Magnat";
+    src: url("/fonts/Magnat-HeadSemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "Magnat Head";
-        src: url("/fonts/Magnat-HeadMediumItalic.woff2") format("woff2");
-        font-weight: 500;
-        font-style: italic;
-    }
+  @font-face {
+    font-family: "Magnat Head";
+    src: url("/fonts/Magnat-HeadMediumItalic.woff2") format("woff2");
+    font-weight: 500;
+    font-style: italic;
+  }
 
-    html {
-        scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: theme("colors.gray.800");
-        font-family: "Archivo", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: theme("colors.gray.800");
+    font-family: "Archivo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-    body::-webkit-scrollbar {
-        width: 7px;
-    }
+  body::-webkit-scrollbar {
+    width: 7px;
+  }
 
-    body::-webkit-scrollbar-thumb {
-        border-radius: 25px;
-        background-color: theme("colors.primary.500");
-    }
+  body::-webkit-scrollbar-thumb {
+    border-radius: 25px;
+    background-color: theme("colors.primary.500");
+  }
 
-    .cursor-dot,
-    .cursor-dot-outline {
-        margin: auto;
-        justify-content: center;
-        pointer-events: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: tranprimary(-50%, -50%);
-        border-radius: 50%;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border 0.3s ease-in-out;
-    }
+  .cursor-dot,
+  .cursor-dot-outline {
+    margin: auto;
+    justify-content: center;
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: tranprimary(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+      border 0.3s ease-in-out;
+  }
 
-    .cursor-dot {
-        width: 8px;
-        height: 8px;
-        background-color: theme("colors.primary.500");
-        border: 2px solid transparent;
-        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, border 0.3s ease-in-out;
-    }
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: theme("colors.primary.500");
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out,
+      border 0.3s ease-in-out;
+  }
 
-    .cursor-dot-outline {
-        width: 40px;
-        height: 40px;
-        background-color: transparent;
-        border: 2px solid rgb(233, 128, 116, 0.5);
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out,
-            border 0.3s ease-in-out;
-    }
+  .cursor-dot-outline {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid rgb(233, 128, 116, 0.5);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+      width 0.3s ease-in-out, height 0.3s ease-in-out, border 0.3s ease-in-out;
+  }
 
-    li {
-        @apply px-4;
-        @apply cursor-pointer;
-    }
+  li {
+    @apply px-4;
+    @apply cursor-pointer;
+  }
 
-    .font-code {
-        @apply font-[monospace];
-    }
+  .font-code {
+    @apply font-[monospace];
+  }
 
-    .hover-animation-light {
-        background: linear-gradient(theme("colors.primary.200") 0 0) var(--p, 0) 100% / var(--d, 0) 1px no-repeat !important;
-        transition: 0.3s, background-position 0s 0.3s;
-    }
-    .hover-animation-light:hover {
-        --d: 100%;
-        --p: 100%;
-    }
+  .hover-animation-light {
+    background: linear-gradient(theme("colors.primary.200") 0 0) var(--p, 0)
+      100% / var(--d, 0) 1px no-repeat !important;
+    transition: 0.3s, background-position 0s 0.3s;
+  }
+  .hover-animation-light:hover {
+    --d: 100%;
+    --p: 100%;
+  }
 
-    .hover-animation-dark {
-        background: linear-gradient(theme("colors.primary.400") 0 0) var(--p, 0) 100% / var(--d, 0) 1px no-repeat !important;
-        transition: 0.3s, background-position 0s 0.3s;
-    }
-    .hover-animation-dark:hover {
-        --d: 100%;
-        --p: 100%;
-    }
+  .hover-animation-dark {
+    background: linear-gradient(theme("colors.primary.400") 0 0) var(--p, 0)
+      100% / var(--d, 0) 1px no-repeat !important;
+    transition: 0.3s, background-position 0s 0.3s;
+  }
+  .hover-animation-dark:hover {
+    --d: 100%;
+    --p: 100%;
+  }
 
-    .box-shadow {
-        -webkit-box-shadow: 0 10px 30px -10px theme("colors.gray.900");
-        -moz-box-shadow: 0 10px 30px -10px theme("colors.gray.900");
-        box-shadow: 0 10px 30px -10px theme("colors.gray.900");
-    }
+  .box-shadow {
+    -webkit-box-shadow: 0 10px 30px -10px theme("colors.gray.900");
+    -moz-box-shadow: 0 10px 30px -10px theme("colors.gray.900");
+    box-shadow: 0 10px 30px -10px theme("colors.gray.900");
+  }
 
-    .active-work {
-        background-color: rgba(236, 90, 101, 0.1);
-        color: theme("colors.primary.500");
-    }
+  .active-work {
+    background-color: rgba(236, 90, 101, 0.1);
+    color: theme("colors.primary.500");
+  }
 
-    .inactive-work:hover {
-        background-color: rgba(236, 90, 101, 0.1);
-        color: theme("colors.primary.500");
-    }
+  .inactive-work:hover {
+    background-color: rgba(236, 90, 101, 0.1);
+    color: theme("colors.primary.500");
+  }
 
-    .active-work-md {
-        background-color: rgba(236, 90, 101, 0.1);
-        border-color: theme("colors.primary.500");
-        color: theme("colors.primary.500");
-    }
+  .active-work-md {
+    background-color: rgba(236, 90, 101, 0.1);
+    border-color: theme("colors.primary.500");
+    color: theme("colors.primary.500");
+  }
 
-    .inactive-work-md {
-        border-color: theme("colors.gray.400");
-    }
-    .inactive-work-md:hover {
-        background-color: rgba(236, 90, 101, 0.1);
-        color: theme("colors.primary.500");
-    }
+  .inactive-work-md {
+    border-color: theme("colors.gray.400");
+  }
+  .inactive-work-md:hover {
+    background-color: rgba(236, 90, 101, 0.1);
+    color: theme("colors.primary.500");
+  }
 
-    ::selection {
-        background: rgb(232, 49, 63, 0.3);
-    }
+  ::selection {
+    background: rgb(232, 49, 63, 0.3);
+  }
 
-    ::-moz-selection {
-        background: rgb(232, 49, 63, 0.3);
-    }
+  ::-moz-selection {
+    background: rgb(232, 49, 63, 0.3);
+  }
 
-    .vertical-line {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
+  .vertical-line {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 
-    .input {
-        background: linear-gradient(to right, theme("colors.gray.100"), theme("colors.gray.100")),
-            linear-gradient(to right, theme("colors.primary.500"), theme("colors.primary.500"), theme("colors.primary.500"));
-        background-size: 100% 0.1em, 0 0.1em;
-        background-position: 100% 100%, 0 100%;
-        background-repeat: no-repeat;
-        width: 100%;
-        outline: none;
-        transition: 0.3s;
-        height: 44px;
-    }
+  .input {
+    background: linear-gradient(
+        to right,
+        theme("colors.gray.100"),
+        theme("colors.gray.100")
+      ),
+      linear-gradient(
+        to right,
+        theme("colors.primary.500"),
+        theme("colors.primary.500"),
+        theme("colors.primary.500")
+      );
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    outline: none;
+    transition: 0.3s;
+    height: 44px;
+  }
 
-    .input:focus {
-        background-size: 0 0.1em, 100% 0.1em;
-    }
+  .input:focus {
+    background-size: 0 0.1em, 100% 0.1em;
+  }
 }

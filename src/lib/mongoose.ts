@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const { MONGODB_URI } = process.env;
 
 if (!MONGODB_URI) {
-    throw new Error("Please define the MONGODB_URI environment variable.");
+  throw new Error("Please define the MONGODB_URI environment variable.");
 }
 
 /**
@@ -16,52 +16,48 @@ if (!MONGODB_URI) {
 let cached = global.mongoose;
 
 if (!cached) {
-    // @ts-ignore
-    global.ObjectId = ObjectId;
-    // @ts-ignore
-    // eslint-disable-next-line no-multi-assign
-    cached = global.mongoose = { conn: null, promise: null };
+  // @ts-ignore
+  global.ObjectId = ObjectId;
+  // @ts-ignore
+  // eslint-disable-next-line no-multi-assign
+  cached = global.mongoose = { conn: null, promise: null };
 }
 
 async function dbConnect() {
-    if (cached.conn) {
-        return cached.conn;
-    }
-
-    if (!cached.promise) {
-        const opts = {
-            bufferCommands: false,
-        };
-
-        // @ts-ignore
-        // eslint-disable-next-line @typescript-eslint/no-shadow
-        cached.promise = mongoose
-            .connect(MONGODB_URI as string, opts)
-            .then((m) => {
-                return m;
-            });
-    }
-    cached.conn = await cached.promise;
+  if (cached.conn) {
     return cached.conn;
+  }
+
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    cached.promise = mongoose.connect(MONGODB_URI as string, opts).then((m) => {
+      return m;
+    });
+  }
+  cached.conn = await cached.promise;
+  return cached.conn;
 }
 
 function dbConnectNow() {
-    if (cached.conn) return cached.conn;
-    if (!cached.promise) {
-        const opts = {
-            bufferCommands: false,
-        };
+  if (cached.conn) return cached.conn;
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
 
-        // @ts-ignore
-        // eslint-disable-next-line @typescript-eslint/no-shadow
-        cached.promise = mongoose
-            .connect(MONGODB_URI as string, opts)
-            .then((m) => {
-                return m;
-            });
-    }
-    cached.conn = cached.promise;
-    return cached.conn;
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    cached.promise = mongoose.connect(MONGODB_URI as string, opts).then((m) => {
+      return m;
+    });
+  }
+  cached.conn = cached.promise;
+  return cached.conn;
 }
 
 export default dbConnect;
