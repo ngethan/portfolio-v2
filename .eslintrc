@@ -36,7 +36,7 @@
       },
       "rules": {
         "prettier/prettier": [
-          "error",
+          "warn",
           {
             "tabWidth": 4,
             "useTabs": false,
