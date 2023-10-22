@@ -6,7 +6,6 @@ import { CalendarIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import Stars from "@/components/Stars";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent } from "@/components/ui/card";
@@ -48,7 +47,6 @@ const Index = () => {
 
     return (
         <div className="items-center flex flex-col w-full h-[100vh] justify-center text-white">
-            <Stars />
             <Card className="pt-5">
                 <CardContent>
                     <Form {...form}>

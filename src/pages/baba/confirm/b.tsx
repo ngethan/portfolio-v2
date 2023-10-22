@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import Stars from "@/components/Stars";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -45,7 +44,6 @@ const Index = () => {
 
     return (
         <div className="items-center flex flex-col w-full h-[100vh] justify-center text-white">
-            <Stars />
             <Card className="pt-5">
                 <CardContent>
                     <Form {...form}>
