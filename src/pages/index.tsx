@@ -1,4 +1,8 @@
+import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Head from "next/head";
+import { useEffect } from "react";
 
 import About from "@/components/About";
 import Contact from "@/components/Contact";
@@ -10,7 +14,21 @@ import Socials from "@/components/Socials";
 import Stars from "@/components/Stars";
 import Work from "@/components/Work/Work";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Index = () => {
+    useEffect(() => {
+        const lenis = new Lenis();
+
+        lenis.on("scroll", ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+
+        gsap.ticker.lagSmoothing(0);
+    });
+
     return (
         <div>
             <Head>

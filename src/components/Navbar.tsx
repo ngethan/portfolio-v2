@@ -1,10 +1,11 @@
 import { motion, useAnimation } from "framer-motion";
 import { Spin as Hamburger } from "hamburger-react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-import icon from "../../public/icon.png";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -98,82 +99,88 @@ const Navbar = () => {
     return (
         <motion.div
             id="navbar"
-            className="duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100 z-[999]"
+            className="duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100 z-[999] "
             initial="hidden"
             animate={controls}
             variants={list}
             ref={ref}
         >
-            <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                variants={item}
-            >
-                <img
+            <div className="flex flex-col w-full">
+                <div className="justify-between flex w-full mb-2 items-center">
+                    <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        variants={item}
+                    >
+                        {/* <img
                     src={icon.src}
                     className="md:w-[48px] md:h-[48px] w-[32px] h-[32px]"
                     alt="Logo"
-                />
-            </motion.div>
+                /> */}
+                        <Link href="/">ETHAN NG</Link>
+                    </motion.div>
 
-            <ul className="font-code hidden md:flex text-lg items-center">
-                <motion.li variants={item}>
-                    <h1
-                        className="hover-animation-dark hover:text-primary-400 duration-300"
-                        data-section="home"
-                        onClick={handleViewSection}
-                    >
-                        Home
-                    </h1>
-                </motion.li>
-                <motion.li variants={item}>
-                    <h1
-                        className="hover-animation-dark hover:text-primary-400 duration-300"
-                        data-section="about"
-                        onClick={handleViewSection}
-                    >
-                        About
-                    </h1>
-                </motion.li>
-                <motion.li variants={item}>
-                    <h1
-                        className="hover-animation-dark hover:text-primary-400 duration-300"
-                        data-section="skills"
-                        onClick={handleViewSection}
-                    >
-                        Skills
-                    </h1>
-                </motion.li>
-                <motion.li variants={item}>
-                    <h1
-                        className="hover-animation-dark hover:text-primary-400 duration-300"
-                        data-section="work"
-                        onClick={handleViewSection}
-                    >
-                        Work
-                    </h1>
-                </motion.li>
-                <motion.li variants={item}>
-                    <h1
-                        className="hover-animation-dark hover:text-primary-400 duration-300"
-                        data-section="writing"
-                        onClick={handleViewSection}
-                    >
-                        Writing
-                    </h1>
-                </motion.li>
-                <motion.li variants={item}>
-                    <button
-                        className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 rounded-lg px-4 py-1 my-1 flex items-center duration-300"
-                        data-section="contact"
-                        onClick={handleViewSection}
-                        type="button"
-                        aria-label="Contact"
-                    >
-                        Contact
-                    </button>
-                </motion.li>
-            </ul>
+                    <ul className="font-code hidden md:flex text-[12px] items-center">
+                        <motion.li variants={item}>
+                            <h1
+                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                data-section="about"
+                                onClick={handleViewSection}
+                            >
+                                ABOUT
+                            </h1>
+                        </motion.li>
+                        <motion.li variants={item}>
+                            <h1
+                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                data-section="skills"
+                                onClick={handleViewSection}
+                            >
+                                SKILLS
+                            </h1>
+                        </motion.li>
+                        <motion.li variants={item}>
+                            <h1
+                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                data-section="work"
+                                onClick={handleViewSection}
+                            >
+                                WORK
+                            </h1>
+                        </motion.li>
+                        <motion.li variants={item}>
+                            <h1
+                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                data-section="writing"
+                                onClick={handleViewSection}
+                            >
+                                WRITING
+                            </h1>
+                        </motion.li>
+                        <motion.li variants={item}>
+                            <h1
+                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                data-section="writing"
+                            >
+                                <Link href="/Ethan_Ng_Resume" target="_blank">
+                                    RESUME
+                                </Link>
+                            </h1>
+                        </motion.li>
+                        <motion.li variants={item}>
+                            <Button
+                                data-section="contact"
+                                onClick={handleViewSection}
+                                type="button"
+                                aria-label="Contact"
+                            >
+                                <span className="text-[12px]">CONTACT</span>
+                            </Button>
+                        </motion.li>
+                    </ul>
+                </div>
+                <hr className="w-full" />
+            </div>
 
             <div className="md:hidden z-[1000]" onClick={handleClick}>
                 <Hamburger
@@ -198,35 +205,46 @@ const Navbar = () => {
                         data-section="about"
                         onClick={handleViewSection}
                     >
-                        About
+                        ABOUT
                     </p>
                 </li>
 
-                <li className="top-[calc(30%)] fixed">
+                <li className="top-[calc(27%)] fixed">
                     <p
                         className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="skills"
                         onClick={handleViewSection}
                     >
-                        Skills
+                        SKILLS
                     </p>
                 </li>
-                <li className="top-[calc(45%)] fixed">
+                <li className="top-[calc(39%)] fixed">
                     <p
                         className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="work"
                         onClick={handleViewSection}
                     >
-                        Work
+                        WORK
                     </p>
                 </li>
-                <li className="top-[calc(60%)] fixed">
+                <li className="top-[calc(51%)] fixed">
                     <p
                         className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="writing"
                         onClick={handleViewSection}
                     >
-                        Writing
+                        WRITING
+                    </p>
+                </li>
+                <li className="top-[calc(63%)] fixed">
+                    <p
+                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
+                        data-section="writing"
+                        onClick={handleViewSection}
+                    >
+                        <Link href="/Ethan_Ng_Resume" target="_blank">
+                            RESUME
+                        </Link>
                     </p>
                 </li>
                 <li className="top-[calc(75%)] fixed">
@@ -235,7 +253,7 @@ const Navbar = () => {
                         data-section="contact"
                         onClick={handleViewSection}
                     >
-                        Contact
+                        CONTACT
                     </p>
                 </li>
             </motion.ul>

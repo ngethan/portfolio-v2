@@ -1,12 +1,12 @@
 import Script from "next/script";
 
 const GoogleTagManager = ({ containerId }: { containerId: string }) =>
-    containerId ? (
-        <Script
-            id="googleTagManager"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-                __html: `
+  containerId ? (
+    <Script
+      id="googleTagManager"
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `
            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
            new Date().getTime(),event:'gtm.js'});var
            f=d.getElementsByTagName(s)[0],
@@ -15,11 +15,11 @@ const GoogleTagManager = ({ containerId }: { containerId: string }) =>
            id='+i+dl;f.parentNode.insertBefore(j,f);
            })(window,document,'script','dataLayer', '${containerId}');
            `,
-            }}
-        />
-    ) : null;
+      }}
+    />
+  ) : null;
 
 export { GoogleTagManager };
 
 export const GOOGLE_TAG_MANAGER_ID =
-    process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
+  process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;

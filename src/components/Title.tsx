@@ -1,6 +1,13 @@
-const Title = ({ text, large }: { text: string; large?: boolean }) => {
+const Title = ({
+    text,
+
+    large,
+}: {
+    text: string;
+    large?: boolean;
+}) => {
     return (
-        <h1>
+        <h1 className="flex flex-row">
             {text
                 .replace(" ", "\xa0")
                 .split("")
@@ -10,7 +17,7 @@ const Title = ({ text, large }: { text: string; large?: boolean }) => {
                             className={
                                 large
                                     ? "hover:text-primary-500 duration-300 inline align-top"
-                                    : "hover:text-primary-500 border-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
+                                    : "hover:text-primary-500 border-primary-500 font-code text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
                             }
                             key={i}
                         >

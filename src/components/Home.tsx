@@ -1,9 +1,15 @@
 import { motion, useAnimation } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import Title from "@/components/Title";
+import { Button } from "@/components/ui/button";
+
+import Title from "./Title";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
     const controls = useAnimation();
@@ -39,11 +45,33 @@ const Home = () => {
         },
     };
 
-    const handleViewWork = () => {
-        document.getElementById("work")!.scrollIntoView();
-    };
+    useLayoutEffect(() => {
+        if (typeof window !== "undefined") {
+            // gsap.fromTo(
+            //     nameRef,
+            //     { scale: 1 },
+            //     {
+            //         scale: 2,
+            //         duration: 1,
+            //         scrollTrigger: {
+            //             trigger: nameRef.current,
+            //         },
+            //     }
+            // );
+            // gsap.to("#name", {
+            //     // this will animate ALL boxes
+            //     x: 300,
+            //     scrollTrigger: {
+            //         trigger: "#name", // this will use the first box as the trigger
+            //         scrub: true,
+            //     },
+            // });
+        }
+        return () => {};
+    }, []);
+
     return (
-        <>
+        <section id="home">
             <motion.div
                 id="home"
                 className="w-full h-screen max-w-[1075px] mx-auto px-4 flex flex-row items-center -z-[1]"
@@ -67,6 +95,7 @@ const Home = () => {
                     >
                         <Title text="Ethan Ng" large />
                     </motion.div>
+
                     <motion.div
                         className="text-primary-500 flex text-5xl sm:text-6xl font-bold"
                         variants={item}
@@ -74,34 +103,42 @@ const Home = () => {
                         <h2 className="fade-in-out text-[52px]">Developer</h2>
                     </motion.div>
                     <motion.p
-                        className="text-gray-200 my-2 max-w-[500px] text-lg mb-[30px]"
+                        className="text-gray-300 my-2 max-w-[500px] text-lg mb-[30px]"
                         variants={item}
                     >
-                        I&apos;m a software engineer who loves creating
-                        beautiful interfaces. I&apos;m currently studying CS and
+                        creating beautiful interfaces. currently studying CS and
                         business at{" "}
                         <Link
                             href="https://wustl.edu/"
-                            className="hover:text-primary-500 hover:decoration-primary-500 underline decoration-gray-300 duration-300"
+                            className="hover-animation-dark hover:text-primary-400 text-gray-100  decoration-gray-300 duration-300"
+                            target="_blank"
                         >
-                            Washington University in St. Louis
+                            washu
                         </Link>
                         .
                     </motion.p>
-                    <motion.div variants={item}>
-                        <button
-                            className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 rounded-lg px-5 py-3 my-2 flex items-center duration-300"
-                            onClick={handleViewWork}
-                            type="button"
-                            aria-label="View work"
+                    <motion.div variants={item} className="flex w-full">
+                        <Button
+                            size="lg"
+                            variant="default"
+                            onClick={() =>
+                                document
+                                    .getElementById("work")!
+                                    .scrollIntoView()
+                            }
+                            aria-label="Work"
+                            arrowAnimation={true}
+                            childtext="WORK"
                         >
-                            View work
-                        </button>
+                            WORK
+                        </Button>
                     </motion.div>
                 </div>
             </motion.div>
-        </>
+        </section>
     );
 };
 
 export default Home;
+
+// className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 px-5 py-3 my-2 flex items-center duration-300"

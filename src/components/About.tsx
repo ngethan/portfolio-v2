@@ -38,43 +38,31 @@ const About = () => {
     };
 
     return (
-        <motion.div
-            id="about"
-            className="py-[100px] text-gray-200 w-full max-w-[950px] mx-auto flex flex-col px-4"
-            initial="hidden"
-            animate={controls}
-            variants={list}
-            ref={ref}
-        >
+        <section id="about">
             <motion.div
-                className="text-7xl sm:text-8xl flex text-gray-100 font-bold"
-                variants={itemY}
+                className="py-[100px] text-gray-200 w-full max-w-[950px] mx-auto flex flex-col px-4"
+                initial="hidden"
+                animate={controls}
+                variants={list}
+                ref={ref}
             >
-                <Title text="about" />
-            </motion.div>
+                <motion.div
+                    className="text-7xl sm:text-8xl flex text-gray-100 font-bold"
+                    variants={itemY}
+                >
+                    <Title text="about" />
+                </motion.div>
 
-            <motion.div className="text-[17px]" variants={itemY}>
-                <p>
-                    Hey, I&apos;m Ethan! I&apos;ve been playing around with
-                    computers ever since I was young and my love for them has
-                    only grown since. When I was nine, I was introduced to
-                    Scratch, and from that age forward, I&apos;ve spent
-                    innumerable days and nights building upon my passion for the
-                    astounding cyber world. From writing my first &quot;Hello,
-                    World&quot; project to programming full-stack MERN apps into
-                    fruition, I use CS to explore realms of limitless
-                    creativity.
-                    <br />
-                    <br />I value being able to make a difference in the world.
-                    My work with Muddy Paws Rescue illustrates the impact I
-                    strive to have on the world. Being a teacher too, not only
-                    gives me the opportunity to impart knowledge, but it also
-                    requires me to undergo constant learning as well. There is
-                    an art to teaching, learning students, and finding ways to
-                    reach and help them that is extremely gratifying.
-                </p>
+                <motion.div className="text-[20px] ml-2" variants={itemY}>
+                    <p>
+                        hey im ethan! born and raised in new york. currently
+                        studying CS and business at washu in stl. apart from
+                        coding, i like photography, piano (especially jazz),
+                        tennis, badminton, movies, and watches.
+                    </p>
+                </motion.div>
             </motion.div>
-        </motion.div>
+        </section>
     );
 };
 

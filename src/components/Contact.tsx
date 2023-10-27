@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Title from "@/components/Title";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
     const controls = useAnimation();
@@ -157,114 +158,119 @@ const Contact = () => {
     }
 
     return (
-        <motion.div
-            id="contact"
-            className="py-[100px] text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
-            initial="hidden"
-            animate={controls}
-            variants={list}
-            ref={ref}
-        >
+        <section id="contact">
             <motion.div
-                className="text-7xl sm:text-8xl flex text-gray-100 font-bold "
-                variants={itemY}
+                className="py-[100px] text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
+                initial="hidden"
+                animate={controls}
+                variants={list}
+                ref={ref}
             >
-                <Title text="contact" />
+                <motion.div
+                    className="text-7xl sm:text-8xl flex text-gray-100 font-bold "
+                    variants={itemY}
+                >
+                    <Title text="contact" />
+                </motion.div>
+
+                <form
+                    id="contact_form"
+                    className="font-code inline-flex flex-wrap justify-between w-full"
+                    method="post"
+                    onSubmit={handleOnSubmit}
+                    name="contact"
+                    aria-label="Contact"
+                >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <motion.div
+                        className="inline-block flex-[1_1_40%] mr-[3%] mb-[30px]"
+                        variants={itemY}
+                    >
+                        <label
+                            id="name-label"
+                            htmlFor="name"
+                            className="label text-primary-500 relative text-[24px] top-10 duration-300"
+                        >
+                            Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            onChange={handleOnChange}
+                            className="input relative text-[18px]"
+                            required
+                        />
+                    </motion.div>
+                    <motion.div
+                        className="inline-block flex-[1_1_40%] ml-[3%] mb-[30px]"
+                        variants={itemY}
+                    >
+                        <label
+                            id="email-label"
+                            htmlFor="email"
+                            className="text-primary-500 relative text-[24px] top-10 duration-300"
+                        >
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            onChange={handleOnChange}
+                            className="input relative text-[18px]"
+                            required
+                        />
+                    </motion.div>
+                    <motion.div
+                        className="inline-block w-full mb-[40px]"
+                        variants={itemY}
+                    >
+                        <label
+                            id="message-label"
+                            htmlFor="message"
+                            className="text-primary-500 relative text-[24px] top-10 duration-300"
+                        >
+                            Message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            onChange={handleOnChange}
+                            className="input relative h-[88px] py-[8px] text-[18px]"
+                            required
+                        ></textarea>
+                    </motion.div>
+
+                    <motion.div variants={itemY}>
+                        <Button
+                            id="submit"
+                            type="submit"
+                            disabled={status.submitting}
+                            size="lg"
+                            aria-label="Send message"
+                            arrowAnimation
+                            childtext="SEND MESSAGE"
+                        >
+                            {" "}
+                            {!status.submitting
+                                ? !status.submitted
+                                    ? "SEND MESSAGE"
+                                    : "SENT MESSAGE!"
+                                : "SENDING..."}
+                        </Button>
+                    </motion.div>
+                </form>
+                {status.info.error && (
+                    <div className="error">Error: {status.info.msg}</div>
+                )}
+                {!status.info.error && status.info.msg && (
+                    <p className="text-red-500 font-bold text-xl">
+                        {status.info.msg}
+                    </p>
+                )}
             </motion.div>
-
-            <form
-                id="contact_form"
-                className="font-code inline-flex flex-wrap justify-between w-full"
-                method="post"
-                onSubmit={handleOnSubmit}
-                name="contact"
-                aria-label="Contact"
-            >
-                <input type="hidden" name="form-name" value="contact" />
-                <motion.div
-                    className="inline-block flex-[1_1_40%] mr-[3%] mb-[30px]"
-                    variants={itemY}
-                >
-                    <label
-                        id="name-label"
-                        htmlFor="name"
-                        className="label text-primary-500 relative text-[24px] top-10 duration-300"
-                    >
-                        Name
-                    </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        onChange={handleOnChange}
-                        className="input relative text-[18px]"
-                        required
-                    />
-                </motion.div>
-                <motion.div
-                    className="inline-block flex-[1_1_40%] ml-[3%] mb-[30px]"
-                    variants={itemY}
-                >
-                    <label
-                        id="email-label"
-                        htmlFor="email"
-                        className="text-primary-500 relative text-[24px] top-10 duration-300"
-                    >
-                        Email
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        onChange={handleOnChange}
-                        className="input relative text-[18px]"
-                        required
-                    />
-                </motion.div>
-                <motion.div
-                    className="inline-block w-full mb-[40px]"
-                    variants={itemY}
-                >
-                    <label
-                        id="message-label"
-                        htmlFor="message"
-                        className="text-primary-500 relative text-[24px] top-10 duration-300"
-                    >
-                        Message
-                    </label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        onChange={handleOnChange}
-                        className="input relative h-[88px] py-[8px] text-[18px]"
-                        required
-                    ></textarea>
-                </motion.div>
-
-                <motion.button
-                    id="submit"
-                    className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 rounded-lg px-4 py-2 my-2 flex items-center duration-300"
-                    type="submit"
-                    disabled={status.submitting}
-                    variants={itemY}
-                    aria-label="Send message"
-                >
-                    {!status.submitting
-                        ? !status.submitted
-                            ? "Send message"
-                            : "Sent message!"
-                        : "Sending message..."}{" "}
-                </motion.button>
-            </form>
-            {status.info.error && (
-                <div className="error">Error: {status.info.msg}</div>
-            )}
-            {!status.info.error && status.info.msg && (
-                <p className="text-red-500 font-bold text-xl">
-                    {status.info.msg}
-                </p>
-            )}
-        </motion.div>
+        </section>
     );
 };
 

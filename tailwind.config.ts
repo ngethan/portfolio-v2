@@ -5,7 +5,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Archivo"],
+                sans: "var(--font-archivo)",
                 serif: ["Magnat"],
             },
             colors: {
@@ -23,9 +23,10 @@ export default {
                     950: "#4c0519",
                 },
                 gray: {
-                    100: "#FFFFFF",
-                    200: "#EDEDED",
-                    300: "#A0A0A0",
+                    50: "#ffffff",
+                    100: "#ededed",
+                    200: "#dcdcdc",
+                    300: "#bdbdbd",
                     400: "#7E7E7E",
                     500: "#505050",
                     600: "#343434",
