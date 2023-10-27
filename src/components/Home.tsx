@@ -1,13 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Link from "next/link";
 import React, { useEffect, useLayoutEffect } from "react";
 import { useInView } from "react-intersection-observer";
-
-import { Button } from "@/components/ui/button";
-
-import Title from "./Title";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,61 +68,28 @@ const Home = () => {
     return (
         <section id="home">
             <motion.div
-                id="home"
-                className="w-full h-screen max-w-[1075px] mx-auto px-4 flex flex-row items-center -z-[1]"
+                className="w-full h-screen justify-center flex items-center -z-[1]"
                 initial="hidden"
                 animate={controls}
                 variants={list}
                 ref={ref}
             >
-                <div className="max-w-[473.9px] max-h-[473.89px] mr-[100px]">
+                <div className="max-h-[473.89px]">
                     <motion.div
-                        className="font-code flex text-gray-100 text-xl max-w-[181.4px]"
-                        variants={item}
-                    ></motion.div>
-                    <motion.div
-                        className="text-7xl sm:text-8xl flex text-gray-100 font-bold my-4 max-w-[425.2px]"
+                        id="name"
+                        className="2xl:text-[300px] xl:text-[250px] lg:text-[200px] md:text-[150px] sm:text-[100px] overflow-x-hidden text-gray-100 font-serif"
                         variants={item}
                     >
-                        <Title text="Ethan Ng" large />
-                    </motion.div>
-
-                    <motion.div
-                        className="text-primary-500 flex text-5xl sm:text-6xl font-bold"
-                        variants={item}
-                    >
-                        <h2 className="fade-in-out text-[52px]">Developer</h2>
-                    </motion.div>
-                    <motion.p
-                        className="text-gray-300 my-2 max-w-[500px] text-lg mb-[30px]"
-                        variants={item}
-                    >
-                        creating beautiful interfaces. currently studying CS and
-                        business at{" "}
-                        <Link
-                            href="https://wustl.edu/"
-                            className="hover-animation-dark hover:text-primary-400 text-gray-100  decoration-gray-300 duration-300"
-                            target="_blank"
-                        >
-                            washu
-                        </Link>
-                        .
-                    </motion.p>
-                    <motion.div variants={item} className="flex w-full">
-                        <Button
-                            size="lg"
-                            variant="default"
-                            onClick={() =>
-                                document
-                                    .getElementById("work")!
-                                    .scrollIntoView()
-                            }
-                            aria-label="Work"
-                            arrowAnimation={true}
-                            childtext="WORK"
-                        >
-                            WORK
-                        </Button>
+                        {"ETHAN NG".split("").map((c, index) => {
+                            return (
+                                <span
+                                    className="hover:text-primary-500 duration-300"
+                                    key={index}
+                                >
+                                    {c}
+                                </span>
+                            );
+                        })}
                     </motion.div>
                 </div>
             </motion.div>
@@ -136,5 +98,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// className="font-code text-primary-400 border-primary-400 hover:bg-primary-300/[.3] text-lg border-2 px-5 py-3 my-2 flex items-center duration-300"
