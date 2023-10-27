@@ -1,20 +1,88 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import Delayed from "@/components/Delayed";
 import Title from "@/components/Title";
-import WorkInfo from "@/components/Work/WorkInfo";
+
+import WorkCard from "./WorkCard";
+
+const workData = [
+    {
+        abbreviation: "rad",
+        name: "RadiantAI",
+        title: "Software Engineering Intern",
+        url: "https://radiantai.health/",
+        duration: "September 2023 - Present",
+        description: [
+            "Collaborated directly with founders, formerly of Lyft and Amazon, to redesign UI/UX in efforts to target $2 million seed round",
+            "Designing user-centric interfaces in Figma for proprietary medical AI query engine; built designs with Next.js & TailwindCSS; honed through iterative sprints following stakeholder & user feedback",
+        ],
+        tags: ["Next.js", "TailwindCSS", "Figma", "shadcn", "Typescript"],
+    },
+    {
+        abbreviation: "mpr",
+        name: "Muddy Paws Rescue",
+        title: "Website Developer",
+        url: "https://muddypawsrescue.org/",
+        duration: "October 2021 - June 2023",
+        description: [
+            "Worked closely with marketing & website directors to conceptualize website layout and functionality; constantly improved design through user feedback",
+            "Utilized languages and technologies like HTML, CSS, JavaScript, Salesforce, and Squarespace",
+        ],
+        tags: ["HTML", "CSS", "Javascript", "Salesforce"],
+    },
+    {
+        abbreviation: "tcs",
+        name: "theCoderSchool",
+        title: "Teacher",
+        url: "https://thecoderschool.com/",
+        duration: "September 2021 - March 2023",
+        description: [
+            "Taught beginner and intermediate programmers; fostered a productive and respectful learning environment; utilized feedback loops to perfect teaching strategies",
+            "Taught Python, Java, JavaScript, HTML, and CSS",
+            "Delegated teaching process through training and mentoring interns",
+        ],
+        tags: ["Python", "Java", "Web Development", "Teaching"],
+    },
+    {
+        abbreviation: "nydeo",
+        name: "NYDEO",
+        title: "Fullstack Developer",
+        url: "https://nydeo.org",
+        duration: "January 2022",
+        description: [
+            "Designed website layout and created mockups",
+            "Used HTML, CSS, JavaScript, and Google Sheets as a database",
+            "Responsible for the general maintenance and upkeep of the website",
+        ],
+        tags: ["HTML", "CSS", "JavaScript"],
+    },
+    {
+        abbreviation: "aetheria",
+        name: "Aetheria",
+        title: "Lead Developer",
+        url: "https://discord.aetheria.world",
+        duration: "June 2022 - February 2023",
+        description: [
+            "Used Java & Paper API to develop highly functional Minecraft plugins",
+            "Used TypeScript & discord.js to develop a general purpose discord management bot",
+            "Managed the server, staff, and oversaw the server's overall operation",
+        ],
+        tags: [
+            "Java",
+            "Paper API",
+            "Typescript",
+            "Discord.js",
+            "Product Management",
+        ],
+    },
+];
 
 const Work = () => {
-    const [work, setWork] = useState("tcs");
-
-    const [inViewFinal, setInViewFinal] = useState(false);
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
         if (inView) {
-            setInViewFinal(true);
             controls.start("visible");
         }
     }, [controls, inView]);
@@ -52,171 +120,41 @@ const Work = () => {
         },
     };
 
-    function sleep(ms: number) {
-        // eslint-disable-next-line no-promise-executor-return
-        return new Promise((resolve) => setTimeout(resolve, ms));
-    }
-
-    const handleClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-        setWork((e.target as any).dataset.work);
-
-        if (window.innerWidth < 768) {
-            const prevActive =
-                document.getElementsByClassName("active-work-md")[0];
-            prevActive?.classList.add("inactive-work-md");
-            prevActive?.classList.remove("active-work-md");
-            (e.target as any).classList.add("active-work-md");
-            (e.target as any).classList.remove("inactive-work-md");
-        } else {
-            const prevActive =
-                document.getElementsByClassName("active-work")[0];
-            prevActive?.classList.add("inactive-work");
-            prevActive?.classList.remove("active-work");
-            (e.target as any).classList.add("active-work");
-            (e.target as any).classList.remove("inactive-work");
-            if ((e.target as any).dataset.work === "tcs")
-                sleep(100).then(() => {
-                    document.getElementById(
-                        "selected-indicator-cr"
-                    )!.style.marginTop = `${-47 * 4}px`;
-                });
-            if ((e.target as any).dataset.work === "mpr")
-                sleep(100).then(() => {
-                    document.getElementById(
-                        "selected-indicator-cr"
-                    )!.style.marginTop = `${-47 * 3}px`;
-                });
-            else if ((e.target as any).dataset.work === "nydeo")
-                sleep(100).then(() => {
-                    document.getElementById(
-                        "selected-indicator-cr"
-                    )!.style.marginTop = `${-47 * 2}px`;
-                });
-            else if ((e.target as any).dataset.work === "aetheria")
-                sleep(100).then(() => {
-                    document.getElementById(
-                        "selected-indicator-cr"
-                    )!.style.marginTop = `${-47 * 1}px`;
-                });
-        }
-    };
-
     return (
-        <motion.div
-            id="work"
-            className="py-[100px] text-gray-200 w-full max-w-[850px] mx-auto px-4 flex flex-col"
-            initial="hidden"
-            animate={controls}
-            variants={list}
-            ref={ref}
-        >
+        <section id="work">
             <motion.div
-                className="name text-7xl sm:text-8xl flex text-gray-100 font-bold"
-                variants={itemY}
+                className="py-[100px] text-gray-200 w-full max-w-[850px] mx-auto px-4 flex flex-col"
+                initial="hidden"
+                animate={controls}
+                variants={list}
+                ref={ref}
             >
-                <Title text="my work" />
-            </motion.div>
-
-            <div className="hidden md:flex">
-                <motion.ul
-                    className="justify-left items-left font-code flex flex-col text-[20px] font-medium float-left"
-                    variants={itemX}
-                >
-                    <li
-                        id="tcs"
-                        className="active-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
-                        data-work="tcs"
-                        onClick={handleClick}
-                    >
-                        theCoderSchool
-                    </li>
-                    <li
-                        id="mpr"
-                        className="inactive-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
-                        data-work="mpr"
-                        onClick={handleClick}
-                    >
-                        Muddy Paws Rescue
-                    </li>
-                    <li
-                        id="nydeo"
-                        className="inactive-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
-                        data-work="nydeo"
-                        onClick={handleClick}
-                    >
-                        NYDEO
-                    </li>
-                    <li
-                        id="aetheria"
-                        className="inactive-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
-                        data-work="aetheria"
-                        onClick={handleClick}
-                    >
-                        Aetheria
-                    </li>
-                    <div
-                        id="selected-indicator-cr"
-                        className="border-primary-500 relative top-0 mt-[-188px] w-[2px] h-[47px] border-l-[2px] duration-300"
-                    ></div>
-                </motion.ul>
-
-                {inViewFinal ? (
-                    <Delayed delay={500}>
-                        <WorkInfo work={work} />
-                    </Delayed>
-                ) : null}
-            </div>
-
-            <div className="flex flex-col md:hidden">
-                <motion.ul
-                    className="font-code ul-mobile flex flex-row h-[47px] text-[18px] mb-[5px] overflow-x-scroll overflow-y-hidden"
+                <motion.div
+                    className="name text-7xl sm:text-8xl flex text-gray-100 font-bold"
                     variants={itemY}
-                    aria-label="Work"
                 >
-                    <li
-                        id="tcs-md"
-                        className="active-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
-                        data-work="tcs"
-                        onClick={handleClick}
-                        aria-label="theCoderSchool"
-                    >
-                        theCoderSchool
-                    </li>
-                    <li
-                        id="mpr-md"
-                        className="inactive-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
-                        data-work="mpr"
-                        onClick={handleClick}
-                        aria-label="Muddy Paws Rescue"
-                    >
-                        Muddy Paws Rescue
-                    </li>
-                    <li
-                        id="nydeo-md"
-                        className="inactive-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
-                        data-work="nydeo"
-                        onClick={handleClick}
-                        aria-label="NYDEO"
-                    >
-                        NYDEO
-                    </li>
-                    <li
-                        id="aetheria-md"
-                        className="inactive-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
-                        data-work="aetheria"
-                        onClick={handleClick}
-                        aria-label="AETHERIA"
-                    >
-                        Aetheria
-                    </li>
-                </motion.ul>
-                {inViewFinal ? (
-                    <Delayed delay={500}>
-                        <WorkInfo work={work} md={true} />
-                    </Delayed>
-                ) : null}
-            </div>
-        </motion.div>
+                    <Title text="work" />
+                </motion.div>
+
+                <div className="">
+                    <motion.ul className="grid" variants={itemX}>
+                        {workData.map((w) => {
+                            return (
+                                <WorkCard
+                                    key={w.name}
+                                    title={w.title}
+                                    url={w.url}
+                                    name={w.name}
+                                    duration={w.duration}
+                                    description={w.description}
+                                    tags={w.tags}
+                                />
+                            );
+                        })}
+                    </motion.ul>
+                </div>
+            </motion.div>
+        </section>
     );
 };
 
