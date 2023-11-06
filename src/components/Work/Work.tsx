@@ -213,9 +213,7 @@ const Work = () => {
                         </li>
                         <div
                             id="selected-indicator-cr"
-                            className={`relative top-0 border-primary-500 -mt-[${
-                                47 * workData.length
-                            }px] h-[47px] w-[2px] border-l-[2px] duration-300`}
+                            className={`relative top-0 -mt-[235px] h-[47px] w-[2px] border-l-[2px] border-primary-500 duration-300`}
                         ></div>
                     </motion.ul>
 
