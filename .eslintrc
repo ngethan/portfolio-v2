@@ -21,6 +21,7 @@
             "files": ["**/*.ts", "**/*.tsx"],
             "plugins": ["@typescript-eslint", "unused-imports", "tailwindcss", "simple-import-sort"],
             "extends": [
+                "next",
                 "plugin:tailwindcss/recommended",
                 "airbnb-typescript",
                 "next/core-web-vitals",
@@ -30,7 +31,7 @@
                 "project": "./tsconfig.json"
             },
             "rules": {
-                "prettier/prettier": 0,
+                // "prettier/prettier": 0,
                 "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
                 "jsx-a11y/anchor-is-valid": "off", // Next.js uses its own internal link system
                 "react/require-default-props": "off", // Allow non-defined react props as undefined

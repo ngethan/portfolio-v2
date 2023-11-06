@@ -23,14 +23,14 @@ const Skill = ({ name, icon, noName }: Props) => {
             <div
                 className={
                     !noName
-                        ? "group hover:shadow-primary-500/[.8] px-[10px] mb-[20px] h-[75px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] transform-gpu mr-[50px] justify-center"
-                        : "group hover:shadow-primary-500/[.8] px-[10px] mb-[20px] h-[60px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] transform-gpu mr-[20px] justify-center z-0"
+                        ? "group hover:shadow-primary-500/[.8] px-[10px] mb-[20px] h-[75px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] transform-gpu mr-[50px] justify-center rounded-lg"
+                        : "group hover:shadow-primary-500/[.8] px-[10px] mb-[20px] h-[60px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] transform-gpu mr-[20px] justify-center z-0 rounded-lg"
                 }
             >
                 <p
                     className={
                         noName
-                            ? "-tranprimary-x-1/2 invisible opacity-0 px-[10px] fixed group-hover:visible group-hover:opacity-100 text-gray-200 w-fit h-[20] bg-gray-700 duration-300 left-[50%] bottom-[60px] z-[100]"
+                            ? "-translate-x-1/2 invisible opacity-0 px-[10px] fixed group-hover:visible group-hover:opacity-100 text-gray-200 w-fit h-[20] bg-gray-700 duration-300 left-[50%] bottom-[60px] z-[100] rounded-lg"
                             : "invisible fixed"
                     }
                 >
@@ -39,8 +39,8 @@ const Skill = ({ name, icon, noName }: Props) => {
                 <div
                     className={
                         !noName
-                            ? "skill font-code text-gray-200 h-[75px] items-center w-fit flex flex-row"
-                            : "skill font-code text-gray-200 h-[60px] items-center w-fit flex flex-row"
+                            ? "skill font-mono text-gray-200 h-[75px] items-center w-fit flex flex-row"
+                            : "skill font-mono text-gray-200 h-[60px] items-center w-fit flex flex-row"
                     }
                 >
                     <Icon

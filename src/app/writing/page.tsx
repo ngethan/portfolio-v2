@@ -1,14 +1,35 @@
-import type { InferGetServerSidePropsType } from "next";
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Navbar from "@/components/Navbar";
 import Stars from "@/components/Stars";
 import getBlogModel from "@/models/blog";
 
-const ViewBlogPage = ({
-    blogs,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const ViewBlogPage = () => {
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const BlogModel = await getBlogModel();
+            const data = await BlogModel.find();
+            
+            if (data.length === 0) {
+                return;
+            }
+    
+            data.sort((a: any, b: any) => {
+                return b.date - a.date;
+            });
+    
+            setBlogs(JSON.parse(JSON.stringify(data)));
+    
+        }
+        
+        fetchData().catch();
+    }, []);
+
     return (
         <div>
             <Navbar />
@@ -54,36 +75,3 @@ const ViewBlogPage = ({
 
 export default ViewBlogPage;
 
-export async function getServerSideProps() {
-    try {
-        const BlogModel = await getBlogModel();
-        const blogs = await BlogModel.find();
-
-        if (blogs.length === 0) {
-            return {
-                props: {
-                    success: false,
-                    message: "No blogs found!",
-                },
-            };
-        }
-
-        blogs.sort((a: any, b: any) => {
-            return b.date - a.date;
-        });
-
-        return {
-            props: {
-                success: true,
-                blogs: JSON.parse(JSON.stringify(blogs)),
-            },
-        };
-    } catch (e) {
-        return {
-            props: {
-                success: false,
-                message: "An error occurred! Please try again later.",
-            },
-        };
-    }
-}

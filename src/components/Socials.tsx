@@ -2,7 +2,7 @@ import { FiGithub, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 const Socials = () => {
   return (
-    <ul className="hidden md:flex flex-col fixed bottom-12 right-7">
+    <ul className="hidden md:flex flex-col fixed bottom-12 right-7 duration-300" id="socials">
       <li className="group mb-[30px]">
         <a
           href="https://github.com/ngethan"

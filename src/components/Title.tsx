@@ -17,7 +17,7 @@ const Title = ({
                             className={
                                 large
                                     ? "hover:text-primary-500 duration-300 inline align-top"
-                                    : "hover:text-primary-500 border-primary-500 font-code text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
+                                    : "hover:text-primary-500 border-primary-500 font-mono text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
                             }
                             key={i}
                         >

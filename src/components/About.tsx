@@ -2,7 +2,8 @@ import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import Title from "@/components/Title";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
 const About = () => {
     const controls = useAnimation();
@@ -40,27 +41,33 @@ const About = () => {
     return (
         <section id="about">
             <motion.div
-                className="py-[100px] text-gray-200 w-full max-w-[950px] mx-auto flex flex-col px-4"
+                className="py-[100px] text-gray-200 w-full flex justify-center"
                 initial="hidden"
                 animate={controls}
                 variants={list}
                 ref={ref}
             >
-                <motion.div
-                    className="text-7xl sm:text-8xl flex text-gray-100 font-bold"
-                    variants={itemY}
-                >
-                    <Title text="about" />
-                </motion.div>
-
-                <motion.div className="text-[20px] ml-2" variants={itemY}>
-                    <p>
-                        hey im ethan! born and raised in new york. currently
-                        studying CS and business at washu in stl. apart from
-                        coding, i like photography, piano (especially jazz),
-                        tennis, badminton, movies, and watches.
-                    </p>
-                </motion.div>
+                <div className="text-[30px] xl:w-[55%] md:w-[70%] w-[85%]">
+                    <motion.p variants={itemY} className="mb-12">
+                        I'm a developer focused on creating exceptional experiences. Currently
+                        studying <Link href="https://admissions.wustl.edu/academics/special-programs/joint-degree-in-business-and-computer-science/" className="hover-animation-dark text-primary-400" target="_blank">CS & business</Link> at <Link href="https://wustl.edu/" className="hover-animation-dark text-primary-400" target="_blank" >Washington University in St. Louis</Link>. Working on building anything and everything.
+                        <br /><br />
+                        Born and raised in New York. I also like photography, piano (jazz especially), tennis, film, and watches.
+                    </motion.p>
+                    <motion.div variants={itemY}>
+                        <Button
+                            arrowAnimation
+                            childtext="Reach out!"
+                            size="lg"
+                            onClick={() =>
+                                document
+                                    .getElementById("contact")!
+                                    .scrollIntoView()}
+                        >
+                            Reach out!
+                        </Button>
+                    </motion.div>
+                </div>
             </motion.div>
         </section>
     );

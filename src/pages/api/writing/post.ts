@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import getBlogModel from "@/models/blog";
-import { requireMethod } from "@/utils/ServerUtils";
+import { requireMethod } from "@/lib/ServerUtils";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (requireMethod(req, res, "POST")) {

@@ -1,7 +1,9 @@
+"use client";
+
 import { motion, useAnimation } from "framer-motion";
 import { Spin as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -11,6 +13,7 @@ const Navbar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
     const router = useRouter();
+    const pathname = usePathname();
 
     // const [top, setTop] = useState(true);
 
@@ -85,7 +88,7 @@ const Navbar = () => {
         if ((e.target as any).dataset.section === "writing") {
             await router.push("/writing");
         } else {
-            if (router.pathname !== "/") await router.push("/");
+            if (pathname !== "/") await router.push("/");
             document
                 .getElementById((e.target as any).dataset.section!)!
                 .scrollIntoView();
@@ -106,11 +109,12 @@ const Navbar = () => {
             ref={ref}
         >
             <div className="flex flex-col w-full">
-                <div className="justify-between flex w-full mb-2 items-center">
+                <div className="justify-between flex w-full md:mb-2">
                     <motion.div
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         variants={item}
+                        className="flex items-center"
                     >
                         {/* <img
                     src={icon.src}
@@ -120,7 +124,7 @@ const Navbar = () => {
                         <Link href="/">ETHAN NG</Link>
                     </motion.div>
 
-                    <ul className="font-code hidden md:flex text-[12px] items-center">
+                    <ul className="hidden md:flex text-[12px] items-center">
                         <motion.li variants={item}>
                             <h1
                                 className="hover-animation-dark hover:text-primary-400 duration-300"
@@ -148,7 +152,7 @@ const Navbar = () => {
                                 WORK
                             </h1>
                         </motion.li>
-                        <motion.li variants={item}>
+                        {/* <motion.li variants={item}>
                             <h1
                                 className="hover-animation-dark hover:text-primary-400 duration-300"
                                 data-section="writing"
@@ -156,13 +160,13 @@ const Navbar = () => {
                             >
                                 WRITING
                             </h1>
-                        </motion.li>
+                        </motion.li> */}
                         <motion.li variants={item}>
                             <h1
                                 className="hover-animation-dark hover:text-primary-400 duration-300"
                                 data-section="writing"
                             >
-                                <Link href="/Ethan_Ng_Resume" target="_blank">
+                                <Link href="/Ethan%20Ng%20Resume.pdf" target="_blank">
                                     RESUME
                                 </Link>
                             </h1>
@@ -179,7 +183,7 @@ const Navbar = () => {
                         </motion.li>
                     </ul>
                 </div>
-                <hr className="w-full" />
+                <hr className="md:w-full md:inline hidden" />
             </div>
 
             <div className="md:hidden z-[1000]" onClick={handleClick}>
@@ -195,7 +199,7 @@ const Navbar = () => {
                 className={
                     !nav
                         ? "hidden"
-                        : "font-code fixed top-0 left-0 w-full h-full overflow-y-hidden bg-gray-800 flex flex-col justify-center items-center text-lg z-10"
+                        : "font-mono fixed top-0 left-0 w-full h-full overflow-y-hidden bg-gray-800 flex flex-col justify-center items-center text-lg z-10"
                 }
                 variants={variants}
             >
@@ -227,7 +231,7 @@ const Navbar = () => {
                         WORK
                     </p>
                 </li>
-                <li className="top-[calc(51%)] fixed">
+                {/* <li className="top-[calc(51%)] fixed">
                     <p
                         className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
                         data-section="writing"
@@ -235,7 +239,7 @@ const Navbar = () => {
                     >
                         WRITING
                     </p>
-                </li>
+                </li> */}
                 <li className="top-[calc(63%)] fixed">
                     <p
                         className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"

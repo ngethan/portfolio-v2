@@ -6,7 +6,7 @@ import { MdHorizontalRule } from "react-icons/md";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-primary-950 dark:focus-visible:ring-primary-300 duration-300 font-code",
+    `inline-flex items-center justify-center text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-primary-950 dark:focus-visible:ring-primary-300 duration-300 font-mono`,
     {
         variants: {
             variant: {
@@ -21,6 +21,7 @@ const buttonVariants = cva(
                 default: "h-10 px-4 py-2",
                 sm: "h-9 px-3",
                 lg: "h-14 px-8",
+                xl: "h-20 px-12",
                 icon: "h-10 w-10",
             },
         },

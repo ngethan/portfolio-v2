@@ -18,7 +18,9 @@ import {
     SiSupabase,
     SiTailwindcss,
     SiTypescript,
+    SiFirebase
 } from "react-icons/si";
+import { GrSwift } from "react-icons/gr";
 import { TbBrandNextjs, TbBrandVercel } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 
@@ -69,7 +71,7 @@ const Skills = () => {
                 ref={ref}
             >
                 <motion.div
-                    className="text-7xl sm:text-8xl flex text-gray-100 font-bold"
+                    className="text-7xl md:pl-4 lg:pl-2 sm:text-8xl flex text-gray-100 font-bold"
                     variants={itemY}
                 >
                     <Title text="skills" />
@@ -88,7 +90,10 @@ const Skills = () => {
                     <Skill name="React.js" icon={FaReact} />
                     <Skill name="Next.js" icon={TbBrandNextjs} />
                     <Skill name="Flutter" icon={SiFlutter} />
+                    <Skill name="React Native" icon={FaReact} />
+                    <Skill name="Swift" icon={GrSwift} />
                     <Skill name="Git" icon={DiGit} />
+                    <Skill name="Firebase" icon={SiFirebase} />
                     <Skill name="Supabase" icon={SiSupabase} />
                     <Skill name="MongoDB" icon={DiMongodb} />
                     <Skill name="Squarespace" icon={FaSquarespace} />
@@ -112,7 +117,10 @@ const Skills = () => {
                     <Skill name="React.js" icon={FaReact} noName />
                     <Skill name="Next.js" icon={TbBrandNextjs} noName />
                     <Skill name="Flutter" icon={SiFlutter} noName />
+                    <Skill name="React Native" icon={FaReact} noName />
+                    <Skill name="Swift" icon={GrSwift} noName />
                     <Skill name="Git" icon={DiGit} noName />
+                    <Skill name="Firebase" icon={SiFirebase} noName />
                     <Skill name="Supabase" icon={SiSupabase} noName />
                     <Skill name="MongoDB" icon={DiMongodb} noName />
                     <Skill name="Squarespace" icon={FaSquarespace} noName />

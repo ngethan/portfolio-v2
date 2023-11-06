@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import axios from "axios";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
@@ -175,7 +174,7 @@ const Contact = () => {
 
                 <form
                     id="contact_form"
-                    className="font-code inline-flex flex-wrap justify-between w-full"
+                    className="font-mono inline-flex flex-wrap justify-between w-full"
                     method="post"
                     onSubmit={handleOnSubmit}
                     name="contact"

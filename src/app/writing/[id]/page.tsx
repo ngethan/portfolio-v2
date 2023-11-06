@@ -1,32 +1,52 @@
 /* eslint-disable no-nested-ternary */
-import type {
-    GetServerSidePropsContext,
-    InferGetServerSidePropsType,
-} from "next";
+
+
 import Link from "next/link";
-import React from "react";
+import { useSearchParams } from 'next/navigation'
+import { title } from "process";
+import React, { useEffect, useState } from "react";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
 import Stars from "@/components/Stars";
 import getBlogModel from "@/models/blog";
 
-const ViewBlogPage = ({
-    success,
-    title,
-    description,
-    content,
-    date,
-    views,
-    hidden,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const ViewBlogPage = () => {
+    const [blogData, setBlogData] = useState({success: false, message: "Loading...", hidden: false});
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const BlogModel = await getBlogModel();
+        const id = searchParams!.get("id");
+        const blog =
+            (await BlogModel.findOne({
+                slug: id as string,
+            })) || (await BlogModel.findById(id as string));
+
+        if (!blog) {
+            setBlogData({success: false, message: "Blog not found!", hidden: false})
+            return;
+        }
+
+        const newBlog = JSON.parse(JSON.stringify(blog));
+
+        setBlogData({
+            success: true,
+            ...newBlog,
+        })
+        }
+        
+        fetchData().catch();
+    }, []);
+
     const styles = {
         h1: "font-serif text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-200",
         h2: "font-serif text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-200",
         h3: "font-serif text-xl text-gray-100",
         p: "text-lg font-serif",
         span: "text-lg font-serif",
-        quote: "text-gray-100 font-code italic font-serif bg-gray-800 rounded-lg px-2 py-1",
-        code: "text-gray-100 font-code bg-gray-800 font-code rounded-lg px-2 py-1",
+        quote: "text-gray-100 font-mono italic font-serif bg-gray-800 rounded-lg px-2 py-1",
+        code: "text-gray-100 font-mono bg-gray-800 font-mono rounded-lg px-2 py-1",
         link: "text-gray-100 underline decoration-gray-500 hover:decoration-gray-300 duration-300",
         underline:
             "underline decoration-gray-300 hover:decoration-gray-100 duration-300",
@@ -35,7 +55,7 @@ const ViewBlogPage = ({
         <div>
             <Stars />
 
-            {success && !hidden ? (
+            {blogData.success && !blogData.hidden ? (
                 <section>
                     <div className="relative flex min-h-screen flex-col items-center justify-center py-12 text-center">
                         <div className="mb-[30px] max-w-[672px] text-left mx-auto px-4">
@@ -43,11 +63,11 @@ const ViewBlogPage = ({
                                 {title}
                             </h1>
                             <h2 className="text-gray-300 font-serif text-2xl mb-[30px]">
-                                {description}
+                                {(blogData as any).description}
                             </h2>
                             <div className="flex flex-row mb-[20px]">
                                 <p className="text-gray-300 text-xl font-serif italic">
-                                    {new Date(date).toLocaleDateString(
+                                    {new Date((blogData as any).date!).toLocaleDateString(
                                         "en-us",
                                         {
                                             year: "numeric",
@@ -59,12 +79,12 @@ const ViewBlogPage = ({
                                 </p>
                                 <p className="text-gray-300 text-xl font-serif italic">
                                     &nbsp;
-                                    {views} views
+                                    {(blogData as any).views} views
                                 </p>
                             </div>
                             <hr className="border-gray-300 mb-[30px]" />
                             <div className="mb-[50px] text-gray-300">
-                                {content.map((c: any, i: number) =>
+                                {(blogData as any).content.map((c: any, i: number) =>
                                     c.type === "break" ? (
                                         React.createElement("br")
                                     ) : c.type === "link" ? (
@@ -158,39 +178,3 @@ const ViewBlogPage = ({
 };
 
 export default ViewBlogPage;
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-    try {
-        const BlogModel = await getBlogModel();
-        const { id } = context.query;
-        const blog =
-            (await BlogModel.findOne({
-                slug: id as string,
-            })) || (await BlogModel.findById(id as string));
-
-        if (!blog) {
-            return {
-                props: {
-                    success: false,
-                    message: "Blog not found!",
-                },
-            };
-        }
-
-        const newBlog = JSON.parse(JSON.stringify(blog));
-
-        return {
-            props: {
-                success: true,
-                ...newBlog,
-            },
-        };
-    } catch (e) {
-        return {
-            props: {
-                success: false,
-                message: "An error occurred! Please try again later.",
-            },
-        };
-    }
-}
