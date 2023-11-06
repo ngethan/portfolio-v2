@@ -54,7 +54,7 @@
 //           clearInterval(interval);
 //         };
 //       }, []);
-        
+
 //     return (
 //         <>
 //             <motion.div
@@ -95,9 +95,10 @@
 
 // export default Home;
 
+import React, { useEffect } from "react";
+
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
-import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { Button } from "@/components/ui/button";
@@ -142,40 +143,39 @@ const Home = () => {
         <section id="home">
             <motion.div
                 id="home"
-                className="w-full h-screen mx-auto sm:px-4 flex flex-row justify-center items-center -z-[1]"
+                className="-z-[1] mx-auto flex h-screen w-full flex-row items-center justify-center sm:px-4"
                 initial="hidden"
                 animate={controls}
                 variants={list}
                 ref={ref}
             >
-                <div className="xl:w-[65%] lg:w-[80%] md:w-[80%] w-[90%] max-h-[473.89px]">
+                <div className="max-h-[473.89px] w-[90%] md:w-[80%] lg:w-[80%] xl:w-[65%]">
                     <motion.div
-                        className="font-mono flex text-gray-100 text-xl max-w-[181.4px]"
+                        className="flex max-w-[181.4px] font-mono text-xl text-gray-100"
                         variants={item}
-                    >
-                    </motion.div>
+                    ></motion.div>
                     <motion.div
-                        className="text-7xl sm:text-8xl flex text-gray-100 font-bold my-4 max-w-[425.2px]"
+                        className="my-4 flex max-w-[425.2px] text-7xl font-bold text-gray-100 sm:text-8xl"
                         variants={item}
                     >
                         <Title text="Ethan Ng" large />
                     </motion.div>
 
                     <motion.div
-                        className="text-primary-500 flex text-5xl sm:text-6xl font-bold"
+                        className="flex text-5xl font-bold text-primary-500 sm:text-6xl"
                         variants={item}
                     >
                         <h2 className="fade-in-out text-[52px]">Developer</h2>
                     </motion.div>
                     <motion.p
-                        className="text-gray-300 my-2 max-w-[500px] text-lg mb-[30px]"
+                        className="my-2 mb-[30px] max-w-[500px] text-lg text-gray-300"
                         variants={item}
                     >
                         creating beautiful interfaces. currently studying CS and
                         business at{" "}
                         <Link
                             href="https://wustl.edu/"
-                            className="hover-animation-dark hover:text-primary-400 text-gray-100  decoration-gray-300 duration-300"
+                            className="hover-animation-dark text-gray-100 decoration-gray-300  duration-300 hover:text-primary-400"
                             target="_blank"
                         >
                             washu

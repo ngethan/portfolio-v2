@@ -23,14 +23,14 @@ const Skill = ({ name, icon, noName }: Props) => {
             <div
                 className={
                     !noName
-                        ? "group hover:shadow-primary-500/[.8] px-[10px] mb-[20px] h-[75px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] transform-gpu mr-[50px] justify-center rounded-lg"
-                        : "group hover:shadow-primary-500/[.8] px-[10px] mb-[20px] h-[60px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] transform-gpu mr-[20px] justify-center z-0 rounded-lg"
+                        ? "group mb-[20px] mr-[50px] h-[75px] transform-gpu justify-center rounded-lg bg-[#1b1c1b] px-[10px] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] hover:shadow-primary-500/[.8]"
+                        : "group z-0 mb-[20px] mr-[20px] h-[60px] transform-gpu justify-center rounded-lg bg-[#1b1c1b] px-[10px] shadow-lg shadow-gray-100/[.4] duration-300 hover:scale-[1.12] hover:shadow-primary-500/[.8]"
                 }
             >
                 <p
                     className={
                         noName
-                            ? "-translate-x-1/2 invisible opacity-0 px-[10px] fixed group-hover:visible group-hover:opacity-100 text-gray-200 w-fit h-[20] bg-gray-700 duration-300 left-[50%] bottom-[60px] z-[100] rounded-lg"
+                            ? "invisible fixed bottom-[60px] left-[50%] z-[100] h-[20] w-fit -translate-x-1/2 rounded-lg bg-gray-700 px-[10px] text-gray-200 opacity-0 duration-300 group-hover:visible group-hover:opacity-100"
                             : "invisible fixed"
                     }
                 >
@@ -39,16 +39,16 @@ const Skill = ({ name, icon, noName }: Props) => {
                 <div
                     className={
                         !noName
-                            ? "skill font-mono text-gray-200 h-[75px] items-center w-fit flex flex-row"
-                            : "skill font-mono text-gray-200 h-[60px] items-center w-fit flex flex-row"
+                            ? "skill flex h-[75px] w-fit flex-row items-center font-mono text-gray-200"
+                            : "skill flex h-[60px] w-fit flex-row items-center font-mono text-gray-200"
                     }
                 >
                     <Icon
                         size={!noName ? 50 : 30}
-                        className="group-hover:text-primary-300 duration-300"
+                        className="duration-300 group-hover:text-primary-300"
                     />
                     {!noName ? (
-                        <h1 className="group-hover:text-primary-300 ml-[20px] float-right text-[20px] duration-300">
+                        <h1 className="float-right ml-[20px] text-[20px] duration-300 group-hover:text-primary-300">
                             {name}
                         </h1>
                     ) : (

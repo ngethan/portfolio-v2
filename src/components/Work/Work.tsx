@@ -1,11 +1,12 @@
-import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
+
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import Title from "@/components/Title";
 
-import WorkCard from "./WorkCard";
 import Delayed from "../Delayed";
+import WorkCard from "./WorkCard";
 
 const workData = [
     {
@@ -130,12 +131,11 @@ const Work = () => {
 
         const prevActiveMd =
             document.getElementsByClassName("active-work-md")[0];
-            prevActiveMd?.classList.add("inactive-work-md");
-            prevActiveMd?.classList.remove("active-work-md");
+        prevActiveMd?.classList.add("inactive-work-md");
+        prevActiveMd?.classList.remove("active-work-md");
         (e.target as any).classList.add("active-work-md");
         (e.target as any).classList.remove("inactive-work-md");
-        const prevActive =
-            document.getElementsByClassName("active-work")[0];
+        const prevActive = document.getElementsByClassName("active-work")[0];
         prevActive?.classList.add("inactive-work");
         prevActive?.classList.remove("active-work");
         (e.target as any).classList.add("active-work");
@@ -143,7 +143,9 @@ const Work = () => {
         sleep(100).then(() => {
             document.getElementById(
                 "selected-indicator-cr"
-            )!.style.marginTop = `${-47 * (workData.length - (e.target as any).dataset.work)}px`;
+            )!.style.marginTop = `${
+                -47 * (workData.length - (e.target as any).dataset.work)
+            }px`;
         });
     };
 
@@ -151,14 +153,14 @@ const Work = () => {
         <section id="work">
             <motion.div
                 id="work"
-                className="py-[100px] text-gray-200 w-full max-w-[850px] mx-auto px-4 flex flex-col"
+                className="mx-auto flex w-full max-w-[850px] flex-col px-4 py-[100px] text-gray-200"
                 initial="hidden"
                 animate={controls}
                 variants={list}
                 ref={ref}
             >
                 <motion.div
-                    className="name text-7xl sm:text-8xl flex text-gray-100 font-bold"
+                    className="name flex text-7xl font-bold text-gray-100 sm:text-8xl"
                     variants={itemY}
                 >
                     <Title text="my work" />
@@ -166,12 +168,12 @@ const Work = () => {
 
                 <div className="hidden md:flex">
                     <motion.ul
-                        className="justify-left items-left font-mono flex flex-col text-[20px] font-medium float-left"
+                        className="justify-left items-left float-left flex flex-col font-mono text-[20px] font-medium"
                         variants={itemX}
                     >
                         <li
                             id="rad"
-                            className="active-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
+                            className="active-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
                             data-work={0}
                             onClick={handleClick}
                         >
@@ -179,7 +181,7 @@ const Work = () => {
                         </li>
                         <li
                             id="mpr"
-                            className="inactive-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
+                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
                             data-work={1}
                             onClick={handleClick}
                         >
@@ -187,7 +189,7 @@ const Work = () => {
                         </li>
                         <li
                             id="tcs"
-                            className="inactive-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
+                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
                             data-work={2}
                             onClick={handleClick}
                         >
@@ -195,7 +197,7 @@ const Work = () => {
                         </li>
                         <li
                             id="nydeo"
-                            className="inactive-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
+                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
                             data-work={3}
                             onClick={handleClick}
                         >
@@ -203,7 +205,7 @@ const Work = () => {
                         </li>
                         <li
                             id="aetheria"
-                            className="inactive-work inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400"
+                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
                             data-work={4}
                             onClick={handleClick}
                         >
@@ -211,7 +213,9 @@ const Work = () => {
                         </li>
                         <div
                             id="selected-indicator-cr"
-                            className={`border-primary-500 relative top-0 -mt-[${47 * workData.length}px] w-[2px] h-[47px] border-l-[2px] duration-300`}
+                            className={`relative top-0 border-primary-500 -mt-[${
+                                47 * workData.length
+                            }px] h-[47px] w-[2px] border-l-[2px] duration-300`}
                         ></div>
                     </motion.ul>
 
@@ -232,13 +236,13 @@ const Work = () => {
                 <div className="flex flex-col md:hidden">
                     <motion.ul
                         id="mobile-work-list"
-                        className="font-mono ul-mobile flex flex-row h-[47px] text-[18px] mb-[5px] overflow-x-scroll overflow-y-hidden"
+                        className="ul-mobile mb-[5px] flex h-[47px] flex-row overflow-y-hidden overflow-x-scroll font-mono text-[18px]"
                         variants={itemY}
                         aria-label="Work"
                     >
                         <li
                             id="rad-md"
-                            className="active-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
+                            className="active-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
                             data-work={0}
                             onClick={handleClick}
                             aria-label="theCoderSchool"
@@ -247,7 +251,7 @@ const Work = () => {
                         </li>
                         <li
                             id="mpr-md"
-                            className="inactive-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
+                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
                             data-work={1}
                             onClick={handleClick}
                             aria-label="Muddy Paws Rescue"
@@ -256,7 +260,7 @@ const Work = () => {
                         </li>
                         <li
                             id="tcs-md"
-                            className="inactive-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
+                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
                             data-work={2}
                             onClick={handleClick}
                             aria-label="theCoderSchool"
@@ -265,7 +269,7 @@ const Work = () => {
                         </li>
                         <li
                             id="nydeo-md"
-                            className="inactive-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
+                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
                             data-work={3}
                             onClick={handleClick}
                             aria-label="NYDEO"
@@ -274,7 +278,7 @@ const Work = () => {
                         </li>
                         <li
                             id="aetheria-md"
-                            className="inactive-work-md flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4"
+                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
                             data-work={4}
                             onClick={handleClick}
                             aria-label="AETHERIA"

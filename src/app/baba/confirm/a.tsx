@@ -46,7 +46,7 @@ const Index = () => {
     }
 
     return (
-        <div className="items-center flex flex-col w-full h-[100vh] justify-center text-white">
+        <div className="flex h-[100vh] w-full flex-col items-center justify-center text-white">
             <Card className="pt-5">
                 <CardContent>
                     <Form {...form}>
@@ -59,7 +59,7 @@ const Index = () => {
                                 name="dob"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col">
-                                        <FormLabel className="text-white text-lg font-bold">
+                                        <FormLabel className="text-lg font-bold text-white">
                                             when&apos;s your birthday??
                                         </FormLabel>
                                         <Popover>
@@ -83,7 +83,7 @@ const Index = () => {
                                                                 Pick a date
                                                             </span>
                                                         )}
-                                                        <CalendarIcon className="text-white ml-auto h-4 w-4 opacity-50" />
+                                                        <CalendarIcon className="ml-auto h-4 w-4 text-white opacity-50" />
                                                     </Button>
                                                 </FormControl>
                                             </PopoverTrigger>

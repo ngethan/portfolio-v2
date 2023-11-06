@@ -1,5 +1,6 @@
-import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
+
+import { motion, useAnimation } from "framer-motion";
 import { DiGit, DiHeroku, DiHtml5, DiMongodb, DiSass } from "react-icons/di";
 import {
     FaAws,
@@ -11,6 +12,7 @@ import {
     FaSquarespace,
     FaWordpressSimple,
 } from "react-icons/fa";
+import { GrSwift } from "react-icons/gr";
 import {
     SiFlutter,
     SiJavascript,
@@ -18,9 +20,8 @@ import {
     SiSupabase,
     SiTailwindcss,
     SiTypescript,
-    SiFirebase
+    SiFirebase,
 } from "react-icons/si";
-import { GrSwift } from "react-icons/gr";
 import { TbBrandNextjs, TbBrandVercel } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 
@@ -64,20 +65,20 @@ const Skills = () => {
     return (
         <section id="skills">
             <motion.div
-                className="py-[100px] flex flex-row flex-wrap mx-auto w-full max-w-[950px] px-4"
+                className="mx-auto flex w-full max-w-[950px] flex-row flex-wrap px-4 py-[100px]"
                 initial="hidden"
                 animate={controls}
                 variants={list}
                 ref={ref}
             >
                 <motion.div
-                    className="text-7xl md:pl-4 lg:pl-2 sm:text-8xl flex text-gray-100 font-bold"
+                    className="flex text-7xl font-bold text-gray-100 sm:text-8xl md:pl-4 lg:pl-2"
                     variants={itemY}
                 >
                     <Title text="skills" />
                 </motion.div>
 
-                <div className="hidden md:flex flex-row flex-wrap justify-center">
+                <div className="hidden flex-row flex-wrap justify-center md:flex">
                     <Skill name="HTML" icon={DiHtml5} />
                     <Skill name="CSS" icon={FaCss3} />
                     <Skill name="Sass" icon={DiSass} />
@@ -104,7 +105,7 @@ const Skills = () => {
                     <Skill name="AWS" icon={FaAws} />
                 </div>
 
-                <div className="md:hidden flex flex-row flex-wrap justify-center">
+                <div className="flex flex-row flex-wrap justify-center md:hidden">
                     <Skill name="HTML" icon={DiHtml5} noName />
                     <Skill name="CSS" icon={FaCss3} noName />
                     <Skill name="Sass" icon={DiSass} noName />

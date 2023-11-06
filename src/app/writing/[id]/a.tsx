@@ -1,4 +1,4 @@
-// /* eslint-disable no-nested-ternary */
+export {};
 
 // import Link from "next/link";
 // import { useSearchParams } from 'next/navigation'
@@ -34,7 +34,7 @@
 //             ...newBlog,
 //         })
 //         }
-        
+
 //         fetchData().catch();
 //     }, []);
 

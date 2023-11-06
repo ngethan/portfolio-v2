@@ -1,18 +1,18 @@
 {
-  "editor.tabSize": 4,
-  "editor.detectIndentation": false,
-  "search.exclude": {
-    "package-lock.json": true
-  },
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.formatOnSave": false,
-  "editor.codeActionsOnSave": [
-    "source.addMissingImports",
-    "source.fixAll.eslint"
-  ],
-  // Multiple language settings for json and jsonc files
-  "[json][jsonc]": {
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "search.exclude": {
+        "package-lock.json": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "editor.codeActionsOnSave": {
+        "source.addMissingImports": true,
+        "source.fixAll.eslint": true
+    },
+    // Multiple language settings for json and jsonc files
+    "[json][jsonc]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

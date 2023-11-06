@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import { Badge } from "../ui/badge";
-import Link from "next/link";
 
 interface Props {
     title: string;
@@ -13,7 +13,15 @@ interface Props {
     md?: boolean;
 }
 
-const WorkCard = ({ title, url, name, duration, description, tags, md }: Props) => {
+const WorkCard = ({
+    title,
+    url,
+    name,
+    duration,
+    description,
+    tags,
+    md,
+}: Props) => {
     const list = {
         visible: {
             opacity: 1,
@@ -40,22 +48,26 @@ const WorkCard = ({ title, url, name, duration, description, tags, md }: Props) 
 
     return (
         <motion.div
-            className={!md ? "ml-[25px] float-right h-[300px]" : "ml-4 float-right h-[300px]"}
+            className={
+                !md
+                    ? "float-right ml-[25px] h-[300px]"
+                    : "float-right ml-4 h-[300px]"
+            }
             initial="hidden"
             animate="visible"
             key={name}
             variants={list}
         >
             <motion.div variants={itemY}>
-                <motion.p className="inline text-[24px] text-gray-100 font-bold mb-1">
+                <motion.p className="mb-1 inline text-[24px] font-bold text-gray-100">
                     {title}
                 </motion.p>
-                <p className="text-primary-500 inline text-[24px] font-bold">
+                <p className="inline text-[24px] font-bold text-primary-500">
                     {" "}
                     @{" "}
                 </p>
                 <Link
-                    className="hover-animation-dark text-primary-500 inline text-[24px] font-bold"
+                    className="hover-animation-dark inline text-[24px] font-bold text-primary-500"
                     href={url}
                     target="_blank"
                     rel="noreferrer"
@@ -64,7 +76,7 @@ const WorkCard = ({ title, url, name, duration, description, tags, md }: Props) 
                 </Link>
             </motion.div>
             <motion.p
-                className="font-mono text-[20px] text-gray-200 mb-4"
+                className="mb-4 font-mono text-[20px] text-gray-200"
                 variants={itemY}
             >
                 {duration}
@@ -73,7 +85,7 @@ const WorkCard = ({ title, url, name, duration, description, tags, md }: Props) 
                 {description.map((i: string, index: number) => {
                     return (
                         <li
-                            className="before:text-primary-300 relative text-[18px] pl-[30px] pr-0 mb-[10px] list-none before:absolute before:left-0 before:content-['▸'] text-gray-100"
+                            className="relative mb-[10px] list-none pl-[30px] pr-0 text-[18px] text-gray-100 before:absolute before:left-0 before:text-primary-300 before:content-['▸']"
                             key={index}
                         >
                             <p>{i}</p>

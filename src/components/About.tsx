@@ -1,8 +1,9 @@
-import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
+
+import { motion, useAnimation } from "framer-motion";
+import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
-import Link from "next/link";
 import { Button } from "./ui/button";
 
 const About = () => {
@@ -41,18 +42,36 @@ const About = () => {
     return (
         <section id="about">
             <motion.div
-                className="py-[100px] text-gray-200 w-full flex justify-center"
+                className="flex w-full justify-center py-[100px] text-gray-200"
                 initial="hidden"
                 animate={controls}
                 variants={list}
                 ref={ref}
             >
-                <div className="text-[30px] xl:w-[55%] md:w-[70%] w-[85%]">
+                <div className="w-[85%] text-[30px] md:w-[70%] xl:w-[55%]">
                     <motion.p variants={itemY} className="mb-12">
-                        I'm a developer focused on creating exceptional experiences. Currently
-                        studying <Link href="https://admissions.wustl.edu/academics/special-programs/joint-degree-in-business-and-computer-science/" className="hover-animation-dark text-primary-400" target="_blank">CS & business</Link> at <Link href="https://wustl.edu/" className="hover-animation-dark text-primary-400" target="_blank" >Washington University in St. Louis</Link>. Working on building anything and everything.
-                        <br /><br />
-                        Born and raised in New York. I also like photography, piano (jazz especially), tennis, film, and watches.
+                        I&apos;m a developer focused on creating exceptional
+                        experiences. Currently studying{" "}
+                        <Link
+                            href="https://admissions.wustl.edu/academics/special-programs/joint-degree-in-business-and-computer-science/"
+                            className="hover-animation-dark text-primary-400"
+                            target="_blank"
+                        >
+                            CS & business
+                        </Link>{" "}
+                        at{" "}
+                        <Link
+                            href="https://wustl.edu/"
+                            className="hover-animation-dark text-primary-400"
+                            target="_blank"
+                        >
+                            Washington University in St. Louis
+                        </Link>
+                        . Working on building anything and everything.
+                        <br />
+                        <br />
+                        Born and raised in New York. I also like photography,
+                        piano (jazz especially), tennis, film, and watches.
                     </motion.p>
                     <motion.div variants={itemY}>
                         <Button
@@ -62,7 +81,8 @@ const About = () => {
                             onClick={() =>
                                 document
                                     .getElementById("contact")!
-                                    .scrollIntoView()}
+                                    .scrollIntoView()
+                            }
                         >
                             Reach out!
                         </Button>

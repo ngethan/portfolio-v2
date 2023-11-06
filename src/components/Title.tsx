@@ -16,8 +16,8 @@ const Title = ({
                         <span
                             className={
                                 large
-                                    ? "hover:text-primary-500 duration-300 inline align-top"
-                                    : "hover:text-primary-500 border-primary-500 font-mono text-4xl mb-[40px] duration-300 inline-block align-top border-b-[2px]"
+                                    ? "inline align-top duration-300 hover:text-primary-500"
+                                    : "mb-[40px] inline-block border-b-[2px] border-primary-500 align-top font-mono text-4xl duration-300 hover:text-primary-500"
                             }
                             key={i}
                         >

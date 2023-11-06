@@ -1,10 +1,11 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
+
 import { motion, useAnimation } from "framer-motion";
 import { Spin as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { Button } from "./ui/button";
@@ -102,14 +103,14 @@ const Navbar = () => {
     return (
         <motion.div
             id="navbar"
-            className="duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100 z-[999] "
+            className="fixed z-[999] flex h-[50px] w-full items-center justify-between bg-gray-800 px-[50px] py-[40px] text-gray-100 duration-300 "
             initial="hidden"
             animate={controls}
             variants={list}
             ref={ref}
         >
-            <div className="flex flex-col w-full">
-                <div className="justify-between flex w-full md:mb-2">
+            <div className="flex w-full flex-col">
+                <div className="flex w-full justify-between md:mb-2">
                     <motion.div
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -124,10 +125,10 @@ const Navbar = () => {
                         <Link href="/">ETHAN NG</Link>
                     </motion.div>
 
-                    <ul className="hidden md:flex text-[12px] items-center">
+                    <ul className="hidden items-center text-[12px] md:flex">
                         <motion.li variants={item}>
                             <h1
-                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                className="hover-animation-dark duration-300 hover:text-primary-400"
                                 data-section="about"
                                 onClick={handleViewSection}
                             >
@@ -136,7 +137,7 @@ const Navbar = () => {
                         </motion.li>
                         <motion.li variants={item}>
                             <h1
-                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                className="hover-animation-dark duration-300 hover:text-primary-400"
                                 data-section="skills"
                                 onClick={handleViewSection}
                             >
@@ -145,7 +146,7 @@ const Navbar = () => {
                         </motion.li>
                         <motion.li variants={item}>
                             <h1
-                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                className="hover-animation-dark duration-300 hover:text-primary-400"
                                 data-section="work"
                                 onClick={handleViewSection}
                             >
@@ -163,10 +164,13 @@ const Navbar = () => {
                         </motion.li> */}
                         <motion.li variants={item}>
                             <h1
-                                className="hover-animation-dark hover:text-primary-400 duration-300"
+                                className="hover-animation-dark duration-300 hover:text-primary-400"
                                 data-section="writing"
                             >
-                                <Link href="/Ethan%20Ng%20Resume.pdf" target="_blank">
+                                <Link
+                                    href="/Ethan%20Ng%20Resume.pdf"
+                                    target="_blank"
+                                >
                                     RESUME
                                 </Link>
                             </h1>
@@ -183,10 +187,10 @@ const Navbar = () => {
                         </motion.li>
                     </ul>
                 </div>
-                <hr className="md:w-full md:inline hidden" />
+                <hr className="hidden md:inline md:w-full" />
             </div>
 
-            <div className="md:hidden z-[1000]" onClick={handleClick}>
+            <div className="z-[1000] md:hidden" onClick={handleClick}>
                 <Hamburger
                     toggled={nav}
                     toggle={setNav}
@@ -199,13 +203,13 @@ const Navbar = () => {
                 className={
                     !nav
                         ? "hidden"
-                        : "font-mono fixed top-0 left-0 w-full h-full overflow-y-hidden bg-gray-800 flex flex-col justify-center items-center text-lg z-10"
+                        : "fixed left-0 top-0 z-10 flex h-full w-full flex-col items-center justify-center overflow-y-hidden bg-gray-800 font-mono text-lg"
                 }
                 variants={variants}
             >
-                <li className="top-[calc(15%)] fixed">
+                <li className="fixed top-[calc(15%)]">
                     <p
-                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-primary-400"
                         data-section="about"
                         onClick={handleViewSection}
                     >
@@ -213,18 +217,18 @@ const Navbar = () => {
                     </p>
                 </li>
 
-                <li className="top-[calc(27%)] fixed">
+                <li className="fixed top-[calc(27%)]">
                     <p
-                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-primary-400"
                         data-section="skills"
                         onClick={handleViewSection}
                     >
                         SKILLS
                     </p>
                 </li>
-                <li className="top-[calc(39%)] fixed">
+                <li className="fixed top-[calc(39%)]">
                     <p
-                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-primary-400"
                         data-section="work"
                         onClick={handleViewSection}
                     >
@@ -240,9 +244,9 @@ const Navbar = () => {
                         WRITING
                     </p>
                 </li> */}
-                <li className="top-[calc(63%)] fixed">
+                <li className="fixed top-[calc(63%)]">
                     <p
-                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-primary-400"
                         data-section="writing"
                         onClick={handleViewSection}
                     >
@@ -251,9 +255,9 @@ const Navbar = () => {
                         </Link>
                     </p>
                 </li>
-                <li className="top-[calc(75%)] fixed">
+                <li className="fixed top-[calc(75%)]">
                     <p
-                        className="hover-animation-dark hover:text-primary-400 py-6 text-4xl duration-300"
+                        className="hover-animation-dark py-6 text-4xl duration-300 hover:text-primary-400"
                         data-section="contact"
                         onClick={handleViewSection}
                     >

@@ -17,7 +17,7 @@ const Cursor = () => {
     const mouseMoveEvent = (e: MouseEvent) => {
         endX.current = e.clientX;
         endY.current = e.clientY;
-        
+
         const q = document.querySelectorAll(":hover");
         const elType = q[q.length - 1]!.tagName;
         if (
@@ -65,7 +65,7 @@ const Cursor = () => {
     return (
         <div
             id="cursor-container"
-            className="hidden md:block relative top-0 z-[999]"
+            className="relative top-0 z-[999] hidden md:block"
         >
             <div ref={dot} className="cursor-dot"></div>
         </div>

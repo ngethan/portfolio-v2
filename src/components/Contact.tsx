@@ -1,6 +1,7 @@
+import React, { useEffect, useState } from "react";
+
 import axios from "axios";
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Title from "@/components/Title";
@@ -144,11 +145,11 @@ const Contact = () => {
         return (
             <div
                 id="contact"
-                className="py-[100px] bg-transparent text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
+                className="mx-auto flex h-screen w-full max-w-[1075px] flex-col bg-transparent px-4 py-[100px] text-gray-200"
                 ref={ref}
             >
-                <div className="text-7xl sm:text-8xl flex text-gray-100 font-bold ">
-                    <h1 className="hover:text-primary-500 text-4xl mb-[40px] duration-300 inline-block align-top">
+                <div className="flex text-7xl font-bold text-gray-100 sm:text-8xl ">
+                    <h1 className="mb-[40px] inline-block align-top text-4xl duration-300 hover:text-primary-500">
                         Thanks for your message!
                     </h1>
                 </div>
@@ -159,14 +160,14 @@ const Contact = () => {
     return (
         <section id="contact">
             <motion.div
-                className="py-[100px] text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
+                className="mx-auto flex h-screen w-full max-w-[1075px] flex-col px-4 py-[100px] text-gray-200"
                 initial="hidden"
                 animate={controls}
                 variants={list}
                 ref={ref}
             >
                 <motion.div
-                    className="text-7xl sm:text-8xl flex text-gray-100 font-bold "
+                    className="flex text-7xl font-bold text-gray-100 sm:text-8xl "
                     variants={itemY}
                 >
                     <Title text="contact" />
@@ -174,7 +175,7 @@ const Contact = () => {
 
                 <form
                     id="contact_form"
-                    className="font-mono inline-flex flex-wrap justify-between w-full"
+                    className="inline-flex w-full flex-wrap justify-between font-mono"
                     method="post"
                     onSubmit={handleOnSubmit}
                     name="contact"
@@ -182,13 +183,13 @@ const Contact = () => {
                 >
                     <input type="hidden" name="form-name" value="contact" />
                     <motion.div
-                        className="inline-block flex-[1_1_40%] mr-[3%] mb-[30px]"
+                        className="mb-[30px] mr-[3%] inline-block flex-[1_1_40%]"
                         variants={itemY}
                     >
                         <label
                             id="name-label"
                             htmlFor="name"
-                            className="label text-primary-500 relative text-[24px] top-10 duration-300"
+                            className="label relative top-10 text-[24px] text-primary-500 duration-300"
                         >
                             Name
                         </label>
@@ -202,13 +203,13 @@ const Contact = () => {
                         />
                     </motion.div>
                     <motion.div
-                        className="inline-block flex-[1_1_40%] ml-[3%] mb-[30px]"
+                        className="mb-[30px] ml-[3%] inline-block flex-[1_1_40%]"
                         variants={itemY}
                     >
                         <label
                             id="email-label"
                             htmlFor="email"
-                            className="text-primary-500 relative text-[24px] top-10 duration-300"
+                            className="relative top-10 text-[24px] text-primary-500 duration-300"
                         >
                             Email
                         </label>
@@ -222,13 +223,13 @@ const Contact = () => {
                         />
                     </motion.div>
                     <motion.div
-                        className="inline-block w-full mb-[40px]"
+                        className="mb-[40px] inline-block w-full"
                         variants={itemY}
                     >
                         <label
                             id="message-label"
                             htmlFor="message"
-                            className="text-primary-500 relative text-[24px] top-10 duration-300"
+                            className="relative top-10 text-[24px] text-primary-500 duration-300"
                         >
                             Message
                         </label>
@@ -264,7 +265,7 @@ const Contact = () => {
                     <div className="error">Error: {status.info.msg}</div>
                 )}
                 {!status.info.error && status.info.msg && (
-                    <p className="text-red-500 font-bold text-xl">
+                    <p className="text-xl font-bold text-red-500">
                         {status.info.msg}
                     </p>
                 )}
