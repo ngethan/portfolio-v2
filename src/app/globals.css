@@ -248,6 +248,10 @@
     pointer-events: none;
   } */
 
+    button svg {
+        pointer-events: none;
+    }
+
     button span {
         pointer-events: none;
     }
