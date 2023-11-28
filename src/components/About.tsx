@@ -76,7 +76,7 @@ const About = () => {
                     <motion.div variants={itemY}>
                         <Button
                             arrowAnimation
-                            childtext="Reach out!"
+                            childtext="REACH OUT"
                             size="lg"
                             onClick={() =>
                                 document
@@ -84,7 +84,7 @@ const About = () => {
                                     .scrollIntoView()
                             }
                         >
-                            Reach out!
+                            REACH OUT
                         </Button>
                     </motion.div>
                 </div>
