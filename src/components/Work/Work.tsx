@@ -10,6 +10,25 @@ import WorkCard from "./WorkCard";
 
 const workData = [
     {
+        name: "Connect",
+        title: "Co-Founder",
+        url: "https://connectalum.com",
+        duration: "December 2023 - Present",
+        description: [
+            "Developing web-based edTech software using Next.js, Supabase, TailwindCSS, and Prisma",
+            "Signed $50,000 LOI to be adopted by 1 high-school, expecting more by the end of Jan 2024; 3300 active users",
+        ],
+        tags: [
+            "Next.js",
+            "Supabase",
+            "Prisma",
+            "TailwindCSS",
+            "Figma",
+            "shadcn",
+            "Typescript",
+        ],
+    },
+    {
         name: "RadiantAI",
         title: "Software Engineering Intern",
         url: "https://radiantai.health/",
@@ -19,6 +38,26 @@ const workData = [
             "Designing user-centric interfaces in Figma for proprietary medical AI query engine; built designs with Next.js & TailwindCSS; honed through iterative sprints following stakeholder & user feedback",
         ],
         tags: ["Next.js", "TailwindCSS", "Figma", "shadcn", "Typescript"],
+    },
+    {
+        name: "Ethan Ng Technologies, LLC",
+        title: "CEO",
+        url: "https://ethanng.dev/",
+        duration: "September 2020 - December 2023",
+        description: [
+            "Developed software solutions, including websites, Java plugins, and Discord bots for over 50 clients and generated over $150k in revenue across 4 years.",
+            "Executed business strategies, including marketing, client engagement, and revenue growth.",
+            "Spearheaded project management, effectively balancing project timelines, client pitches, and high-quality coding standards.",
+            "Recruited and managed a team of 3 developers, demonstrating leadership skills by delegating tasks and ensuring project completion within deadlines.",
+        ],
+        tags: [
+            "Leadership",
+            "Product Management",
+            "Web Design",
+            "Communication",
+            "Client Engagement",
+            "Marketing",
+        ],
     },
     {
         name: "Muddy Paws Rescue",
@@ -42,18 +81,6 @@ const workData = [
             "Delegated teaching process through training and mentoring interns",
         ],
         tags: ["Python", "Java", "Web Development", "Teaching"],
-    },
-    {
-        name: "NYDEO",
-        title: "Fullstack Developer",
-        url: "https://nydeo.org",
-        duration: "January 2022",
-        description: [
-            "Designed website layout and created mockups",
-            "Used HTML, CSS, JavaScript, and Google Sheets as a database",
-            "Responsible for the general maintenance and upkeep of the website",
-        ],
-        tags: ["HTML", "CSS", "JavaScript"],
     },
     {
         name: "Aetheria",
@@ -172,17 +199,33 @@ const Work = () => {
                         variants={itemX}
                     >
                         <li
-                            id="rad"
+                            id="connect"
                             className="active-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
                             data-work={0}
+                            onClick={handleClick}
+                        >
+                            Connect
+                        </li>
+                        <li
+                            id="rad"
+                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
+                            data-work={1}
                             onClick={handleClick}
                         >
                             RadiantAI
                         </li>
                         <li
+                            id="ent"
+                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
+                            data-work={2}
+                            onClick={handleClick}
+                        >
+                            Freelancing
+                        </li>
+                        <li
                             id="mpr"
                             className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
-                            data-work={1}
+                            data-work={3}
                             onClick={handleClick}
                         >
                             Muddy Paws Rescue
@@ -190,30 +233,22 @@ const Work = () => {
                         <li
                             id="tcs"
                             className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
-                            data-work={2}
+                            data-work={4}
                             onClick={handleClick}
                         >
                             theCoderSchool
                         </li>
                         <li
-                            id="nydeo"
-                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
-                            data-work={3}
-                            onClick={handleClick}
-                        >
-                            NYDEO
-                        </li>
-                        <li
                             id="aetheria"
                             className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
-                            data-work={4}
+                            data-work={5}
                             onClick={handleClick}
                         >
                             Aetheria
                         </li>
                         <div
                             id="selected-indicator-cr"
-                            className={`relative top-0 -mt-[235px] h-[47px] w-[2px] border-l-[2px] border-primary-500 duration-300`}
+                            className={`relative top-0 -mt-[282px] h-[47px] w-[2px] border-l-[2px] border-primary-500 duration-300`}
                         ></div>
                     </motion.ul>
 
@@ -239,18 +274,36 @@ const Work = () => {
                         aria-label="Work"
                     >
                         <li
-                            id="rad-md"
+                            id="connect-md"
                             className="active-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
                             data-work={0}
                             onClick={handleClick}
-                            aria-label="theCoderSchool"
+                            aria-label="Connect Network"
+                        >
+                            Connect
+                        </li>
+                        <li
+                            id="rad-md"
+                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
+                            data-work={1}
+                            onClick={handleClick}
+                            aria-label="RadiantAI"
                         >
                             RadiantAI
                         </li>
                         <li
+                            id="ent-md"
+                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
+                            data-work={2}
+                            onClick={handleClick}
+                            aria-label="Freelancing"
+                        >
+                            Freelancing
+                        </li>
+                        <li
                             id="mpr-md"
                             className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
-                            data-work={1}
+                            data-work={3}
                             onClick={handleClick}
                             aria-label="Muddy Paws Rescue"
                         >
@@ -259,27 +312,18 @@ const Work = () => {
                         <li
                             id="tcs-md"
                             className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
-                            data-work={2}
+                            data-work={4}
                             onClick={handleClick}
                             aria-label="theCoderSchool"
                         >
                             theCoderSchool
                         </li>
                         <li
-                            id="nydeo-md"
-                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
-                            data-work={3}
-                            onClick={handleClick}
-                            aria-label="NYDEO"
-                        >
-                            NYDEO
-                        </li>
-                        <li
                             id="aetheria-md"
                             className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
-                            data-work={4}
+                            data-work={5}
                             onClick={handleClick}
-                            aria-label="AETHERIA"
+                            aria-label="Aetheria"
                         >
                             Aetheria
                         </li>

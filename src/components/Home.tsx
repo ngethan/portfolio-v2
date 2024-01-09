@@ -180,6 +180,14 @@ const Home = () => {
                         >
                             washu
                         </Link>
+                        . co-founder at{" "}
+                        <Link
+                            href="https://connectalum.com/"
+                            className="hover-animation-dark text-gray-100 decoration-gray-300  duration-300 hover:text-primary-400"
+                            target="_blank"
+                        >
+                            connect
+                        </Link>
                         .
                     </motion.p>
                     <motion.div variants={item} className="flex w-full">

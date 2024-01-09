@@ -7,8 +7,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.addMissingImports": true,
-        "source.fixAll.eslint": true
+        "source.addMissingImports": "explicit",
+        "source.fixAll.eslint": "explicit"
     },
     // Multiple language settings for json and jsonc files
     "[json][jsonc]": {

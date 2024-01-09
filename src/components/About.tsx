@@ -67,11 +67,19 @@ const About = () => {
                         >
                             Washington University in St. Louis
                         </Link>
-                        . Working on building anything and everything.
+                        . Currently building{" "}
+                        <Link
+                            href="https://connectalum.com"
+                            target="_blank"
+                            className="hover-animation-dark text-primary-400"
+                        >
+                            Connect
+                        </Link>
+                        , an alumni outreach platform.
                         <br />
                         <br />
                         Born and raised in New York. I also like photography,
-                        piano (jazz especially), tennis, film, and watches.
+                        piano, jazz, tennis, film, and watches.
                     </motion.p>
                     <motion.div variants={itemY}>
                         <Button
