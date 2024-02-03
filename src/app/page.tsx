@@ -10,6 +10,9 @@ import Skills from "@/components/Skills";
 import Socials from "@/components/Socials";
 import Stars from "@/components/Stars";
 import Work from "@/components/Work/Work";
+import Navbar from "@/components/Navbar";
+import Cursor from "@/components/Cursor";
+import Footer from "@/components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +31,8 @@ const Index = () => {
 
     return (
         <>
+            <Navbar />
+            <Cursor />
             <Stars />
             <Home />
             <About />
@@ -35,6 +40,7 @@ const Index = () => {
             <Work />
             <Contact />
             <Socials />
+            <Footer />
         </>
     );
 };
