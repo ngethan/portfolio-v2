@@ -49,9 +49,7 @@ const WorkCard = ({
     return (
         <motion.div
             className={
-                !md
-                    ? "float-right ml-[25px] h-[300px]"
-                    : "float-right ml-4 h-[300px]"
+                !md ? "float-right ml-[25px] h-[500px]" : "float-right ml-4"
             }
             initial="hidden"
             animate="visible"

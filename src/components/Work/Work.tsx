@@ -15,8 +15,10 @@ const workData = [
         url: "https://connectalum.com",
         duration: "December 2023 - Present",
         description: [
-            "Developing web-based edTech software using Next.js, Supabase, TailwindCSS, and Prisma",
-            "Signed $50,000 LOI to be adopted by 1 high-school, expecting more by the end of Jan 2024; 3300 active users",
+            "Served as Chief Technology Officer and Co-Founder, leading the development of web-based educational technology software with over 5000 monthly active users",
+            "Managed a team of 10 developers, overseeing project timelines and deliverables",
+            "Negotiated and secured $50,000 software contracts with Ritenour High School",
+            "Successfully obtained venture capital funding from BLCK VC for the company",
         ],
         tags: [
             "Next.js",
@@ -32,7 +34,7 @@ const workData = [
         name: "RadiantAI",
         title: "Software Engineering Intern",
         url: "https://radiantai.health/",
-        duration: "September 2023 - Present",
+        duration: "September 2023 - January 2024",
         description: [
             "Collaborated directly with founders, formerly of Lyft and Amazon, to redesign UI/UX in efforts to target $2 million seed round",
             "Designing user-centric interfaces in Figma for proprietary medical AI query engine; built designs with Next.js & TailwindCSS; honed through iterative sprints following stakeholder & user feedback",
