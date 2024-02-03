@@ -12,23 +12,25 @@ const page = () => {
             <img src="/hearts.png" alt="hearts" width={300} height={300} />
             <Card className="mt-10 h-[400px] border-none bg-transparent">
                 <CardHeader>
-                    <CardTitle className="text-4xl text-white">
+                    <CardTitle className="text-center text-4xl text-white">
                         Will you be my valentine??
                     </CardTitle>
                 </CardHeader>
                 <CardContent className="flex items-center justify-center space-x-6">
                     <Button
-                        className="mr-[200px] rounded-lg bg-green-500 px-8 py-8 font-sans text-2xl font-bold hover:border-green-600 hover:bg-green-400"
+                        className="rounded-lg bg-green-500 px-8 py-8 font-sans text-2xl font-bold hover:border-green-600 hover:bg-green-400"
                         onClick={() => router.push("/valentine/accepted")}
                     >
                         YES!!!!!
                     </Button>
                     <Button
-                        className="absolute left-[52%] top-[50.5%] rounded-lg px-8 py-8 font-sans text-[8px]"
+                        className="rounded-lg px-8 py-8 font-sans text-[12px]"
                         variant="destructive"
                         onMouseOver={(e) => {
                             const RandomX = Math.random() * 90 + "%";
                             const RandomY = Math.random() * 92 + "%";
+                            (e.target as HTMLElement).style.position =
+                                "absolute";
                             (e.target as HTMLElement).style.left = RandomX;
                             (e.target as HTMLElement).style.top = RandomY;
                         }}

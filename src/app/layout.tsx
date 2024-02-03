@@ -16,7 +16,7 @@ export default function RootLayout({
         >
             <Meta />
             <body>
-                <div className="min-h-screen w-full">
+                <div className="min-h-screen w-full overflow-hidden">
                     <main className="w-full">{children}</main>
                 </div>
             </body>
