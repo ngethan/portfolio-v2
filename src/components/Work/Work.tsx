@@ -192,7 +192,7 @@ const Work = () => {
                     className="name flex text-7xl font-bold text-gray-100 sm:text-8xl"
                     variants={itemY}
                 >
-                    <Title text="my work" />
+                    <Title text="Work" />
                 </motion.div>
 
                 <div className="hidden md:flex">

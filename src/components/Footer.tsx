@@ -26,12 +26,12 @@ const Footer = () => {
     return (
         <section id="footer" ref={ref}>
             <footer className="sticky top-full mb-[20px] flex h-auto w-full flex-col items-center justify-center pb-[20px]">
-                <h1 className="mb-[10px] text-[20px] font-bold text-primary-400">
-                    Ethan Ng&nbsp;&nbsp;
+                <h2 className="mb-[10px] text-[20px] font-bold text-primary-400">
+                    Ethan Ng's&nbsp;&nbsp;
                     <p className="inline-block font-normal text-gray-100">
                         Portfolio
                     </p>
-                </h1>
+                </h2>
                 <ul className="mb-[10px] flex flex-row">
                     <li className="group mx-[15px] my-[20px] px-[5px]">
                         <a

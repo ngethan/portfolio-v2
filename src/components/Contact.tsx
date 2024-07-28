@@ -170,7 +170,7 @@ const Contact = () => {
                     className="flex text-7xl font-bold text-gray-100 sm:text-8xl "
                     variants={itemY}
                 >
-                    <Title text="contact" />
+                    <Title text="Contact" />
                 </motion.div>
 
                 <form

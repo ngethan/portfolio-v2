@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
 
 const Cursor = () => {
@@ -30,7 +28,7 @@ const Cursor = () => {
             dot.current.style.transform = "scale(3)";
             dot.current.style.width = "13px";
             dot.current.style.height = "13px";
-            dot.current.style.backgroundColor = "rgba(255,255,255,0.5)";
+            dot.current.style.backgroundColor = "rgba(255,255,255,0.15)";
         } else {
             dot.current.style.transform = "scale(1)";
             dot.current.style.opacity = "1";

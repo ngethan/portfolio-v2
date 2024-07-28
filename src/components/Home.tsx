@@ -1,101 +1,4 @@
-// import { motion, useAnimation } from "framer-motion";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-// import React, { useEffect, useState } from "react";
-// import { useInView } from "react-intersection-observer";
-
-// const Home = () => {
-//     const controls = useAnimation();
-//     const [ref, inView] = useInView({ threshold: 0.3 });
-//     const [time, setTime] = useState("");
-//     useEffect(() => {
-//         if (inView) {
-//             controls.start("visible");
-//         }
-//     }, [controls, inView]);
-
-//     gsap.registerPlugin(ScrollTrigger);
-
-//     const list = {
-//         visible: {
-//             opacity: 1,
-//             transition: {
-//                 delay: 1.1,
-//                 when: "beforeChildren",
-//                 staggerChildren: 0.05,
-//             },
-//         },
-//         hidden: {
-//             opacity: 0,
-//             transition: {
-//                 when: "afterChildren",
-//             },
-//         },
-//     };
-
-//     const item = {
-//         hidden: { y: -10, opacity: 0 },
-//         visible: {
-//             y: 0,
-//             opacity: 1,
-//         },
-//     };
-
-//     const dateFormatter = new Intl.DateTimeFormat([], {
-//         timeZone: "America/Chicago",
-//         hour: "numeric",
-//         minute: "numeric",
-//         second: "numeric",
-//       });
-
-//       useEffect(() => {
-//         const interval = setInterval(() => setTime(dateFormatter.format(new Date())), 1000);
-//         return () => {
-//           clearInterval(interval);
-//         };
-//       }, []);
-
-//     return (
-//         <>
-//             <motion.div
-//                 id="home"
-//                 className="w-full h-screen justify-center flex items-center -z-[1]"
-//                 initial="hidden"
-//                 animate={controls}
-//                 variants={list}
-//                 ref={ref}
-//             >
-//                 <div>
-//                     <motion.div
-//                         id="name"
-//                         className="2xl:text-[300px] xl:text-[250px] lg:text-[200px] md:text-[150px] sm:text-[100px] text-gray-100 font-semibold text-[60px]"
-//                         variants={item}
-//                     >
-//                         {"ETHAN NG".split("").map((c, index) => {
-//                             return (
-//                                 <span
-//                                     className="hover:text-primary-500 duration-300"
-//                                     key={index}
-//                                 >
-//                                     {c}
-//                                 </span>
-//                             );
-//                         })}
-//                     </motion.div>
-//                 </div>
-//                 <div className="top-[80px] left-[50px] absolute">
-//                     <motion.p variants={item} className="text-gray-300 text-[14px] font-mono">
-//                         STL {time}
-//                     </motion.p>
-//                 </div>
-//             </motion.div>
-//         </>
-//     );
-// };
-
-// export default Home;
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
@@ -107,6 +10,7 @@ import Title from "./Title";
 
 const Home = () => {
     const controls = useAnimation();
+    const [time, setTime] = useState("");
     const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
         if (inView) {
@@ -139,6 +43,23 @@ const Home = () => {
         },
     };
 
+    const dateFormatter = new Intl.DateTimeFormat([], {
+        timeZone: "America/Chicago",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+    });
+
+    useEffect(() => {
+        const interval = setInterval(
+            () => setTime(dateFormatter.format(new Date())),
+            1000
+        );
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
     return (
         <section id="home">
             <motion.div
@@ -165,13 +86,15 @@ const Home = () => {
                         className="flex text-5xl font-bold text-primary-500 sm:text-6xl"
                         variants={item}
                     >
-                        <h2 className="fade-in-out text-[52px]">Developer</h2>
+                        <h2 className="fade-in-out text-[52px]">
+                            Full-Stack Developer
+                        </h2>
                     </motion.div>
                     <motion.p
                         className="my-2 mb-[30px] max-w-[500px] text-lg text-gray-300"
                         variants={item}
                     >
-                        creating beautiful interfaces. currently studying CS and
+                        Creating beautiful interfaces. Currently studying CS and
                         business at{" "}
                         <Link
                             href="https://wustl.edu/"
@@ -180,7 +103,7 @@ const Home = () => {
                         >
                             washu
                         </Link>
-                        . co-founder at{" "}
+                        . Co-founder at{" "}
                         <Link
                             href="https://connectalum.com/"
                             className="hover-animation-dark text-gray-100 decoration-gray-300  duration-300 hover:text-primary-400"
@@ -190,8 +113,9 @@ const Home = () => {
                         </Link>
                         .
                     </motion.p>
-                    <motion.div variants={item} className="flex w-full">
+                    <motion.div variants={item} className="flex w-full gap-6">
                         <Button
+                            className="font-bold"
                             size="lg"
                             variant="default"
                             onClick={() =>
@@ -205,7 +129,29 @@ const Home = () => {
                         >
                             WORK
                         </Button>
+                        <Button
+                            size="lg"
+                            variant="default"
+                            onClick={() =>
+                                document
+                                    .getElementById("contact")!
+                                    .scrollIntoView()
+                            }
+                            aria-label="Contact"
+                            arrowAnimation={true}
+                            childtext="CONTACT"
+                        >
+                            CONTACT
+                        </Button>
                     </motion.div>
+                </div>
+                <div className="absolute left-[50px] top-[80px]">
+                    <motion.p
+                        variants={item}
+                        className="font-mono text-[14px] text-gray-300"
+                    >
+                        STL {time}
+                    </motion.p>
                 </div>
             </motion.div>
         </section>

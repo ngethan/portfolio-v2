@@ -75,7 +75,7 @@ const Skills = () => {
                     className="flex text-7xl font-bold text-gray-100 sm:text-8xl md:pl-4 lg:pl-2"
                     variants={itemY}
                 >
-                    <Title text="skills" />
+                    <Title text="Skills" />
                 </motion.div>
 
                 <div className="hidden flex-row flex-wrap justify-center md:flex">

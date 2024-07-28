@@ -117,18 +117,13 @@ const Navbar = () => {
                         variants={item}
                         className="flex items-center"
                     >
-                        {/* <img
-                    src={icon.src}
-                    className="md:w-[48px] md:h-[48px] w-[32px] h-[32px]"
-                    alt="Logo"
-                /> */}
                         <Link href="/">ETHAN NG</Link>
                     </motion.div>
 
                     <ul className="hidden items-center text-[12px] md:flex">
                         <motion.li variants={item}>
                             <h1
-                                className="hover-animation-dark duration-300 hover:text-primary-400"
+                                className="hover-animation-dark font-semibold duration-300 hover:text-primary-400"
                                 data-section="about"
                                 onClick={handleViewSection}
                             >
@@ -137,7 +132,7 @@ const Navbar = () => {
                         </motion.li>
                         <motion.li variants={item}>
                             <h1
-                                className="hover-animation-dark duration-300 hover:text-primary-400"
+                                className="hover-animation-dark font-semibold duration-300 hover:text-primary-400"
                                 data-section="skills"
                                 onClick={handleViewSection}
                             >
@@ -146,7 +141,7 @@ const Navbar = () => {
                         </motion.li>
                         <motion.li variants={item}>
                             <h1
-                                className="hover-animation-dark duration-300 hover:text-primary-400"
+                                className="hover-animation-dark font-semibold duration-300 hover:text-primary-400"
                                 data-section="work"
                                 onClick={handleViewSection}
                             >
@@ -164,7 +159,7 @@ const Navbar = () => {
                         </motion.li> */}
                         <motion.li variants={item}>
                             <h1
-                                className="hover-animation-dark duration-300 hover:text-primary-400"
+                                className="hover-animation-dark font-semibold duration-300 hover:text-primary-400"
                                 data-section="writing"
                             >
                                 <Link
@@ -181,6 +176,7 @@ const Navbar = () => {
                                 onClick={handleViewSection}
                                 type="button"
                                 aria-label="Contact"
+                                className="font-semibold"
                             >
                                 <span className="text-[12px]">CONTACT</span>
                             </Button>

@@ -50,8 +50,8 @@ const About = () => {
             >
                 <div className="w-[85%] text-[30px] md:w-[70%] xl:w-[55%]">
                     <motion.p variants={itemY} className="mb-12">
-                        I&apos;m a developer focused on creating exceptional
-                        experiences. Currently studying{" "}
+                        I&apos;m a full-stack developer focused on creating
+                        exceptional experiences. I'm currently studying{" "}
                         <Link
                             href="https://admissions.wustl.edu/academics/special-programs/joint-degree-in-business-and-computer-science/"
                             className="hover-animation-dark text-primary-400"
@@ -67,7 +67,7 @@ const About = () => {
                         >
                             Washington University in St. Louis
                         </Link>
-                        . Currently building{" "}
+                        . I'm currently building{" "}
                         <Link
                             href="https://connectalum.com"
                             target="_blank"
@@ -79,7 +79,7 @@ const About = () => {
                         <br />
                         <br />
                         Born and raised in New York. I also like photography,
-                        piano, jazz, tennis, film, and watches.
+                        piano, jazz, tennis, film, and watches :)
                     </motion.p>
                     <motion.div variants={itemY}>
                         <Button
