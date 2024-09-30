@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import { PointMaterial, Points } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as random from "maath/random/dist/maath-random.cjs";
@@ -44,7 +43,7 @@ const Stars = () => {
 
         const ref = useRef(null as any);
         const [sphere] = useState(() =>
-            random.inSphere(new Float32Array(5000), { radius: 1.5 })
+            random.inSphere(new Float32Array(1500), { radius: 1.5 })
         );
         useFrame((_state, delta) => {
             ref.current!.rotation.x += (delta * globalCoords.x) / 2;
