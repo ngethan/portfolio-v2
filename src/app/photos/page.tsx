@@ -58,9 +58,11 @@ export default async function Page() {
         "CB1CE155-7421-4009-9964-B99E40C11750-28299-000005192D81407C.JPG",
     ];
 
+    const imageGrid = await ImageGrid({ images });
+
     return (
         <div className="my-2 w-full">
-            <ImageGrid images={images} />
+            {imageGrid}
         </div>
     );
 }
