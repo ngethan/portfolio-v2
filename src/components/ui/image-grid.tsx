@@ -1,22 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import styles from "../../styles/photos.module.css";
-import { useState, useEffect } from "react";
 
-const ImageGrid = () => {
-    const [images, setImages] = useState<string[]>([]);
-
-    useEffect(() => {
-        const fetchImages = async () => {
-            const res = await fetch("/api/photos");
-            const imageList = await res.json();
-            setImages(imageList.reverse());
-        };
-
-        fetchImages();
-    }, []);
-
+const ImageGrid = ({ images }: { images: string[] }) => {
     return (
         <div className={`${styles.gridContainer} mx-2 w-full`}>
             {images.map((image, index) => (
