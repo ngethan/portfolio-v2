@@ -171,6 +171,15 @@ const Navbar = () => {
                             </h1>
                         </motion.li>
                         <motion.li variants={item}>
+                            <Link
+                                href="/photos"
+                                target="_blank"
+                                className="hover-animation-dark font-semibold duration-300 hover:text-primary-400"
+                            >
+                                PHOTOS
+                            </Link>
+                        </motion.li>
+                        <motion.li variants={item}>
                             <Button
                                 data-section="contact"
                                 onClick={handleViewSection}
@@ -243,11 +252,17 @@ const Navbar = () => {
                 <li className="fixed top-[calc(63%)]">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-primary-400"
-                        data-section="writing"
                         onClick={handleViewSection}
                     >
                         <Link href="/Ethan_Ng_Resume" target="_blank">
                             RESUME
+                        </Link>
+                    </p>
+                </li>
+                <li className="fixed top-[calc(63%)]">
+                    <p className="hover-animation-dark py-6 text-4xl duration-300 hover:text-primary-400">
+                        <Link href="/photos" target="_blank">
+                            PHOTOS
                         </Link>
                     </p>
                 </li>

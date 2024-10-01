@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../styles/globals.css";
 
 import { GeistMono, GeistSans } from "geist/font";
 

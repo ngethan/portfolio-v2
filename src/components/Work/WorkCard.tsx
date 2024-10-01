@@ -5,7 +5,7 @@ import { Badge } from "../ui/badge";
 
 interface Props {
     title: string;
-    url: string;
+    url?: string;
     name: string;
     duration: string;
     description: string[];
@@ -64,14 +64,20 @@ const WorkCard = ({
                     {" "}
                     @{" "}
                 </p>
-                <Link
-                    className="hover-animation-dark inline text-[24px] font-bold text-primary-500"
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    {name}
-                </Link>
+                {url ? (
+                    <Link
+                        className="hover-animation-dark inline text-[24px] font-bold text-primary-500"
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {name}
+                    </Link>
+                ) : (
+                    <p className="hover-animation-dark inline text-[24px] font-bold text-primary-500">
+                        {name}
+                    </p>
+                )}
             </motion.div>
             <motion.p
                 className="mb-4 font-mono text-[20px] text-gray-200"

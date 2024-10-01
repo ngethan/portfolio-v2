@@ -1,0 +1,22 @@
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image {
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}

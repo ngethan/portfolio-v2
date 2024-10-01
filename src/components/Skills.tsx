@@ -1,28 +1,27 @@
 import React, { useEffect } from "react";
 
 import { motion, useAnimation } from "framer-motion";
-import { DiGit, DiHeroku, DiHtml5, DiMongodb, DiSass } from "react-icons/di";
+import { DiGit, DiMongodb } from "react-icons/di";
 import {
     FaAws,
-    FaCss3,
     FaJava,
-    FaNodeJs,
     FaPython,
     FaReact,
-    FaSquarespace,
-    FaWordpressSimple,
+    FaPhp,
+    FaDatabase,
+    FaLinux,
 } from "react-icons/fa";
 import { GrSwift } from "react-icons/gr";
 import {
     SiFlutter,
     SiJavascript,
-    SiNetlify,
-    SiSupabase,
     SiTailwindcss,
     SiTypescript,
-    SiFirebase,
+    SiCplusplus,
+    SiDart,
+    SiC,
 } from "react-icons/si";
-import { TbBrandNextjs, TbBrandVercel } from "react-icons/tb";
+import { TbBrandNextjs } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 
 import Title from "@/components/Title";
@@ -79,57 +78,47 @@ const Skills = () => {
                 </motion.div>
 
                 <div className="hidden flex-row flex-wrap justify-center md:flex">
-                    <Skill name="HTML" icon={DiHtml5} />
-                    <Skill name="CSS" icon={FaCss3} />
-                    <Skill name="Sass" icon={DiSass} />
-                    <Skill name="TailwindCSS" icon={SiTailwindcss} />
                     <Skill name="JavaScript" icon={SiJavascript} />
                     <Skill name="TypeScript" icon={SiTypescript} />
-                    <Skill name="Node.js" icon={FaNodeJs} />
                     <Skill name="Python" icon={FaPython} />
                     <Skill name="Java" icon={FaJava} />
+                    <Skill name="PHP" icon={FaPhp} />
+                    <Skill name="C" icon={SiC} />
+                    <Skill name="C++" icon={SiCplusplus} />
+                    <Skill name="Dart" icon={SiDart} />
+                    <Skill name="Swift" icon={GrSwift} />
+                    <Skill name="SQL" icon={FaDatabase} />
                     <Skill name="React.js" icon={FaReact} />
                     <Skill name="Next.js" icon={TbBrandNextjs} />
-                    <Skill name="Flutter" icon={SiFlutter} />
                     <Skill name="React Native" icon={FaReact} />
-                    <Skill name="Swift" icon={GrSwift} />
-                    <Skill name="Git" icon={DiGit} />
-                    <Skill name="Firebase" icon={SiFirebase} />
-                    <Skill name="Supabase" icon={SiSupabase} />
+                    <Skill name="Flutter" icon={SiFlutter} />
                     <Skill name="MongoDB" icon={DiMongodb} />
-                    <Skill name="Squarespace" icon={FaSquarespace} />
-                    <Skill name="Wordpress" icon={FaWordpressSimple} />
-                    <Skill name="Vercel" icon={TbBrandVercel} />
-                    <Skill name="Netlify" icon={SiNetlify} />
-                    <Skill name="Heroku" icon={DiHeroku} />
+                    <Skill name="TailwindCSS" icon={SiTailwindcss} />
+                    <Skill name="Git" icon={DiGit} />
                     <Skill name="AWS" icon={FaAws} />
+                    <Skill name="Linux" icon={FaLinux} />
                 </div>
 
                 <div className="flex flex-row flex-wrap justify-center md:hidden">
-                    <Skill name="HTML" icon={DiHtml5} noName />
-                    <Skill name="CSS" icon={FaCss3} noName />
-                    <Skill name="Sass" icon={DiSass} noName />
-                    <Skill name="TailwindCSS" icon={SiTailwindcss} noName />
                     <Skill name="JavaScript" icon={SiJavascript} noName />
                     <Skill name="TypeScript" icon={SiTypescript} noName />
-                    <Skill name="Node.js" icon={FaNodeJs} noName />
                     <Skill name="Python" icon={FaPython} noName />
                     <Skill name="Java" icon={FaJava} noName />
+                    <Skill name="PHP" icon={FaPhp} noName />
+                    <Skill name="C" icon={SiC} noName />
+                    <Skill name="C++" icon={SiCplusplus} noName />
+                    <Skill name="Dart" icon={SiDart} noName />
+                    <Skill name="Swift" icon={GrSwift} noName />
+                    <Skill name="SQL" icon={FaDatabase} noName />
                     <Skill name="React.js" icon={FaReact} noName />
                     <Skill name="Next.js" icon={TbBrandNextjs} noName />
-                    <Skill name="Flutter" icon={SiFlutter} noName />
                     <Skill name="React Native" icon={FaReact} noName />
-                    <Skill name="Swift" icon={GrSwift} noName />
-                    <Skill name="Git" icon={DiGit} noName />
-                    <Skill name="Firebase" icon={SiFirebase} noName />
-                    <Skill name="Supabase" icon={SiSupabase} noName />
+                    <Skill name="Flutter" icon={SiFlutter} noName />
                     <Skill name="MongoDB" icon={DiMongodb} noName />
-                    <Skill name="Squarespace" icon={FaSquarespace} noName />
-                    <Skill name="Wordpress" icon={FaWordpressSimple} noName />
-                    <Skill name="Vercel" icon={TbBrandVercel} noName />
-                    <Skill name="Netlify" icon={SiNetlify} noName />
-                    <Skill name="Heroku" icon={DiHeroku} noName />
+                    <Skill name="TailwindCSS" icon={SiTailwindcss} noName />
+                    <Skill name="Git" icon={DiGit} noName />
                     <Skill name="AWS" icon={FaAws} noName />
+                    <Skill name="Linux" icon={FaLinux} noName />
                 </div>
             </motion.div>
         </section>

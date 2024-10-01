@@ -11,7 +11,7 @@ import Navbar from "@/components/Navbar";
 import Cursor from "@/components/Cursor";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const Page = () => {
     return (
         <>
             <Navbar />
@@ -28,4 +28,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default Page;

@@ -101,7 +101,7 @@ const Home = () => {
                             className="hover-animation-dark text-gray-100 decoration-gray-300  duration-300 hover:text-primary-400"
                             target="_blank"
                         >
-                            washu
+                            WashU
                         </Link>
                         . Co-founder at{" "}
                         <Link
@@ -109,7 +109,7 @@ const Home = () => {
                             className="hover-animation-dark text-gray-100 decoration-gray-300  duration-300 hover:text-primary-400"
                             target="_blank"
                         >
-                            connect
+                            Connect
                         </Link>
                         .
                     </motion.p>

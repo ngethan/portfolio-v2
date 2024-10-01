@@ -15,31 +15,20 @@ const workData = [
         url: "https://connectalum.com",
         duration: "December 2023 - Present",
         description: [
-            "Served as Chief Technology Officer and Co-Founder, leading the development of web-based educational technology software with over 5000 monthly active users",
-            "Managed a team of 10 developers, overseeing project timelines and deliverables",
-            "Negotiated and secured $50,000 software contracts with Ritenour High School",
-            "Successfully obtained venture capital funding from BLCK VC for the company",
+            "Leading the development of web and mobile-based educational technology software with over 5000 monthly active users using Next.js, React Native, TRPC, and PostgreSQL",
+            "Engineered a scalable real - time chat application handling 5000 + monthly active users, implemented efficient post and user search using embeddings, and automated hosting pipelines with SST, OpenNext, and EC2, achieving a 15% increase in system uptime",
+            "Negotiated and secured software contracts with 4 organizations grossing over $60K in annual revenue",
+            "Received non-dilutive funding from WashU Skandalaris IdeaBounce and Washu Olin Business Cup",
         ],
         tags: [
             "Next.js",
-            "Supabase",
-            "Prisma",
+            "React Native",
+            "PostgreSQL",
+            "DrizzleORM",
             "TailwindCSS",
-            "Figma",
-            "shadcn",
-            "Typescript",
+            "SST",
+            "EC2",
         ],
-    },
-    {
-        name: "RadiantAI",
-        title: "Software Engineering Intern",
-        url: "https://radiantai.health/",
-        duration: "September 2023 - January 2024",
-        description: [
-            "Collaborated directly with founders, formerly of Lyft and Amazon, to redesign UI/UX in efforts to target $2 million seed round",
-            "Designing user-centric interfaces in Figma for proprietary medical AI query engine; built designs with Next.js & TailwindCSS; honed through iterative sprints following stakeholder & user feedback",
-        ],
-        tags: ["Next.js", "TailwindCSS", "Figma", "shadcn", "Typescript"],
     },
     {
         name: "Ethan Ng Technologies, LLC",
@@ -47,10 +36,9 @@ const workData = [
         url: "https://ethanng.dev/",
         duration: "September 2020 - December 2023",
         description: [
-            "Developed software solutions, including websites, Java plugins, and Discord bots for over 50 clients and generated over $150k in revenue across 4 years.",
-            "Executed business strategies, including marketing, client engagement, and revenue growth.",
-            "Spearheaded project management, effectively balancing project timelines, client pitches, and high-quality coding standards.",
-            "Recruited and managed a team of 3 developers, demonstrating leadership skills by delegating tasks and ensuring project completion within deadlines.",
+            "Developed software solutions, including websites, Java plugins, mobile apps, and Discord bots for over 50 clients and generated over $150K in revenue across 4 years",
+            "Led project management, maintaining a 98% on-time delivery rate & 92% satisfaction rate across over 70 projects",
+            "Recruited and managed a team of 3 developers and a contract manager, demonstrating leadership skills",
         ],
         tags: [
             "Leadership",
@@ -58,19 +46,40 @@ const workData = [
             "Web Design",
             "Communication",
             "Client Engagement",
-            "Marketing",
         ],
     },
     {
-        name: "Muddy Paws Rescue",
-        title: "Website Developer",
-        url: "https://muddypawsrescue.org/",
-        duration: "October 2021 - June 2023",
+        name: "DevSTAC",
+        title: "Developer",
+        url: "https://techden.wustl.edu/programs/devstac-2-2/",
+        duration: "June 2024 - Present",
         description: [
-            "Worked closely with marketing & website directors to conceptualize website layout and functionality; constantly improved design through user feedback",
-            "Utilized languages and technologies like HTML, CSS, JavaScript, Salesforce, and Squarespace",
+            "Developed robust analytics software for Moelis Asset Management to track profiles in the private equity sector using TypeScript, PostgreSQL, and Tableau",
+            "Assisted WashU's Office of Sustainability in developing a mobile app to display dynamic UI based on consumers' energy type and spending habits using React Native",
+            "Work closely with clients to discuss project deliverables and timelines",
         ],
-        tags: ["HTML", "CSS", "Javascript", "Salesforce"],
+        tags: ["Client Engagement", "Product Management"],
+    },
+    {
+        name: "BloomPal",
+        title: "Lead Software Engineer",
+        url: "https://bloompal-wellness.com/",
+        duration: "December 2023 - May 2024",
+        description: [
+            "Led a team of 4 engineers to develop a stress-tracking mobile app with Swift and published it to the app store",
+            "Trained LLM to parse Apple HealthKit data into personalized recommendations on alleviating stress",
+        ],
+        tags: ["Swift", "Apple HealthKit", "Product Management"],
+    },
+    {
+        name: "RadiantAI",
+        title: "Software Engineering Intern",
+        duration: "September 2023 - January 2024",
+        description: [
+            "Collaborated directly with founders, formerly of Lyft and Amazon, to redesign UI/UX in efforts to target $2 million seed round; helped to increase average user retention by around 10%",
+            "Designing user-centric interfaces in Figma for proprietary medical AI query engine; built designs with Next.js & TailwindCSS; honed through iterative sprints following stakeholder & user feedback",
+        ],
+        tags: ["Next.js", "TailwindCSS", "Figma", "shadcn", "Typescript"],
     },
     {
         name: "theCoderSchool",
@@ -78,8 +87,8 @@ const workData = [
         url: "https://thecoderschool.com/",
         duration: "September 2021 - March 2023",
         description: [
-            "Taught beginner and intermediate programmers; fostered a productive and respectful learning environment; utilized feedback loops to perfect teaching strategies",
-            "Taught Python, Java, JavaScript, HTML, and CSS",
+            "Taught over 50 beginner and intermediate programmers; fostered a productive and respectful learning environment; utilized feedback loops to perfect teaching strategies",
+            "Created tailored learning curriculums for Python, Java, JavaScript, HTML, and CSS",
             "Delegated teaching process through training and mentoring interns",
         ],
         tags: ["Python", "Java", "Web Development", "Teaching"],
@@ -209,33 +218,41 @@ const Work = () => {
                             Connect
                         </li>
                         <li
-                            id="rad"
-                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
-                            data-work={1}
-                            onClick={handleClick}
-                        >
-                            RadiantAI
-                        </li>
-                        <li
                             id="ent"
                             className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
-                            data-work={2}
+                            data-work={1}
                             onClick={handleClick}
                         >
                             Freelancing
                         </li>
                         <li
-                            id="mpr"
+                            id="devstac"
+                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
+                            data-work={2}
+                            onClick={handleClick}
+                        >
+                            DevSTAC
+                        </li>
+                        <li
+                            id="bloompal"
                             className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
                             data-work={3}
                             onClick={handleClick}
                         >
-                            Muddy Paws Rescue
+                            BloomPal
+                        </li>
+                        <li
+                            id="rad"
+                            className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
+                            data-work={4}
+                            onClick={handleClick}
+                        >
+                            RadiantAI
                         </li>
                         <li
                             id="tcs"
                             className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
-                            data-work={4}
+                            data-work={5}
                             onClick={handleClick}
                         >
                             theCoderSchool
@@ -243,7 +260,7 @@ const Work = () => {
                         <li
                             id="aetheria"
                             className="inactive-work inline-flex h-[47px] items-center whitespace-nowrap border-l-[2px] border-gray-400 py-4 text-left duration-300"
-                            data-work={5}
+                            data-work={6}
                             onClick={handleClick}
                         >
                             Aetheria
@@ -285,36 +302,45 @@ const Work = () => {
                             Connect
                         </li>
                         <li
-                            id="rad-md"
-                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
-                            data-work={1}
-                            onClick={handleClick}
-                            aria-label="RadiantAI"
-                        >
-                            RadiantAI
-                        </li>
-                        <li
                             id="ent-md"
                             className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
-                            data-work={2}
+                            data-work={1}
                             onClick={handleClick}
                             aria-label="Freelancing"
                         >
                             Freelancing
                         </li>
                         <li
-                            id="mpr-md"
+                            id="devstac-md"
+                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
+                            data-work={2}
+                            onClick={handleClick}
+                            aria-label="Connect Network"
+                        >
+                            DevSTAC
+                        </li>
+                        <li
+                            id="bloompal-md"
                             className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
                             data-work={3}
                             onClick={handleClick}
-                            aria-label="Muddy Paws Rescue"
+                            aria-label="Connect Network"
                         >
-                            Muddy Paws Rescue
+                            BloomPal
+                        </li>
+                        <li
+                            id="rad-md"
+                            className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
+                            data-work={4}
+                            onClick={handleClick}
+                            aria-label="RadiantAI"
+                        >
+                            RadiantAI
                         </li>
                         <li
                             id="tcs-md"
                             className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
-                            data-work={4}
+                            data-work={5}
                             onClick={handleClick}
                             aria-label="theCoderSchool"
                         >
@@ -323,7 +349,7 @@ const Work = () => {
                         <li
                             id="aetheria-md"
                             className="inactive-work-md flex items-center justify-center whitespace-nowrap border-b-[2px] py-4 duration-300"
-                            data-work={5}
+                            data-work={6}
                             onClick={handleClick}
                             aria-label="Aetheria"
                         >
