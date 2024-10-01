@@ -8,7 +8,7 @@ module.exports = withBundleAnalyzer({
         dirs: ["."],
     },
     images: {
-        unoptimized: true,
+        unoptimized: false,
     },
     poweredByHeader: false,
     trailingSlash: true,

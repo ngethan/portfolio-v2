@@ -18,5 +18,4 @@
 
 .image {
     object-fit: cover;
-    transition: opacity 0.5s ease;
 }

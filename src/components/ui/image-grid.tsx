@@ -1,13 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import styles from "../../styles/photos.module.css";
+import { memo } from "react";
 
-const ImageGrid = ({ images }: { images: string[] }) => {
+interface ImageGridProps {
+    images: { filename: string; base64: string }[];
+}
+
+const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
     return (
         <div className={`${styles.gridContainer} mx-2 w-full`}>
             {images.map((image, index) => (
                 <div key={index} className={styles.imageWrapper}>
-                    <Image
-                        src={`/assets/photos/${image}`}
+                    <MemoizedImage
+                        src={`/assets/photos/${image.filename}`}
                         alt={`Photo ${index + 1}`}
                         width={828}
                         height={1104}
@@ -16,10 +23,10 @@ const ImageGrid = ({ images }: { images: string[] }) => {
                             width: "100%",
                             height: "100%",
                         }}
-                        placeholder="blur"
-                        blurDataURL={`/assets/photos/${image}`}
+                        placeholder={image.base64 ? "blur" : "empty"}
+                        blurDataURL={image.base64}
                         className={styles.image}
-                        loading={index < 2 ? "eager" : "lazy"}
+                        loading="eager"
                     />
                 </div>
             ))}
@@ -28,3 +35,5 @@ const ImageGrid = ({ images }: { images: string[] }) => {
 };
 
 export default ImageGrid;
+
+const MemoizedImage = memo(Image);

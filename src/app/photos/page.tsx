@@ -1,22 +1,20 @@
-// import path from "path";
-// import fs from "fs";
+import path from "path";
 import ImageGrid from "../../components/ui/image-grid";
 import { Metadata } from "next";
+import fs from "fs";
 
 export const metadata: Metadata = {
     title: "Photos",
 };
 
-// async function getImages() {
-//     const photosDir = path.join(process.cwd(), "public/assets/photos");
-//     const files = fs.readdirSync(photosDir);
-//     const images = files.filter((file) =>
-//         /\.(jpg|jpeg|png|gif|webp)$/i.test(file)
-//     );
-
-//     console.log(images.reverse());
-//     return images.reverse();
-// }
+const getBase64FromImage = (imagePath: string) => {
+    const imageBuffer = fs.readFileSync(imagePath);
+    const base64String = imageBuffer.toString("base64");
+    const mimeType = path.extname(imagePath).includes("png")
+        ? "image/png"
+        : "image/jpeg";
+    return `data:${mimeType};base64,${base64String}`;
+};
 
 export default async function Page() {
     const images = [
@@ -62,9 +60,16 @@ export default async function Page() {
         "CB1CE155-7421-4009-9964-B99E40C11750-28299-000005192D81407C.JPG",
     ];
 
+    const base64Images = images.map((image) => ({
+        filename: image,
+        base64: getBase64FromImage(
+            path.join(path.join(process.cwd(), "public/assets/photos"), image)
+        ),
+    }));
+
     return (
         <div className="my-2 w-full">
-            <ImageGrid images={images} />
+            <ImageGrid images={base64Images} />
         </div>
     );
 }
