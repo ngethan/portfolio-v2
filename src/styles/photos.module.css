@@ -4,7 +4,13 @@
     gap: 8px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1367px) {
+    .gridContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 919px) {
     .gridContainer {
         grid-template-columns: 1fr;
     }
