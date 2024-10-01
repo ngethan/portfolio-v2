@@ -40,7 +40,6 @@ export default async function Page() {
         "DSCF4974.JPG",
         "DSCF4922.JPG",
         "DSCF4551.JPG",
-        "DSCF4551 2.JPG",
         "DSCF4432.JPG",
         "DSCF4403.JPG",
         "DSCF4399.JPG",
@@ -60,9 +59,5 @@ export default async function Page() {
 
     const imageGrid = await ImageGrid({ images });
 
-    return (
-        <div className="my-2 w-full">
-            {imageGrid}
-        </div>
-    );
+    return <div className="my-2 w-full">{imageGrid}</div>;
 }
