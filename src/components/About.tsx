@@ -78,8 +78,16 @@ const About = () => {
                         , an alumni outreach platform.
                         <br />
                         <br />
-                        Born and raised in New York. I also like photography,
-                        piano, jazz, tennis, film, and watches :)
+                        Born and raised in New York. I also like{" "}
+                        <Link
+                            href="/photos"
+                            target="_blank"
+                            className="hover-animation-dark text-primary-400"
+                        >
+                            photography 📸
+                        </Link>
+                        , piano 🎹, jazz 🎷, tennis 🎾, film 🎥, and watches ⌚
+                        :)
                     </motion.p>
                     <motion.div variants={itemY}>
                         <Button
