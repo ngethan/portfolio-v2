@@ -4,8 +4,8 @@ import axios from "axios";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import Title from "@/components/Title";
 import { Button } from "@/components/ui/button";
+import Title from "@/components/ui/title";
 
 const Contact = () => {
     const controls = useAnimation();

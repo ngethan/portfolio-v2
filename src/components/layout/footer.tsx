@@ -4,8 +4,8 @@ import { useEffect } from "react";
 
 import { useAnimation } from "framer-motion";
 import { FiGithub, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
-import { useInView } from "react-intersection-observer";
 import { SiMonkeytype } from "react-icons/si";
+import { useInView } from "react-intersection-observer";
 
 const Footer = () => {
     const controls = useAnimation();
@@ -27,7 +27,7 @@ const Footer = () => {
         <section id="footer" ref={ref}>
             <footer className="sticky top-full mb-[20px] flex h-auto w-full flex-col items-center justify-center pb-[20px]">
                 <h2 className="mb-[10px] text-[20px] font-bold text-primary-400">
-                    Ethan Ng's&nbsp;&nbsp;
+                    Ethan Ng&apos;s&nbsp;&nbsp;
                     <p className="inline-block font-normal text-gray-100">
                         Portfolio
                     </p>
@@ -100,7 +100,7 @@ const Footer = () => {
                     </li>
                 </ul>
                 <a
-                    href="https://github.com/ngethan/"
+                    href="https://github.com/ngethan/portfolio-v2"
                     target="_blank"
                     rel="noreferrer"
                     className="hover-animation-dark font-mono text-[16px] text-gray-100 duration-300 hover:text-primary-400"

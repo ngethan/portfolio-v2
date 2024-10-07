@@ -1,5 +1,6 @@
-import ImageGrid from "../../components/ui/image-grid";
 import { Metadata } from "next";
+
+import ImageGrid from "../../components/ui/image-grid";
 
 export const metadata: Metadata = {
     title: "Photos",

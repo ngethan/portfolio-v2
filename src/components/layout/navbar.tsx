@@ -8,7 +8,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useInView } from "react-intersection-observer";
 
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);

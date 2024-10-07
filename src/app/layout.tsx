@@ -2,7 +2,7 @@ import "../styles/globals.css";
 
 import { GeistMono, GeistSans } from "geist/font";
 
-import { Meta } from "@/components/Meta";
+import { Meta } from "@/components/layout/SEO";
 
 export default function RootLayout({
     children,

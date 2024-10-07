@@ -1,12 +1,15 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
-import { Button } from "@/components/ui/button";
+
 import { useRouter } from "next/navigation";
 
-const page = () => {
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const Page = () => {
     const router = useRouter();
+
     return (
         <div className="flex h-screen w-full flex-col items-center justify-center bg-[#FBA5A0]">
             <img src="/hearts.png" alt="hearts" width={300} height={300} />
@@ -27,8 +30,8 @@ const page = () => {
                         className="rounded-lg px-8 py-8 font-sans text-[12px]"
                         variant="destructive"
                         onMouseOver={(e) => {
-                            const RandomX = Math.random() * 90 + "%";
-                            const RandomY = Math.random() * 92 + "%";
+                            const RandomX = `${Math.random() * 90}%`;
+                            const RandomY = `${Math.random() * 92}%`;
                             (e.target as HTMLElement).style.position =
                                 "absolute";
                             (e.target as HTMLElement).style.left = RandomX;
@@ -43,4 +46,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

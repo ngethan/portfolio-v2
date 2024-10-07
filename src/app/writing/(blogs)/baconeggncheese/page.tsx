@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
+
+import Link from "next/link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
-import Stars from "@/components/Stars";
+import Stars from "@/components/stars";
 
 export default function WritingPage() {
     return (

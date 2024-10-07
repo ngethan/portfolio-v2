@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 import { Button } from "@/components/ui/button";
 
-import Title from "./Title";
+import Title from "../ui/title";
 
 const Home = () => {
     const controls = useAnimation();
@@ -83,10 +83,10 @@ const Home = () => {
                     </motion.div>
 
                     <motion.div
-                        className="flex text-5xl font-bold text-primary-500 sm:text-6xl"
+                        className="flex font-bold text-primary-500 sm:text-6xl"
                         variants={item}
                     >
-                        <h2 className="fade-in-out text-[52px]">
+                        <h2 className="fade-in-out text-3xl md:text-[52px]">
                             Full-Stack Developer
                         </h2>
                     </motion.div>

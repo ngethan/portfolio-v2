@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
 
-import Navbar from "@/components/Navbar";
-import Stars from "@/components/Stars";
+import Link from "next/link";
+
+import Navbar from "@/components/navbar";
+import Stars from "@/components/stars";
 
 const Writing = () => {
     const blogs = [

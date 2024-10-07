@@ -1,12 +1,119 @@
 import React, { useEffect, useState } from "react";
 
 import { motion, useAnimation } from "framer-motion";
+import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
-import Title from "@/components/Title";
+import { Badge } from "@/components/ui/badge";
+import Delayed from "@/components/ui/delayed";
+import Title from "@/components/ui/title";
 
-import Delayed from "../Delayed";
-import WorkCard from "./WorkCard";
+export interface WorkCardProps {
+    title: string;
+    url?: string;
+    name: string;
+    duration: string;
+    description: string[];
+    tags?: string[];
+    md?: boolean;
+}
+
+const WorkCard = ({
+    title,
+    url,
+    name,
+    duration,
+    description,
+    tags,
+    md,
+}: WorkCardProps) => {
+    const list = {
+        visible: {
+            opacity: 1,
+            transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.05,
+            },
+        },
+        hidden: {
+            opacity: 0,
+            transition: {
+                when: "afterChildren",
+            },
+        },
+    };
+
+    const itemY = {
+        hidden: { y: -10, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+        },
+    };
+
+    return (
+        <motion.div
+            className={
+                !md ? "float-right ml-[25px] h-[500px]" : "float-right ml-4"
+            }
+            initial="hidden"
+            animate="visible"
+            key={name}
+            variants={list}
+        >
+            <motion.div variants={itemY}>
+                <motion.p className="mb-1 inline text-[24px] font-bold text-gray-100">
+                    {title}
+                </motion.p>
+                <p className="inline text-[24px] font-bold text-primary-500">
+                    {" "}
+                    @{" "}
+                </p>
+                {url ? (
+                    <Link
+                        className="hover-animation-dark inline text-[24px] font-bold text-primary-500"
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {name}
+                    </Link>
+                ) : (
+                    <p className="hover-animation-dark inline text-[24px] font-bold text-primary-500">
+                        {name}
+                    </p>
+                )}
+            </motion.div>
+            <motion.p
+                className="mb-4 font-mono text-[20px] text-gray-200"
+                variants={itemY}
+            >
+                {duration}
+            </motion.p>
+            <motion.ul variants={itemY}>
+                {description.map((i: string, index: number) => {
+                    return (
+                        <li
+                            className="relative mb-[10px] list-none pl-[30px] pr-0 text-[18px] text-gray-100 before:absolute before:left-0 before:text-primary-300 before:content-['▸']"
+                            key={index}
+                        >
+                            <p>{i}</p>
+                        </li>
+                    );
+                })}
+            </motion.ul>
+            <motion.div variants={itemY}>
+                {tags?.map((t, key) => {
+                    return (
+                        <Badge className="mr-1" key={key}>
+                            {t}
+                        </Badge>
+                    );
+                })}
+            </motion.div>
+        </motion.div>
+    );
+};
 
 const workData = [
     {
@@ -372,40 +479,6 @@ const Work = () => {
                 </div>
             </motion.div>
         </section>
-        // <section id="work">
-        //     <motion.div
-        //         className="py-[100px] text-gray-200 w-full max-w-[850px] mx-auto px-4 flex flex-col"
-        //         initial="hidden"
-        //         animate={controls}
-        //         variants={list}
-        //         ref={ref}
-        //     >
-        //         <motion.div
-        //             className="name text-7xl sm:text-8xl flex text-gray-100 font-bold"
-        //             variants={itemY}
-        //         >
-        //             <Title text="work" />
-        //         </motion.div>
-
-        //         <div className="">
-        //             <motion.ul className="grid" variants={itemX}>
-        //                 {workData.map((w) => {
-        //                     return (
-        //                         <WorkCard
-        //                             key={w.name}
-        //                             title={w.title}
-        //                             url={w.url}
-        //                             name={w.name}
-        //                             duration={w.duration}
-        //                             description={w.description}
-        //                             tags={w.tags}
-        //                         />
-        //                     );
-        //                 })}
-        //             </motion.ul>
-        //         </div>
-        //     </motion.div>
-        // </section>
     );
 };
 

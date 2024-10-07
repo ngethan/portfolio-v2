@@ -1,6 +1,8 @@
-import Image from "next/image";
 import path from "path";
+
+import Image from "next/image";
 import sharp from "sharp";
+
 import styles from "../../styles/photos.module.css";
 
 const getBase64FromImage = async (

@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 const About = () => {
     const controls = useAnimation();
@@ -51,7 +51,7 @@ const About = () => {
                 <div className="w-[85%] text-[30px] md:w-[70%] xl:w-[55%]">
                     <motion.p variants={itemY} className="mb-12">
                         I&apos;m a full-stack developer focused on creating
-                        exceptional experiences. I'm currently studying{" "}
+                        exceptional experiences. I&apos;m currently studying{" "}
                         <Link
                             href="https://admissions.wustl.edu/academics/special-programs/joint-degree-in-business-and-computer-science/"
                             className="hover-animation-dark text-primary-400"
@@ -67,7 +67,7 @@ const About = () => {
                         >
                             Washington University in St. Louis
                         </Link>
-                        . I'm currently building{" "}
+                        . I&apos;m currently building{" "}
                         <Link
                             href="https://connectalum.com"
                             target="_blank"

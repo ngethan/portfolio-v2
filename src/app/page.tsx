@@ -1,31 +1,17 @@
-"use client";
+import React from "react";
 
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Home from "@/components/Home";
-import Skills from "@/components/Skills";
-import Socials from "@/components/Socials";
-import Stars from "@/components/Stars";
-import Work from "@/components/Work/Work";
-import Navbar from "@/components/Navbar";
-import Cursor from "@/components/Cursor";
-import Footer from "@/components/Footer";
+import { Metadata } from "next";
+
+import LandingPage from "@/components/landing-page";
+
+export const metadata: Metadata = {
+    title: "Ethan Ng",
+    description:
+        "Ethan Ng is a software engineer who loves designing and building applications.",
+};
 
 const Page = () => {
-    return (
-        <>
-            <Navbar />
-            <Cursor />
-            <Stars />
-            <Home />
-            <About />
-            <Skills />
-            <Work />
-            <Contact />
-            <Socials />
-            <Footer />
-        </>
-    );
+    return <LandingPage />;
 };
 
 export default Page;
