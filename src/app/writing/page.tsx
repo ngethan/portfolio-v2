@@ -4,8 +4,8 @@ import React from "react";
 
 import Link from "next/link";
 
-import Navbar from "@/components/navbar";
-import Stars from "@/components/stars";
+import Navbar from "@/components/layout/navbar";
+import Stars from "@/components/layout/stars";
 
 const Writing = () => {
     const blogs = [

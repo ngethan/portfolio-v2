@@ -5,7 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
-import Stars from "@/components/stars";
+import Stars from "@/components/layout/stars";
 
 export default function WritingPage() {
     return (

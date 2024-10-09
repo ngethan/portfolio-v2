@@ -2,7 +2,7 @@ import React from "react";
 
 import Link from "next/link";
 
-import Stars from "@/components/stars";
+import Stars from "@/components/layout/stars";
 
 const NotFoundPage = () => {
     return (
