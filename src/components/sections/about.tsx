@@ -9,9 +9,15 @@ import { Button } from "../ui/button";
 const About = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
+
     useEffect(() => {
         if (inView) {
             controls.start("visible");
+
+            const scrollIndicator = document.getElementById("scroll-indicator");
+            if (scrollIndicator) {
+                scrollIndicator.style.visibility = "hidden";
+            }
         }
     }, [controls, inView]);
 

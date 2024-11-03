@@ -199,7 +199,7 @@ const Navbar = () => {
                 <Hamburger
                     toggled={nav}
                     toggle={setNav}
-                    size={25}
+                    size={18}
                     label="Menu"
                 />
             </div>
@@ -249,7 +249,7 @@ const Navbar = () => {
                         WRITING
                     </p>
                 </li> */}
-                <li className="fixed top-[calc(63%)]">
+                <li className="fixed top-[calc(51%)]">
                     <p
                         className="hover-animation-dark py-6 text-4xl duration-300 hover:text-primary-400"
                         onClick={handleViewSection}

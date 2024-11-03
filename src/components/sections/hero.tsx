@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
+import { LuArrowBigDownDash } from "react-icons/lu";
 import { useInView } from "react-intersection-observer";
 
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,7 @@ const Home = () => {
     const controls = useAnimation();
     const [time, setTime] = useState("");
     const [ref, inView] = useInView({ threshold: 0.3 });
+
     useEffect(() => {
         if (inView) {
             controls.start("visible");
@@ -43,12 +45,14 @@ const Home = () => {
         },
     };
 
-    const dateFormatter = new Intl.DateTimeFormat([], {
-        timeZone: "America/Chicago",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-    });
+    const dateFormatter = useMemo(() => {
+        return new Intl.DateTimeFormat([], {
+            timeZone: "America/Chicago",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+        });
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(
@@ -58,7 +62,7 @@ const Home = () => {
         return () => {
             clearInterval(interval);
         };
-    }, []);
+    }, [dateFormatter]);
 
     return (
         <section id="home">
@@ -153,6 +157,33 @@ const Home = () => {
                         STL {time}
                     </motion.p>
                 </div>
+
+                {time && (
+                    <motion.div
+                        id="scroll-indicator"
+                        className="absolute bottom-10 flex cursor-pointer flex-row items-center gap-2"
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            opacity: [0, 1, 1, 0],
+                            y: [0, -5, 0],
+                            color: ["#ff0000", "#ff4d4d", "#ff0000"],
+                        }}
+                        transition={{
+                            delay: 5,
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "loop",
+                        }}
+                    >
+                        <LuArrowBigDownDash
+                            size={22}
+                            className="text-red-500"
+                        />
+                        <p className="font-mono text-sm text-red-500">
+                            Scroll for more
+                        </p>
+                    </motion.div>
+                )}
             </motion.div>
         </section>
     );

@@ -23,6 +23,7 @@ const Footer = () => {
             }
         }
     }, [controls, inView]);
+
     return (
         <section id="footer" ref={ref}>
             <footer className="sticky top-full mb-[20px] flex h-auto w-full flex-col items-center justify-center pb-[20px]">
