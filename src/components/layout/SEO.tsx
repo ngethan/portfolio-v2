@@ -10,16 +10,25 @@ const Meta = () => {
                     name="description"
                     content="Ethan Ng is a software engineer who loves designing and building applications."
                 />
-                <link rel="icon" href="https://ethanng.dev/favicon.svg" />
                 <meta name="theme-color" content="#e8313f" />
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
                 <link
-                    rel="apple-touch-icon"
-                    href="https://ethanng.dev/favicon.svg"
+                    rel="icon"
+                    type="image/png"
+                    href="/favicon-96x96.png"
+                    sizes="96x96"
                 />
+                <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="180x180"
+                    href="/apple-touch-icon.png"
+                />
+                <link rel="manifest" href="/site.webmanifest" />
                 <link rel="manifest" href="https://ethanng.dev/manifest.json" />
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="website" />
