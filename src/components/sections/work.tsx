@@ -120,7 +120,7 @@ const WorkCard = ({
 const workData = [
     {
         name: "Connect",
-        title: "Co-Founder",
+        title: "Lead Software Engineer",
         url: "https://connectalum.com",
         duration: "December 2023 - Present",
         description: [
