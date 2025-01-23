@@ -159,7 +159,7 @@ const workData = [
     },
     {
         name: "DevSTAC",
-        title: "Developer",
+        title: "Lead Developer",
         url: "https://techden.wustl.edu/programs/devstac-2-2/",
         duration: "June 2024 - Present",
         description: [
